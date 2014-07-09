@@ -1,4 +1,4 @@
-﻿namespace Website.Controllers
+﻿namespace Controller
 {
     using System.Web.Mvc;
 
