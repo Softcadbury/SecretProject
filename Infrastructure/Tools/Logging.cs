@@ -12,7 +12,7 @@
         private static readonly ILog Log;
 
         /// <summary>
-        /// Static constructor which init the logger object
+        /// Static constructor which initializes the logger object
         /// </summary>
         static Logging()
         {
