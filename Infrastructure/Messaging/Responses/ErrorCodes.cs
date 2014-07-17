@@ -5,6 +5,7 @@
     /// </summary>
     public enum ErrorCodes
     {
-        NotFound
+        NotFound,
+        NotAdded
     }
 }

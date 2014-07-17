@@ -23,7 +23,7 @@
         }
 
         /// <summary>
-        /// Get a user
+        /// Get a model
         /// </summary>
         public Response<TModel> Get(GetRequest request)
         {
@@ -38,13 +38,28 @@
         }
 
         /// <summary>
-        /// Get a list of users
+        /// Get a list of models
         /// </summary>
         public Response<List<TModel>> GetAll(GetAllRequest request)
         {
             List<TModel> models = repository.GetAll(request.PageIndex, request.PageSize);
 
             return Response<List<TModel>>.CreateSuccess(models);
+        }
+
+        /// <summary>
+        /// Add a model
+        /// </summary>
+        public Response<TModel> Add(AddRequest<TModel> request)
+        {
+            TModel model = repository.Add(request.Model);
+
+            if (model == null)
+            {
+                return Response<TModel>.CreateError(ErrorCodes.NotAdded);
+            }
+
+            return Response<TModel>.CreateSuccess(model);
         }
     }
 }

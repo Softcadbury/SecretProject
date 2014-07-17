@@ -48,5 +48,16 @@
 
             return RenderResponse(response);
         }
+
+        // POST: /api/users
+        [HttpPost]
+        [Route("")]
+        public IHttpActionResult Add([FromBody] User user)
+        {
+            var request = new AddRequest<User>(user);
+            Response<User> response = userService.Add(request);
+
+            return RenderResponse(response);
+        }
     }
 }

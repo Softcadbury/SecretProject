@@ -13,6 +13,7 @@
         /// </summary>
         public TModel GetById(long id)
         {
+            // todo
             return null;
         }
 
@@ -21,7 +22,17 @@
         /// </summary>
         public List<TModel> GetAll(int pageIndex, int pageSize)
         {
+            // todo
             return null;
+        }
+
+        /// <summary>
+        /// Add a model to the database
+        /// </summary>
+        public TModel Add(TModel model)
+        {
+            // todo
+            return model;
         }
     }
 }
