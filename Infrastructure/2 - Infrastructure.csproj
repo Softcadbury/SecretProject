@@ -67,6 +67,7 @@
     <Compile Include="Messaging\Requests\AddRequest.cs" />
     <Compile Include="Messaging\Requests\GetAllRequest.cs" />
     <Compile Include="Messaging\Requests\GetRequest.cs" />
+    <Compile Include="Messaging\Requests\UpdateRequest.cs" />
     <Compile Include="Messaging\Responses\Empty.cs" />
     <Compile Include="Messaging\Responses\ErrorCodes.cs" />
     <Compile Include="Messaging\Responses\Response.cs" />

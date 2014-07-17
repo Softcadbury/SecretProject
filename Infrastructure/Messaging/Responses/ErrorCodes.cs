@@ -6,6 +6,7 @@
     public enum ErrorCodes
     {
         NotFound,
-        NotAdded
+        NotAdded,
+        NotUpdated
     }
 }

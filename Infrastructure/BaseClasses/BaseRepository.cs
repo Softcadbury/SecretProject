@@ -34,5 +34,14 @@
             // todo
             return model;
         }
+
+        /// <summary>
+        /// Update a model in the database
+        /// </summary>
+        public TModel Update(TModel model)
+        {
+            // todo
+            return model;
+        }
     }
 }

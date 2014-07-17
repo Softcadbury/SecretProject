@@ -30,7 +30,7 @@
         // GET: /api/users/1
         [HttpGet]
         [Route("{id:long}")]
-        public IHttpActionResult Get(long id)
+        public IHttpActionResult Get(int id)
         {
             var request = new GetRequest(id);
             Response<User> response = userService.Get(request);
@@ -56,6 +56,17 @@
         {
             var request = new AddRequest<User>(user);
             Response<User> response = userService.Add(request);
+
+            return RenderResponse(response);
+        }
+
+        // PUT: /api/users/1
+        [HttpPut]
+        [Route("")]
+        public IHttpActionResult Update(int id, [FromBody] User user)
+        {
+            var request = new UpdateRequest<User>(id, user);
+            Response<User> response = userService.Update(request);
 
             return RenderResponse(response);
         }

@@ -61,5 +61,20 @@
 
             return Response<TModel>.CreateSuccess(model);
         }
+
+        /// <summary>
+        /// Update a model
+        /// </summary>
+        public Response<TModel> Update(UpdateRequest<TModel> request)
+        {
+            TModel model = repository.Update(request.Model);
+
+            if (model == null)
+            {
+                return Response<TModel>.CreateError(ErrorCodes.NotUpdated);
+            }
+
+            return Response<TModel>.CreateSuccess(model);
+        }
     }
 }
