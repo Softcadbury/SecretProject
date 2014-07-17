@@ -11,7 +11,7 @@
         /// <summary>
         /// Get a single model from the database with its id
         /// </summary>
-        public TModel GetById(long id)
+        public TModel GetById(int id)
         {
             // todo
             return null;
@@ -42,6 +42,14 @@
         {
             // todo
             return model;
+        }
+
+        /// <summary>
+        /// Delete a model in the database
+        /// </summary>
+        public void Delete(int id)
+        {
+            // todo
         }
     }
 }

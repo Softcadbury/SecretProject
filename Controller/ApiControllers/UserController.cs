@@ -29,7 +29,7 @@
 
         // GET: /api/users/1
         [HttpGet]
-        [Route("{id:long}")]
+        [Route("{id:int}")]
         public IHttpActionResult Get(int id)
         {
             var request = new GetRequest(id);
@@ -67,6 +67,17 @@
         {
             var request = new UpdateRequest<User>(id, user);
             Response<User> response = userService.Update(request);
+
+            return RenderResponse(response);
+        }
+
+        // DELETE: /api/users/1
+        [HttpGet]
+        [Route("{id:int}")]
+        public IHttpActionResult Delete(int id)
+        {
+            var request = new DeleteRequest(id);
+            Response<Empty> response = userService.Delete(request);
 
             return RenderResponse(response);
         }

@@ -18,6 +18,14 @@
         }
 
         /// <summary>
+        /// Create a success response
+        /// </summary>
+        public static Response<TContent> CreateSuccess()
+        {
+            return new Response<TContent> { IsSuccess = true };
+        }
+
+        /// <summary>
         /// Create an error response
         /// </summary>
         public static Response<TContent> CreateError(ErrorCodes errorCode)

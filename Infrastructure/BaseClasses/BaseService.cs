@@ -76,5 +76,15 @@
 
             return Response<TModel>.CreateSuccess(model);
         }
+
+        /// <summary>
+        /// Delete a model
+        /// </summary>
+        public Response<Empty> Delete(DeleteRequest request)
+        {
+            repository.Delete(request.Id);
+
+            return Response<Empty>.CreateSuccess();
+        }
     }
 }

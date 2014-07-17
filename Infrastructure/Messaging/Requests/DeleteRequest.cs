@@ -1,14 +1,14 @@
 ﻿namespace Infrastructure.Messaging.Requests
 {
     /// <summary>
-    /// This class represents the request to get a model
+    /// This class represents the request to delete a model
     /// </summary>
-    public sealed class GetRequest
+    public sealed class DeleteRequest
     {
         /// <summary>
         /// Constructor
         /// </summary>
-        public GetRequest(int id)
+        public DeleteRequest(int id)
         {
             Id = id;
         }

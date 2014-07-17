@@ -11,13 +11,13 @@
         /// <summary>
         /// Constructor
         /// </summary>
-        public UpdateRequest(long id, TModel model)
+        public UpdateRequest(int id, TModel model)
         {
             Id = id;
             Model = model;
         }
 
-        public long Id { get; private set; }
+        public int Id { get; private set; }
         public TModel Model { get; private set; }
     }
 }
