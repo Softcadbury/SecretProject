@@ -10,7 +10,6 @@
         /// <summary>
         /// Gets The home index
         /// </summary>
-        /// <returns></returns>
         public ActionResult Index()
         {
             return View();

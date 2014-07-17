@@ -1,5 +1,7 @@
 ﻿namespace Infrastructure.BaseClasses
 {
+    using System.Collections.Generic;
+
     using Infrastructure.Messaging.Requests;
     using Infrastructure.Messaging.Responses;
 
@@ -25,7 +27,7 @@
         /// </summary>
         public Response<TModel> Get(GetRequest request)
         {
-            var model = repository.GetById(request.Id);
+            TModel model = repository.GetById(request.Id);
 
             if (model == null)
             {
@@ -33,6 +35,16 @@
             }
 
             return Response<TModel>.CreateSuccess(model);
+        }
+
+        /// <summary>
+        /// Get a list of users
+        /// </summary>
+        public Response<List<TModel>> GetAll(GetAllRequest request)
+        {
+            List<TModel> models = repository.GetAll(request.PageIndex, request.PageSize);
+
+            return Response<List<TModel>>.CreateSuccess(models);
         }
     }
 }

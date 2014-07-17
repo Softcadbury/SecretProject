@@ -1,5 +1,6 @@
 ﻿namespace Controller.ApiControllers
 {
+    using System.Collections.Generic;
     using System.Web.Http;
 
     using Infrastructure.BaseClasses;
@@ -33,6 +34,17 @@
         {
             var request = new GetRequest(id);
             Response<User> response = userService.Get(request);
+
+            return RenderResponse(response);
+        }
+
+        // GET: /api/users?pageIndex=0&pageSize=20
+        [HttpGet]
+        [Route("")]
+        public IHttpActionResult Get([FromUri] int pageIndex, [FromUri] int pageSize)
+        {
+            var request = new GetAllRequest(pageIndex, pageSize);
+            Response<List<User>> response = userService.GetAll(request);
 
             return RenderResponse(response);
         }
