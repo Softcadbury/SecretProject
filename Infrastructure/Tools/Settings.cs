@@ -48,5 +48,30 @@
         {
             get { return GetSetting("Connection_String"); }
         }
+
+        public static string SmtpHost
+        {
+            get { return GetSetting("Smtp_Host"); }
+        }
+
+        public static string SmtpUserName
+        {
+            get { return GetSetting("Smtp_User_Name"); }
+        }
+
+        public static string SmtpPassword
+        {
+            get { return GetSetting("Smtp_Password"); }
+        }
+
+        public static string MailingContactFrom
+        {
+            get { return GetSetting("Mailing_Contact_From"); }
+        }
+
+        public static string MailingContactTo
+        {
+            get { return GetSetting("Mailing_Contact_To"); }
+        }
     }
 }

@@ -73,6 +73,7 @@
     <Compile Include="Messaging\Responses\ErrorCodes.cs" />
     <Compile Include="Messaging\Responses\Response.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tools\Mailing.cs" />
     <Compile Include="Tools\Settings.cs" />
     <Compile Include="Tools\Logging.cs" />
   </ItemGroup>
