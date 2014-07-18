@@ -1,6 +1,7 @@
 ﻿namespace Infrastructure.BaseClasses
 {
     using System.Collections.Generic;
+    using System.Data.Entity;
 
     /// <summary>
     /// A baseline definition that every repository will inherit from
@@ -8,6 +9,16 @@
     public abstract class BaseRepository<TModel>
         where TModel : BaseModel
     {
+        private readonly DbContext context;
+
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        protected BaseRepository(DbContext context)
+        {
+            this.context = context;
+        }
+
         /// <summary>
         /// Get a single model from the database with its id
         /// </summary>

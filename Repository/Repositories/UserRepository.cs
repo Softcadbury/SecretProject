@@ -2,6 +2,7 @@
 {
     using Infrastructure.BaseClasses;
 
+    using Repository.Contexts;
     using Repository.Models;
 
     /// <summary>
@@ -9,5 +10,12 @@
     /// </summary>
     public class UserRepository : BaseRepository<User>
     {
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        public UserRepository()
+            : base(new SecretProjectContext())
+        {
+        }
     }
 }
