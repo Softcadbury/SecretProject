@@ -126,6 +126,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Scripts\main.js" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Web.config" />
@@ -139,8 +140,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\scripts\script.js" />
-    <Content Include="Content\styles\site.css" />
+    <Content Include="Styles\site.css" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -175,6 +175,11 @@
       <Project>{24b41069-f4fa-4824-a5b7-bed6bc6b21d4}</Project>
       <Name>4 - Service</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Scripts\dataservices\" />
+    <Folder Include="Scripts\models\" />
+    <Folder Include="Scripts\viewmodels\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

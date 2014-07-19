@@ -6,11 +6,19 @@
     {
         public static void RegisterBundles(BundleCollection bundles)
         {
-            bundles.Add(new ScriptBundle("~/Content/scripts").Include(
-                "~/Content/scripts/script.js"));
+            bundles.Add(new ScriptBundle("~/Scripts").Include(
+                // Main
+                "~/Scripts/main.js"
 
-            bundles.Add(new StyleBundle("~/Content/styles").Include(
-                "~/Content/styles/site.css"));
+                // Dataservices
+
+                // Models
+
+                // Viewmodels
+                ));
+
+            bundles.Add(new StyleBundle("~/Styles").Include(
+                "~/Styles/site.css"));
         }
     }
 }

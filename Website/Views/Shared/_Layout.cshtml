@@ -3,10 +3,13 @@
 <head>
     <meta charset="utf-8" />
     <title>@ViewBag.Title</title>
-    @Styles.Render("~/Content/styles")
+    @Styles.Render("~/Styles")
 </head>
 <body>
     @RenderBody()
-    @Scripts.Render("~/Content/scripts")
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/knockout/3.1.0/knockout-min.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script type="text/javascript" data-main="/Scripts/main.js" src="//cdnjs.cloudflare.com/ajax/libs/require.js/2.1.14/require.min.js"></script>
+    @Scripts.Render("~/Scripts")
 </body>
 </html>
