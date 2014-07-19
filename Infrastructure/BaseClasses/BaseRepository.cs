@@ -22,7 +22,7 @@
         /// <summary>
         /// Get a single model from the database with its id
         /// </summary>
-        public TModel GetById(int id)
+        public virtual TModel GetById(int id)
         {
             // todo
             return null;
@@ -31,7 +31,7 @@
         /// <summary>
         /// Get all models from the database in a range
         /// </summary>
-        public List<TModel> GetAll(int pageIndex, int pageSize)
+        public virtual List<TModel> GetAll(int pageIndex, int pageSize)
         {
             // todo
             return null;
@@ -40,7 +40,7 @@
         /// <summary>
         /// Add a model to the database
         /// </summary>
-        public TModel Add(TModel model)
+        public virtual TModel Add(TModel model)
         {
             // todo
             return model;
@@ -49,7 +49,7 @@
         /// <summary>
         /// Update a model in the database
         /// </summary>
-        public TModel Update(TModel model)
+        public virtual TModel Update(TModel model)
         {
             // todo
             return model;
@@ -58,7 +58,7 @@
         /// <summary>
         /// Delete a model in the database
         /// </summary>
-        public void Delete(int id)
+        public virtual void Delete(int id)
         {
             // todo
         }

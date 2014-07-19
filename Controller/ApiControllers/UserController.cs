@@ -62,7 +62,7 @@
 
         // PUT: /api/users/1
         [HttpPut]
-        [Route("")]
+        [Route("{id:int}")]
         public IHttpActionResult Update(int id, [FromBody] User user)
         {
             var request = new UpdateRequest<User>(id, user);
@@ -72,7 +72,7 @@
         }
 
         // DELETE: /api/users/1
-        [HttpGet]
+        [HttpDelete]
         [Route("{id:int}")]
         public IHttpActionResult Delete(int id)
         {
