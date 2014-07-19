@@ -8,14 +8,14 @@
         {
             bundles.Add(new ScriptBundle("~/Scripts").Include(
                 // Main
-                "~/Scripts/main.js"
+                "~/Scripts/main.js",
 
                 // Dataservices
 
                 // Models
 
                 // Viewmodels
-                ));
+                "~/Scripts/viewmodels/menu.viewmodel.js"));
 
             bundles.Add(new StyleBundle("~/Styles").Include(
                 "~/Styles/site.css"));

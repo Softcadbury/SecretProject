@@ -127,11 +127,14 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Scripts\main.js" />
+    <Content Include="Scripts\viewmodels\menu.viewmodel.js" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="packages.config" />
+    <Content Include="Views\Home\_Menu.cshtml" />
+    <Content Include="Views\Home\_Container.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -179,7 +182,6 @@
   <ItemGroup>
     <Folder Include="Scripts\dataservices\" />
     <Folder Include="Scripts\models\" />
-    <Folder Include="Scripts\viewmodels\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
