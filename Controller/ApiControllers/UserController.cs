@@ -71,10 +71,10 @@
         // DELETE: /api/users/1
         [HttpDelete]
         [Route("{id:int}")]
-        public IHttpActionResult Delete(int id)
+        public IHttpActionResult Remove(int id)
         {
-            var request = new DeleteRequest(id);
-            Response<Empty> response = userService.Delete(request);
+            var request = new RemoveRequest(id);
+            Response<Empty> response = userService.Remove(request);
 
             return RenderResponse(response);
         }

@@ -23,10 +23,16 @@
             return dataserviceHelper.update(dataserviceUrl, User, idToUpdate, modelToUpdate);
         }
 
+        // Remove
+        function remove(idToRemove) {
+            return dataserviceHelper.remove(dataserviceUrl, idToRemove);
+        }
+
         return {
             get: get,
             getAll: getAll,
             add: add,
-            update: update
+            update: update,
+            remove: remove
         };
     });

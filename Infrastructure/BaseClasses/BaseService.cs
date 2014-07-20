@@ -78,11 +78,11 @@
         }
 
         /// <summary>
-        /// Delete a model
+        /// Remove a model
         /// </summary>
-        public Response<Empty> Delete(DeleteRequest request)
+        public Response<Empty> Remove(RemoveRequest request)
         {
-            repository.Delete(request.Id);
+            repository.Remove(request.Id);
 
             return Response<Empty>.CreateSuccess();
         }

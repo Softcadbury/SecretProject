@@ -56,9 +56,9 @@
         }
 
         /// <summary>
-        /// Delete a model in the database
+        /// Remove a model in the database
         /// </summary>
-        public virtual void Delete(int id)
+        public virtual void Remove(int id)
         {
             // todo
         }

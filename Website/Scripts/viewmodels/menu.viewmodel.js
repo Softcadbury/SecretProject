@@ -26,5 +26,10 @@
             userDataservice.getAll(1).done(function (users) {
                 self.users(users);
             });
+
+            // Test remove
+            userDataservice.remove(1).done(function () {
+                console.log('removed');
+            });
         };
     });

@@ -73,7 +73,7 @@
     <Compile Include="BaseClasses\BaseRepository.cs" />
     <Compile Include="BaseClasses\BaseService.cs" />
     <Compile Include="Messaging\Requests\AddRequest.cs" />
-    <Compile Include="Messaging\Requests\DeleteRequest.cs" />
+    <Compile Include="Messaging\Requests\RemoveRequest.cs" />
     <Compile Include="Messaging\Requests\GetAllRequest.cs" />
     <Compile Include="Messaging\Requests\GetRequest.cs" />
     <Compile Include="Messaging\Requests\UpdateRequest.cs" />

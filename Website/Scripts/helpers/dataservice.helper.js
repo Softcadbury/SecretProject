@@ -69,6 +69,22 @@
             return deferred.promise();
         }
 
+        // Remove
+        function remove(dataserviceUrl, idToRemove) {
+            var url = apiUrl + dataserviceUrl + '/' + idToRemove;
+            var deferred = $.Deferred();
+
+            ajaxRequest(url, 'DELETE')
+				.done(function (data) {
+				    deferred.resolve();
+				})
+				.fail(function (data) {
+				    deferred.reject();
+				});
+
+            return deferred.promise();
+        }
+
         // Send an ajax request
         function ajaxRequest(url, type, data) {
             var options = {
@@ -86,6 +102,7 @@
             get: get,
             getAll: getAll,
             add: add,
-            update: update
+            update: update,
+            remove: remove
         };
     });
