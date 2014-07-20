@@ -42,9 +42,23 @@
             var url = apiUrl + dataserviceUrl;
             var deferred = $.Deferred();
 
-            modelToAdd = ko.isObservable(modelToAdd) ? modelToAdd() : modelToAdd;
-
             ajaxRequest(url, 'POST', modelToAdd)
+				.done(function (data) {
+				    deferred.resolve(new Model(data));
+				})
+				.fail(function (data) {
+				    deferred.reject();
+				});
+
+            return deferred.promise();
+        };
+
+        // Update
+        function update(dataserviceUrl, Model, id, modelToUpdate) {
+            var url = apiUrl + dataserviceUrl + '/' + id;
+            var deferred = $.Deferred();
+
+            ajaxRequest(url, 'PUT', modelToUpdate)
 				.done(function (data) {
 				    deferred.resolve(new Model(data));
 				})
@@ -71,6 +85,7 @@
         return {
             get: get,
             getAll: getAll,
-            add: add
+            add: add,
+            update: update
         };
     });

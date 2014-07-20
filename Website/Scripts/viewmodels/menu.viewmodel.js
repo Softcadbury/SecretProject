@@ -15,6 +15,11 @@
                 userDataservice.add(self.user).done(function (user) {
                     console.log(user)
                 });
+
+                // Test update
+                userDataservice.update(self.user().id, self.user).done(function (user) {
+                    console.log(user)
+                });
             });
 
             // Test getAll

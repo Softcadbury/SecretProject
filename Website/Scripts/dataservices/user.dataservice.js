@@ -18,9 +18,15 @@
             return dataserviceHelper.add(dataserviceUrl, User, modelToAdd);
         };
 
+        // Update
+        function update(id, modelToUpdate) {
+            return dataserviceHelper.update(dataserviceUrl, User, id, modelToUpdate);
+        };
+
         return {
             get: get,
             getAll: getAll,
-            add: add
+            add: add,
+            update: update
         };
     });
