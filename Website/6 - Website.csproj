@@ -126,6 +126,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Scripts\dataservices\user.dataservice.js" />
     <Content Include="Scripts\main.js" />
     <Content Include="Scripts\viewmodels\menu.viewmodel.js" />
     <Content Include="Views\Home\Index.cshtml" />
@@ -135,6 +136,7 @@
     <Content Include="packages.config" />
     <Content Include="Views\Home\_Menu.cshtml" />
     <Content Include="Views\Home\_Container.cshtml" />
+    <Content Include="Scripts\models\user.model.js" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -179,10 +181,7 @@
       <Name>4 - Service</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Scripts\dataservices\" />
-    <Folder Include="Scripts\models\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

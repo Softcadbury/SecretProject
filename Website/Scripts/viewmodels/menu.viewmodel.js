@@ -1,8 +1,13 @@
 ﻿define('menu.viewmodel',
-    function () {
+    ['user.dataservice', 'user.model'],
+    function (userDataservice, User) {
         return function () {
             var self = this;
 
-            self.test = ko.observable('softcadbury');
+            self.user = ko.observable();
+
+            userDataservice.get(1).done(function (data) {
+                self.user(new User(data));
+            });
         };
     });

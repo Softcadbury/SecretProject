@@ -7,12 +7,11 @@
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/Scripts").Include(
-                // Main
-                "~/Scripts/main.js",
-
                 // Dataservices
+                "~/Scripts/dataservices/user.dataservice.js",
 
                 // Models
+                "~/Scripts/models/user.model.js",
 
                 // Viewmodels
                 "~/Scripts/viewmodels/menu.viewmodel.js"));
