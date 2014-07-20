@@ -13,8 +13,14 @@
             return dataserviceHelper.getAll(dataserviceUrl, User, page);
         };
 
+        // Add
+        function add(modelToAdd) {
+            return dataserviceHelper.add(dataserviceUrl, User, modelToAdd);
+        };
+
         return {
             get: get,
-            getAll: getAll
+            getAll: getAll,
+            add: add
         };
     });

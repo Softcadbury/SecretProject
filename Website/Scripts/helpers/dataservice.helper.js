@@ -37,6 +37,24 @@
             return deferred.promise();
         };
 
+        // Add
+        function add(dataserviceUrl, Model, modelToAdd) {
+            var url = apiUrl + dataserviceUrl;
+            var deferred = $.Deferred();
+
+            modelToAdd = ko.isObservable(modelToAdd) ? modelToAdd() : modelToAdd;
+
+            ajaxRequest(url, 'POST', modelToAdd)
+				.done(function (data) {
+				    deferred.resolve(new Model(data));
+				})
+				.fail(function (data) {
+				    deferred.reject();
+				});
+
+            return deferred.promise();
+        };
+
         // Send an ajax request
         function ajaxRequest(url, type, data) {
             var options = {
@@ -44,7 +62,7 @@
                 contentType: "application/json",
                 cache: false,
                 type: type,
-                data: data ? data.toJson() : null
+                data: data ? ko.toJSON(data) : null
             };
 
             return $.ajax(url, options);
@@ -52,6 +70,7 @@
 
         return {
             get: get,
-            getAll: getAll
+            getAll: getAll,
+            add: add
         };
     });
