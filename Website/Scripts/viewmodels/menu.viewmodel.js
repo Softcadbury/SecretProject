@@ -1,13 +1,13 @@
 ﻿define('menu.viewmodel',
-    ['user.dataservice', 'user.model'],
-    function (userDataservice, User) {
+    ['user.dataservice'],
+    function (userDataservice) {
         return function () {
             var self = this;
 
             self.user = ko.observable();
 
-            userDataservice.get(1).done(function (data) {
-                self.user(new User(data));
+            userDataservice.get(1).done(function (user) {
+                self.user(user);
             });
         };
     });

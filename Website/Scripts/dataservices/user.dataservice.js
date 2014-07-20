@@ -1,21 +1,13 @@
 ﻿define('user.dataservice',
-    [],
-    function () {
+    ['dataservice.helper', 'user.model'],
+    function (dataserviceHelper, User) {
+        var dataserviceUrl = 'users/';
+
+        // Get
         function get(id) {
-            return ajaxRequest('GET', './api/users/' + id);
+            var url = dataserviceUrl + id;
+            return dataserviceHelper.get(url, User);
         };
-
-        function ajaxRequest(type, url, data) {
-            var options = {
-                dataType: "json",
-                contentType: "application/json",
-                cache: false,
-                type: type,
-                data: data ? data.toJson() : null
-            };
-
-            return $.ajax(url, options);
-        }
 
         return {
             get: get

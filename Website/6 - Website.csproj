@@ -137,6 +137,7 @@
     <Content Include="Views\Home\_Menu.cshtml" />
     <Content Include="Views\Home\_Container.cshtml" />
     <Content Include="Scripts\models\user.model.js" />
+    <Content Include="Scripts\helpers\dataservice.helper.js" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

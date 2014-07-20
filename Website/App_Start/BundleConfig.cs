@@ -7,6 +7,9 @@
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/Scripts").Include(
+                // Helpers
+                "~/Scripts/helpers/dataservice.helper.js",
+
                 // Dataservices
                 "~/Scripts/dataservices/user.dataservice.js",
 
