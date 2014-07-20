@@ -1,15 +1,20 @@
 ﻿define('user.dataservice',
     ['dataservice.helper', 'user.model'],
     function (dataserviceHelper, User) {
-        var dataserviceUrl = 'users/';
+        var dataserviceUrl = 'users';
 
         // Get
         function get(id) {
-            var url = dataserviceUrl + id;
-            return dataserviceHelper.get(url, User);
+            return dataserviceHelper.get(dataserviceUrl, User, id);
+        };
+
+        // Get all
+        function getAll(page) {
+            return dataserviceHelper.getAll(dataserviceUrl, User, page);
         };
 
         return {
-            get: get
+            get: get,
+            getAll: getAll
         };
     });

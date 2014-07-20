@@ -1,15 +1,12 @@
 ﻿namespace Controller.ApiControllers
 {
-    using System.Collections.Generic;
-    using System.Web.Http;
-
     using Infrastructure.BaseClasses;
     using Infrastructure.Messaging.Requests;
     using Infrastructure.Messaging.Responses;
-
     using Repository.Models;
-
     using Service.Services;
+    using System.Collections.Generic;
+    using System.Web.Http;
 
     /// <summary>
     /// User controller
@@ -38,12 +35,12 @@
             return RenderResponse(response);
         }
 
-        // GET: /api/users?pageIndex=0&pageSize=20
+        // GET: /api/users?pageIndex=0
         [HttpGet]
         [Route("")]
-        public IHttpActionResult Get([FromUri] int pageIndex, [FromUri] int pageSize)
+        public IHttpActionResult GetAll([FromUri] int pageIndex)
         {
-            var request = new GetAllRequest(pageIndex, pageSize);
+            var request = new GetAllRequest(pageIndex, 20);
             Response<List<User>> response = userService.GetAll(request);
 
             return RenderResponse(response);
