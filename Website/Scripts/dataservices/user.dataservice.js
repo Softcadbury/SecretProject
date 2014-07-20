@@ -4,24 +4,24 @@
         var dataserviceUrl = 'users';
 
         // Get
-        function get(id) {
-            return dataserviceHelper.get(dataserviceUrl, User, id);
-        };
+        function get(idToGet) {
+            return dataserviceHelper.get(dataserviceUrl, User, idToGet);
+        }
 
         // Get all
-        function getAll(page) {
-            return dataserviceHelper.getAll(dataserviceUrl, User, page);
-        };
+        function getAll(pageIndex) {
+            return dataserviceHelper.getAll(dataserviceUrl, User, pageIndex);
+        }
 
         // Add
         function add(modelToAdd) {
             return dataserviceHelper.add(dataserviceUrl, User, modelToAdd);
-        };
+        }
 
         // Update
-        function update(id, modelToUpdate) {
-            return dataserviceHelper.update(dataserviceUrl, User, id, modelToUpdate);
-        };
+        function update(idToUpdate, modelToUpdate) {
+            return dataserviceHelper.update(dataserviceUrl, User, idToUpdate, modelToUpdate);
+        }
 
         return {
             get: get,

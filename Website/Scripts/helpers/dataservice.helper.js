@@ -3,8 +3,8 @@
         var apiUrl = './api/';
 
         // Get
-        function get(dataserviceUrl, Model, id) {
-            var url = apiUrl + dataserviceUrl + '/' + id;
+        function get(dataserviceUrl, Model, idToGet) {
+            var url = apiUrl + dataserviceUrl + '/' + idToGet;
             var deferred = $.Deferred();
 
             ajaxRequest(url, 'GET')
@@ -16,7 +16,7 @@
 				});
 
             return deferred.promise();
-        };
+        }
 
         // Get all
         function getAll(dataserviceUrl, Model, pageIndex) {
@@ -35,7 +35,7 @@
 				});
 
             return deferred.promise();
-        };
+        }
 
         // Add
         function add(dataserviceUrl, Model, modelToAdd) {
@@ -51,11 +51,11 @@
 				});
 
             return deferred.promise();
-        };
+        }
 
         // Update
-        function update(dataserviceUrl, Model, id, modelToUpdate) {
-            var url = apiUrl + dataserviceUrl + '/' + id;
+        function update(dataserviceUrl, Model, idToUpdate, modelToUpdate) {
+            var url = apiUrl + dataserviceUrl + '/' + idToUpdate;
             var deferred = $.Deferred();
 
             ajaxRequest(url, 'PUT', modelToUpdate)
@@ -67,7 +67,7 @@
 				});
 
             return deferred.promise();
-        };
+        }
 
         // Send an ajax request
         function ajaxRequest(url, type, data) {

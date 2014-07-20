@@ -9,7 +9,7 @@
             self.modificationDate = data.ModificationDate;
 
             self.name = ko.observable(data.Name);
-        };
+        }
 
         return UserModel;
     });
