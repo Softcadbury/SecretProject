@@ -135,10 +135,11 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="packages.config" />
     <Content Include="Views\Home\_Menu.cshtml" />
-    <Content Include="Views\Home\_Container.cshtml" />
+    <Content Include="Views\Home\_Content.cshtml" />
     <Content Include="Scripts\models\user.model.js" />
     <Content Include="Scripts\helpers\dataservice.helper.js" />
     <Content Include="Styles\constant.less" />
+    <Content Include="Views\Home\_Header.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
