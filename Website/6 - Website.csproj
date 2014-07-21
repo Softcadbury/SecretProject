@@ -138,6 +138,7 @@
     <Content Include="Views\Home\_Container.cshtml" />
     <Content Include="Scripts\models\user.model.js" />
     <Content Include="Scripts\helpers\dataservice.helper.js" />
+    <Content Include="Styles\constant.less" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -146,7 +147,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Styles\site.css" />
+    <Content Include="Styles\site.less" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
   </ItemGroup>

@@ -2,25 +2,33 @@
 {
     using System.Web.Optimization;
 
+    using Infrastructure.Tools;
+
     public class BundleConfig
     {
         public static void RegisterBundles(BundleCollection bundles)
         {
-            bundles.Add(new ScriptBundle("~/Scripts").Include(
-                // Helpers
-                "~/Scripts/helpers/dataservice.helper.js",
+            RegisterScripts(bundles);
+            RegisterStyles(bundles);
+        }
 
-                // Dataservices
-                "~/Scripts/dataservices/user.dataservice.js",
+        private static void RegisterScripts(BundleCollection bundles)
+        {
+            bundles.Add(new ScriptBundle("~/Scripts")
+                                .IncludeDirectory("~/Scripts/dataservices", "*.js", true)
+                                .IncludeDirectory("~/Scripts/helpers", "*.js", true)
+                                .IncludeDirectory("~/Scripts/models", "*.js", true)
+                                .IncludeDirectory("~/Scripts/viewmodels", "*.js", true));
+        }
 
-                // Models
-                "~/Scripts/models/user.model.js",
+        private static void RegisterStyles(BundleCollection bundles)
+        {
+            var bundle = new StyleBundle("~/Styles")
+                                .IncludeDirectory("~/Styles", "*.less", true);
 
-                // Viewmodels
-                "~/Scripts/viewmodels/menu.viewmodel.js"));
-
-            bundles.Add(new StyleBundle("~/Styles").Include(
-                "~/Styles/site.css"));
+            bundle.Transforms.Add(new LessTransformer());
+            bundle.Transforms.Add(new CssMinify());
+            bundles.Add(bundle);
         }
     }
 }
