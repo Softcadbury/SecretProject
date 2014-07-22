@@ -1,12 +1,12 @@
 ﻿namespace Controller.ApiControllers
 {
+    using System.Collections.Generic;
+    using System.Web.Http;
     using Infrastructure.BaseClasses;
     using Infrastructure.Messaging.Requests;
     using Infrastructure.Messaging.Responses;
     using Repository.Models;
     using Service.Services;
-    using System.Collections.Generic;
-    using System.Web.Http;
 
     /// <summary>
     /// User controller
@@ -29,6 +29,11 @@
         [Route("{id:int}")]
         public IHttpActionResult Get(int id)
         {
+            if (id <= 0)
+            {
+                return BadRequest("");
+            }
+
             var request = new GetRequest(id);
             Response<User> response = userService.Get(request);
 
@@ -40,6 +45,11 @@
         [Route("")]
         public IHttpActionResult GetAll([FromUri] int pageIndex)
         {
+            if (pageIndex < 0)
+            {
+                return BadRequest("");
+            }
+
             var request = new GetAllRequest(pageIndex, 20);
             Response<List<User>> response = userService.GetAll(request);
 
@@ -51,6 +61,11 @@
         [Route("")]
         public IHttpActionResult Add([FromBody] User user)
         {
+            if (!ModelState.IsValid || user == null)
+            {
+                return BadRequest("");
+            }
+
             var request = new AddRequest<User>(user);
             Response<User> response = userService.Add(request);
 
@@ -62,6 +77,11 @@
         [Route("{id:int}")]
         public IHttpActionResult Update(int id, [FromBody] User user)
         {
+            if (!ModelState.IsValid || user == null)
+            {
+                return BadRequest("");
+            }
+
             var request = new UpdateRequest<User>(id, user);
             Response<User> response = userService.Update(request);
 
@@ -73,6 +93,11 @@
         [Route("{id:int}")]
         public IHttpActionResult Remove(int id)
         {
+            if (id <= 0)
+            {
+                return BadRequest("");
+            }
+
             var request = new RemoveRequest(id);
             Response<Empty> response = userService.Remove(request);
 
