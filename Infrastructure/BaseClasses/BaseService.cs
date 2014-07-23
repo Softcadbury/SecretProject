@@ -28,11 +28,11 @@
         {
             this.repository = repository;
 
-            IsGetMethodAllowed = true;
-            IsGetAllMethodAllowed = true;
-            IsAddMethodAllowed = true;
-            IsUpdateMethodAllowed = true;
-            IsRemoveMethodAllowed = true;
+            IsGetMethodAllowed = false;
+            IsGetAllMethodAllowed = false;
+            IsAddMethodAllowed = false;
+            IsUpdateMethodAllowed = false;
+            IsRemoveMethodAllowed = false;
         }
 
         /// <summary>
@@ -40,10 +40,7 @@
         /// </summary>
         public Response<TModel> Get(GetRequest request)
         {
-            if (!IsGetMethodAllowed)
-            {
-                throw new InvalidOperationException("The service doesn't allow this method");
-            }
+            CheckMethodRights(IsGetMethodAllowed);
 
             TModel model = repository.GetById(request.Id);
 
@@ -60,10 +57,7 @@
         /// </summary>
         public Response<List<TModel>> GetAll(GetAllRequest request)
         {
-            if (!IsGetAllMethodAllowed)
-            {
-                throw new InvalidOperationException("The service doesn't allow this method");
-            }
+            CheckMethodRights(IsGetAllMethodAllowed);
 
             List<TModel> models = repository.GetAll(request.PageIndex, request.PageSize);
 
@@ -75,10 +69,7 @@
         /// </summary>
         public Response<TModel> Add(AddRequest<TModel> request)
         {
-            if (!IsAddMethodAllowed)
-            {
-                throw new InvalidOperationException("The service doesn't allow this method");
-            }
+            CheckMethodRights(IsAddMethodAllowed);
 
             TModel model = repository.Add(request.Model);
 
@@ -95,10 +86,7 @@
         /// </summary>
         public Response<TModel> Update(UpdateRequest<TModel> request)
         {
-            if (!IsUpdateMethodAllowed)
-            {
-                throw new InvalidOperationException("The service doesn't allow this method");
-            }
+            CheckMethodRights(IsUpdateMethodAllowed);
 
             TModel model = repository.Update(request.Model);
 
@@ -115,14 +103,22 @@
         /// </summary>
         public Response<Empty> Remove(RemoveRequest request)
         {
-            if (!IsRemoveMethodAllowed)
-            {
-                throw new InvalidOperationException("The service doesn't allow this method");
-            }
+            CheckMethodRights(IsRemoveMethodAllowed);
 
             repository.Remove(request.Id);
 
             return Response<Empty>.CreateSuccess();
+        }
+
+        /// <summary>
+        /// Throw an error if the method is not allowed
+        /// </summary>
+        private void CheckMethodRights(bool isMethodAllowed)
+        {
+            if (!isMethodAllowed)
+            {
+                throw new InvalidOperationException("The service doesn't allow this method");
+            }
         }
     }
 }

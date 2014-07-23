@@ -18,6 +18,11 @@
         public UserService()
             : base(UserRepository)
         {
+            IsGetMethodAllowed = true;
+            IsGetAllMethodAllowed = true;
+            IsAddMethodAllowed = true;
+            IsUpdateMethodAllowed = true;
+            IsRemoveMethodAllowed = true;
         }
     }
 }
