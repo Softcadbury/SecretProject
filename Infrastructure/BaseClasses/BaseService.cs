@@ -2,9 +2,11 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.Linq;
 
     using Infrastructure.Messaging.Requests;
     using Infrastructure.Messaging.Responses;
+    using Infrastructure.ServiceBasePermission;
 
     /// <summary>
     /// A baseline definition that every service will inherit from
@@ -15,24 +17,12 @@
     {
         private readonly TRepository repository;
 
-        protected bool IsGetMethodAllowed { get; set; }
-        protected bool IsGetPageMethodAllowed { get; set; }
-        protected bool IsAddMethodAllowed { get; set; }
-        protected bool IsUpdateMethodAllowed { get; set; }
-        protected bool IsRemoveMethodAllowed { get; set; }
-
         /// <summary>
         /// Constructor
         /// </summary>
         protected BaseService(TRepository repository)
         {
             this.repository = repository;
-
-            IsGetMethodAllowed = false;
-            IsGetPageMethodAllowed = false;
-            IsAddMethodAllowed = false;
-            IsUpdateMethodAllowed = false;
-            IsRemoveMethodAllowed = false;
         }
 
         /// <summary>
@@ -40,7 +30,7 @@
         /// </summary>
         public Response<TModel> Get(GetRequest request)
         {
-            CheckMethodRights(IsGetMethodAllowed);
+            EnsureMethodRight(ServiceBaseMethod.Get);
 
             TModel model = repository.GetById(request.Id);
 
@@ -57,7 +47,7 @@
         /// </summary>
         public Response<List<TModel>> GetPage(GetPageRequest request)
         {
-            CheckMethodRights(IsGetPageMethodAllowed);
+            EnsureMethodRight(ServiceBaseMethod.GetPage);
 
             List<TModel> models = repository.GetPage(request.PageIndex, request.PageSize);
 
@@ -69,7 +59,7 @@
         /// </summary>
         public Response<TModel> Add(AddRequest<TModel> request)
         {
-            CheckMethodRights(IsAddMethodAllowed);
+            EnsureMethodRight(ServiceBaseMethod.Add);
 
             TModel model = repository.Add(request.Model);
 
@@ -86,7 +76,7 @@
         /// </summary>
         public Response<TModel> Update(UpdateRequest<TModel> request)
         {
-            CheckMethodRights(IsUpdateMethodAllowed);
+            EnsureMethodRight(ServiceBaseMethod.Update);
 
             TModel model = repository.Update(request.Model);
 
@@ -103,7 +93,7 @@
         /// </summary>
         public Response<Empty> Remove(RemoveRequest request)
         {
-            CheckMethodRights(IsRemoveMethodAllowed);
+            EnsureMethodRight(ServiceBaseMethod.Remove);
 
             repository.Remove(request.Id);
 
@@ -113,12 +103,16 @@
         /// <summary>
         /// Throw an exception if the method is not allowed
         /// </summary>
-        private void CheckMethodRights(bool isMethodAllowed)
+        private void EnsureMethodRight(ServiceBaseMethod methodToCkeck)
         {
-            if (!isMethodAllowed)
+            Attribute[] attributes = Attribute.GetCustomAttributes(GetType());
+
+            if (attributes.OfType<ServiceBasePermissionAttribute>().Any(methodsAllowed => methodsAllowed.Flags.HasFlag(methodToCkeck)))
             {
-                throw new InvalidOperationException("The service doesn't allow this method");
+                return;
             }
+
+            throw new InvalidOperationException("The service doesn't allow this method");
         }
     }
 }

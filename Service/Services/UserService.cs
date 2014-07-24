@@ -1,6 +1,7 @@
 ﻿namespace Service.Services
 {
     using Infrastructure.BaseClasses;
+    using Infrastructure.ServiceBasePermission;
 
     using Repository.Models;
     using Repository.Repositories;
@@ -8,6 +9,7 @@
     /// <summary>
     /// User service
     /// </summary>
+    [ServiceBasePermission(ServiceBaseMethod.Get | ServiceBaseMethod.GetPage | ServiceBaseMethod.Add | ServiceBaseMethod.Update | ServiceBaseMethod.Remove)]
     public class UserService : BaseService<User, UserRepository>
     {
         private static readonly UserRepository UserRepository = new UserRepository();
@@ -18,11 +20,6 @@
         public UserService()
             : base(UserRepository)
         {
-            IsGetMethodAllowed = true;
-            IsGetPageMethodAllowed = true;
-            IsAddMethodAllowed = true;
-            IsUpdateMethodAllowed = true;
-            IsRemoveMethodAllowed = true;
         }
     }
 }
