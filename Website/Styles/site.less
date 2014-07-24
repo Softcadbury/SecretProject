@@ -1,6 +1,7 @@
 ﻿/********** Global **********/
+
 body {
-    padding-top: 50px;
+    padding-top: 60px;
 }
 
 .page-title {
@@ -13,18 +14,22 @@ body {
 }
 
 /********** Header **********/
-.navbar-fixed-top {
+
+.header-navbar {
+    background-color: #2c3e50;
     border: 0;
+    min-height: 60px;
+    padding-top: 5px;
 }
 
 /********** Menu **********/
 
-.sidebar {
+.menu-sidebar {
     display: none; // Hide for mobile
 }
 
 @media (min-width: 768px) {
-    .sidebar {
+    .menu-sidebar {
         position: fixed;
         top: 51px;
         bottom: 0;
@@ -33,31 +38,32 @@ body {
         display: block;
         padding: 20px;
         overflow-x: hidden;
-        overflow-y: auto; // Scrollable contents if viewport is shorter than content.
+        overflow-y: auto; // Scrollable contents if viewport is shorter than content
         background-color: #f5f5f5;
         border-right: 1px solid #eee;
     }
 }
 
-.nav-sidebar {
+.menu-element {
     margin-right: -21px;
     margin-bottom: 20px;
     margin-left: -20px;
 }
 
-.nav-sidebar > li > a {
+.menu-element > li > a {
     padding-right: 20px;
     padding-left: 20px;
 }
 
-.nav-sidebar > .active > a,
-.nav-sidebar > .active > a:hover,
-.nav-sidebar > .active > a:focus {
+.menu-element > .active > a,
+.menu-element > .active > a:hover,
+.menu-element > .active > a:focus {
     color: #fff;
     background-color: #428bca;
 }
 
 /********** Content **********/
+
 #content {
     padding: 20px;
 }

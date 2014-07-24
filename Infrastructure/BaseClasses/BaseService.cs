@@ -111,7 +111,7 @@
         }
 
         /// <summary>
-        /// Throw an error if the method is not allowed
+        /// Throw an exception if the method is not allowed
         /// </summary>
         private void CheckMethodRights(bool isMethodAllowed)
         {
