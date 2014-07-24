@@ -3,12 +3,12 @@
     /// <summary>
     /// This class represents the request to get a list of models
     /// </summary>
-    public sealed class GetAllRequest
+    public sealed class GetPageRequest
     {
         /// <summary>
         /// Constructor
         /// </summary>
-        public GetAllRequest(int pageIndex, int pageSize)
+        public GetPageRequest(int pageIndex, int pageSize)
         {
             PageIndex = pageIndex;
             PageSize = pageSize;

@@ -18,8 +18,8 @@
             return deferred.promise();
         }
 
-        // Get all
-        function getAll(dataserviceUrl, Model, pageIndex) {
+        // Get page
+        function getPage(dataserviceUrl, Model, pageIndex) {
             var url = apiUrl + dataserviceUrl + '?pageIndex=' + pageIndex;
             var deferred = $.Deferred();
 
@@ -100,7 +100,7 @@
 
         return {
             get: get,
-            getAll: getAll,
+            getPage: getPage,
             add: add,
             update: update,
             remove: remove

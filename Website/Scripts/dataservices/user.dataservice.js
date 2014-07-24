@@ -8,9 +8,9 @@
             return dataserviceHelper.get(dataserviceUrl, User, idToGet);
         }
 
-        // Get all
-        function getAll(pageIndex) {
-            return dataserviceHelper.getAll(dataserviceUrl, User, pageIndex);
+        // Get page
+        function getPage(pageIndex) {
+            return dataserviceHelper.getPage(dataserviceUrl, User, pageIndex);
         }
 
         // Add
@@ -30,7 +30,7 @@
 
         return {
             get: get,
-            getAll: getAll,
+            getPage: getPage,
             add: add,
             update: update,
             remove: remove

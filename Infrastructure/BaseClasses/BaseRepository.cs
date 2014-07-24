@@ -29,9 +29,9 @@
         }
 
         /// <summary>
-        /// Get all models from the database in a range
+        /// Get a list of models from the database in a range
         /// </summary>
-        public virtual List<TModel> GetAll(int pageIndex, int pageSize)
+        public virtual List<TModel> GetPage(int pageIndex, int pageSize)
         {
             // todo
             return null;

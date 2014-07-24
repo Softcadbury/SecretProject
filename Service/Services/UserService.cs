@@ -19,7 +19,7 @@
             : base(UserRepository)
         {
             IsGetMethodAllowed = true;
-            IsGetAllMethodAllowed = true;
+            IsGetPageMethodAllowed = true;
             IsAddMethodAllowed = true;
             IsUpdateMethodAllowed = true;
             IsRemoveMethodAllowed = true;

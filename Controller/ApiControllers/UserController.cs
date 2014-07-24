@@ -43,15 +43,15 @@
         // GET: /api/users?pageIndex=0
         [HttpGet]
         [Route("")]
-        public IHttpActionResult GetAll([FromUri] int pageIndex)
+        public IHttpActionResult GetPage([FromUri] int pageIndex)
         {
             if (pageIndex < 0)
             {
                 return BadRequest("");
             }
 
-            var request = new GetAllRequest(pageIndex, 20);
-            Response<List<User>> response = userService.GetAll(request);
+            var request = new GetPageRequest(pageIndex, 20);
+            Response<List<User>> response = userService.GetPage(request);
 
             return RenderResponse(response);
         }

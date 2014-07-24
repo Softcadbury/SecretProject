@@ -16,7 +16,7 @@
         private readonly TRepository repository;
 
         protected bool IsGetMethodAllowed { get; set; }
-        protected bool IsGetAllMethodAllowed { get; set; }
+        protected bool IsGetPageMethodAllowed { get; set; }
         protected bool IsAddMethodAllowed { get; set; }
         protected bool IsUpdateMethodAllowed { get; set; }
         protected bool IsRemoveMethodAllowed { get; set; }
@@ -29,7 +29,7 @@
             this.repository = repository;
 
             IsGetMethodAllowed = false;
-            IsGetAllMethodAllowed = false;
+            IsGetPageMethodAllowed = false;
             IsAddMethodAllowed = false;
             IsUpdateMethodAllowed = false;
             IsRemoveMethodAllowed = false;
@@ -55,11 +55,11 @@
         /// <summary>
         /// Get a list of models
         /// </summary>
-        public Response<List<TModel>> GetAll(GetAllRequest request)
+        public Response<List<TModel>> GetPage(GetPageRequest request)
         {
-            CheckMethodRights(IsGetAllMethodAllowed);
+            CheckMethodRights(IsGetPageMethodAllowed);
 
-            List<TModel> models = repository.GetAll(request.PageIndex, request.PageSize);
+            List<TModel> models = repository.GetPage(request.PageIndex, request.PageSize);
 
             return Response<List<TModel>>.CreateSuccess(models);
         }
