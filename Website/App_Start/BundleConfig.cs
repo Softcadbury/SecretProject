@@ -2,6 +2,8 @@
 {
     using System.Web.Optimization;
 
+    using BundleTransformer.Core.Transformers;
+
     using Infrastructure.Tools;
 
     public class BundleConfig
@@ -26,7 +28,7 @@
             var bundle = new StyleBundle("~/Styles")
                                 .IncludeDirectory("~/Styles", "*.less", true);
 
-            bundle.Transforms.Add(new LessTransformer());
+            bundle.Transforms.Add(new StyleTransformer());
             bundle.Transforms.Add(new CssMinify());
             bundles.Add(bundle);
         }
