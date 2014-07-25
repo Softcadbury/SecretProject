@@ -160,6 +160,9 @@
     <None Include="BundleTransformer.Configuration.xsd">
       <SubType>Designer</SubType>
     </None>
+    <Content Include="Styles\header.less" />
+    <Content Include="Styles\menu.less" />
+    <Content Include="Styles\content.less" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
