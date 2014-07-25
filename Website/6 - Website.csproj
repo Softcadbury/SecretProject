@@ -143,6 +143,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\man.jpg" />
+    <Content Include="Content\woman.jpg" />
     <Content Include="Scripts\dataservices\user.dataservice.js" />
     <Content Include="Scripts\main.js" />
     <Content Include="Scripts\viewmodels\menu.viewmodel.js" />
