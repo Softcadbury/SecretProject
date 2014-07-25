@@ -1,12 +1,11 @@
 ﻿namespace Infrastructure.BaseClasses
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-
     using Infrastructure.Messaging.Requests;
     using Infrastructure.Messaging.Responses;
     using Infrastructure.ServiceBasePermission;
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
 
     /// <summary>
     /// A baseline definition that every service will inherit from
@@ -62,6 +61,7 @@
             EnsureMethodRight(ServiceBaseMethods.Add);
 
             TModel model = repository.Add(request.Model);
+            repository.SaveChanges();
 
             if (model == null)
             {
@@ -79,6 +79,7 @@
             EnsureMethodRight(ServiceBaseMethods.Update);
 
             TModel model = repository.Update(request.Model);
+            repository.SaveChanges();
 
             if (model == null)
             {
@@ -96,6 +97,7 @@
             EnsureMethodRight(ServiceBaseMethods.Remove);
 
             repository.Remove(request.Id);
+            repository.SaveChanges();
 
             return Response<Empty>.CreateSuccess();
         }
