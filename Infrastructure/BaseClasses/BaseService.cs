@@ -30,7 +30,7 @@
         /// </summary>
         public Response<TModel> Get(GetRequest request)
         {
-            EnsureMethodRight(ServiceBaseMethod.Get);
+            EnsureMethodRight(ServiceBaseMethods.Get);
 
             TModel model = repository.GetById(request.Id);
 
@@ -47,7 +47,7 @@
         /// </summary>
         public Response<List<TModel>> GetPage(GetPageRequest request)
         {
-            EnsureMethodRight(ServiceBaseMethod.GetPage);
+            EnsureMethodRight(ServiceBaseMethods.GetPage);
 
             List<TModel> models = repository.GetPage(request.PageIndex, request.PageSize);
 
@@ -59,7 +59,7 @@
         /// </summary>
         public Response<TModel> Add(AddRequest<TModel> request)
         {
-            EnsureMethodRight(ServiceBaseMethod.Add);
+            EnsureMethodRight(ServiceBaseMethods.Add);
 
             TModel model = repository.Add(request.Model);
 
@@ -76,7 +76,7 @@
         /// </summary>
         public Response<TModel> Update(UpdateRequest<TModel> request)
         {
-            EnsureMethodRight(ServiceBaseMethod.Update);
+            EnsureMethodRight(ServiceBaseMethods.Update);
 
             TModel model = repository.Update(request.Model);
 
@@ -93,7 +93,7 @@
         /// </summary>
         public Response<Empty> Remove(RemoveRequest request)
         {
-            EnsureMethodRight(ServiceBaseMethod.Remove);
+            EnsureMethodRight(ServiceBaseMethods.Remove);
 
             repository.Remove(request.Id);
 
@@ -103,7 +103,7 @@
         /// <summary>
         /// Throw an exception if the method is not allowed
         /// </summary>
-        private void EnsureMethodRight(ServiceBaseMethod methodToCkeck)
+        private void EnsureMethodRight(ServiceBaseMethods methodToCkeck)
         {
             Attribute[] attributes = Attribute.GetCustomAttributes(GetType());
 

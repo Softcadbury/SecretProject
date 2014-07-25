@@ -8,17 +8,17 @@
     [AttributeUsage(AttributeTargets.Class)]
     public class ServiceBasePermissionAttribute : Attribute
     {
-        private readonly ServiceBaseMethod flags;
+        private readonly ServiceBaseMethods flags;
 
         /// <summary>
         /// Constructor
         /// </summary>
-        public ServiceBasePermissionAttribute(ServiceBaseMethod flags)
+        public ServiceBasePermissionAttribute(ServiceBaseMethods flags)
         {
             this.flags = flags;
         }
 
-        public ServiceBaseMethod Flags
+        public ServiceBaseMethods Flags
         {
             get
             {
