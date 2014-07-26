@@ -1,6 +1,8 @@
-﻿<div class="col-sm-3 col-md-2 menu-sidebar">
-    <ul class="nav menu-element">
-        <li class="active"><a href="#"><i class="fa fa-home"></i>Home</a></li>
-        <li><a href="#"><i class="fa fa-user"></i>Profile</a></li>
-    </ul>
+﻿<div ng-controller="MenuCtrl as menu">
+    <div class="col-sm-3 col-md-2 menu-sidebar">
+        <ul class="nav menu-element">
+            <li class="active"><a href="#"><i class="fa fa-home"></i>{{ menu.home }}</a></li>
+            <li><a href="#"><i class="fa fa-user"></i>{{ menu.profile }}</a></li>
+        </ul>
+    </div>
 </div>
