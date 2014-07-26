@@ -1,10 +1,16 @@
 ﻿(function () {
     angular
         .module('app')
-        .controller('MenuCtrl', MenuCtrl);
+        .controller('MenuCtrl', ['$scope', 'UserFactory', MenuCtrl]);
 
-    function MenuCtrl($scope) {
-        this.home = "Home";
-        this.profile = "Profile"
+    function MenuCtrl($scope, UserFactory) {
+        $scope.home = 'Home';
+        $scope.profile = 'Profile'
+
+        $scope.userName = 'yooo';
+
+        UserFactory.get(1).success(function (user) {
+            $scope.userName = user.Name;
+        })
     }
 })();

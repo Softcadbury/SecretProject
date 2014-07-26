@@ -147,6 +147,7 @@
     <Content Include="Content\woman.jpg" />
     <Content Include="Scripts\app.js" />
     <Content Include="Scripts\controllers\MenuCtrl.js" />
+    <Content Include="Scripts\factories\UserFactory.js" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Web.config" />
@@ -207,7 +208,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Scripts\services\" />
     <Folder Include="Views\Home\Content\" />
   </ItemGroup>
   <PropertyGroup>
