@@ -1,11 +1,12 @@
 ﻿namespace Controller.Controllers
 {
+    using Infrastructure.BaseClasses;
     using System.Web.Mvc;
 
     /// <summary>
     /// Home controller
     /// </summary>
-    public class HomeController : Controller
+    public class HomeController : BaseController
     {
         /// <summary>
         /// Gets The home index

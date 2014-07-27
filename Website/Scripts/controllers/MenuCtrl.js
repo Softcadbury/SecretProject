@@ -4,10 +4,7 @@
         .controller('MenuCtrl', ['$scope', 'UserFactory', MenuCtrl]);
 
     function MenuCtrl($scope, UserFactory) {
-        $scope.home = 'Home';
-        $scope.profile = 'Profile'
-
-        $scope.userName = 'yooo';
+        $scope.userName = '';
 
         UserFactory.get(1).success(function (user) {
             $scope.userName = user.Name;
