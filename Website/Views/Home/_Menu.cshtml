@@ -1,13 +1,13 @@
 ﻿<div ng-controller="MenuCtrl">
     <p style="color: white">{{ userName }}</p>
     <ul class="nav menu-element">
-        <li class="active">
+        <li ng-class="getClass('/')">
             <a href="#!/">
                 <i class="fa fa-home"></i>
                 @Resources.Menu.Home
             </a>
         </li>
-        <li>
+        <li ng-class="getClass('/account')">
             <a href="#!/account">
                 <i class="fa fa-user"></i>
                 @Resources.Menu.Account
