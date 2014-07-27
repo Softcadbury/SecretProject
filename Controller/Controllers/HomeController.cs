@@ -8,12 +8,19 @@
     /// </summary>
     public class HomeController : BaseController
     {
-        /// <summary>
-        /// Gets The home index
-        /// </summary>
         public ActionResult Index()
         {
             return View();
+        }
+
+        public ActionResult HomeContent()
+        {
+            return PartialView("Content/_Home");
+        }
+
+        public ActionResult AccountContent()
+        {
+            return PartialView("Content/_Account");
         }
     }
 }

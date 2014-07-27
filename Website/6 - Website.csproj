@@ -146,6 +146,8 @@
     <Content Include="Content\man.jpg" />
     <Content Include="Content\woman.jpg" />
     <Content Include="Scripts\app.js" />
+    <Content Include="Scripts\controllers\AccountCtrl.js" />
+    <Content Include="Scripts\controllers\HomeCtrl.js" />
     <Content Include="Scripts\controllers\MenuCtrl.js" />
     <Content Include="Scripts\factories\UserFactory.js" />
     <Content Include="Views\Home\Index.cshtml" />
@@ -154,7 +156,6 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="packages.config" />
     <Content Include="Views\Home\_Menu.cshtml" />
-    <Content Include="Views\Home\_Content.cshtml" />
     <Content Include="Styles\constant.less" />
     <Content Include="Views\Home\_Header.cshtml" />
     <Content Include="Styles\header.less" />
@@ -163,6 +164,8 @@
     <None Include="BundleTransformer.Configuration.xsd">
       <SubType>Designer</SubType>
     </None>
+    <Content Include="Views\Home\Content\_Account.cshtml" />
+    <Content Include="Views\Home\Content\_Home.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -207,9 +210,7 @@
       <Name>4 - Service</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Views\Home\Content\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

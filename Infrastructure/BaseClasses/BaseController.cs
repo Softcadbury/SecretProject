@@ -12,9 +12,9 @@
     public abstract class BaseController : Controller
     {
         /// <summary>
-        /// Override BeginExecuteCore method to manage internationalization
+        /// Override ExecuteCore method to manage internationalization
         /// </summary>
-        protected override IAsyncResult BeginExecuteCore(AsyncCallback callback, object state)
+        protected override void ExecuteCore()
         {
             HttpCookie cultureCookie = Request.Cookies["_culture"];
             string cultureName = null;
@@ -32,7 +32,7 @@
             Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo(cultureName);
             Thread.CurrentThread.CurrentUICulture = Thread.CurrentThread.CurrentCulture;
 
-            return base.BeginExecuteCore(callback, state);
+            base.ExecuteCore();
         }
     }
 }
