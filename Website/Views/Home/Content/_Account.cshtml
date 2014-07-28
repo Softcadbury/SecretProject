@@ -1,1 +1,32 @@
-﻿Account
+﻿@{
+    var currentCulture = System.Threading.Thread.CurrentThread.CurrentUICulture.Name.ToLowerInvariant();
+}
+
+@helper IsCurrentCulture(string currentCulture, string culture)
+{
+    if (culture == currentCulture)
+    {
+        @:checked="checked"
+    }
+}
+
+@using (Html.BeginForm("SetCulture", "Home"))
+{
+    <fieldset>
+        <div class="control-group">
+            <div class="controls">
+                <label for="en">
+                    <input name="culture" id="en" value="en" type="radio" @IsCurrentCulture(currentCulture, "en") />English
+                </label>
+            </div>
+        </div>
+        <div class="control-group">
+            <div class="controls">
+                <label for="es">
+                    <input name="culture" id="fr" value="fr" type="radio" @IsCurrentCulture(currentCulture, "fr") />French
+                </label>
+            </div>
+        </div>
+    </fieldset>
+    <input type="submit" value="Submit" />
+}

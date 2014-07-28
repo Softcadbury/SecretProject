@@ -1,10 +1,10 @@
 ﻿namespace Infrastructure.BaseClasses
 {
-    using Infrastructure.Tools;
     using System;
     using System.Threading;
     using System.Web;
     using System.Web.Mvc;
+    using Infrastructure.Tools;
 
     /// <summary>
     /// A baseline definition that every controller will inherit from
@@ -14,9 +14,9 @@
         /// <summary>
         /// Override ExecuteCore method to manage internationalization
         /// </summary>
-        protected override void ExecuteCore()
+        protected override IAsyncResult BeginExecuteCore(AsyncCallback callback, object state)
         {
-            HttpCookie cultureCookie = Request.Cookies["_culture"];
+            HttpCookie cultureCookie = GetCultureCookie();
             string cultureName = null;
 
             if (cultureCookie != null)
@@ -32,7 +32,15 @@
             Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo(cultureName);
             Thread.CurrentThread.CurrentUICulture = Thread.CurrentThread.CurrentCulture;
 
-            base.ExecuteCore();
+            return base.BeginExecuteCore(callback, state);
+        }
+
+        /// <summary>
+        /// Get the culture cookie
+        /// </summary>
+        protected HttpCookie GetCultureCookie()
+        {
+            return Request.Cookies["_culture"];
         }
     }
 }

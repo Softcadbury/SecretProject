@@ -22,7 +22,7 @@
             }
 
             // Check is the culture is implemented
-            if (_implementedCultures.Where(c => c.Equals(name, StringComparison.InvariantCultureIgnoreCase)).Count() > 0)
+            if (_implementedCultures.Any(c => c.Equals(name, StringComparison.InvariantCultureIgnoreCase)))
             {
                 return name;
             }
