@@ -8,7 +8,7 @@
 
         UserFactory.get(1).success(function (user) {
             $scope.userName = user.Name;
-        })
+        });
 
         $scope.getClass = function (path) {
             return $location.path() == path ? 'active' : '';
