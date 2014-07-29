@@ -7,14 +7,12 @@
     /// </summary>
     public static class CultureHelper
     {
-        private static readonly string CurrentCulture = Thread.CurrentThread.CurrentUICulture.Name.ToLowerInvariant();
-
         /// <summary>
         /// Check if the parameter equals the current culture
         /// </summary>
         public static bool IsCurrent(string culture)
         {
-            return culture == CurrentCulture;
+            return culture == Thread.CurrentThread.CurrentUICulture.Name.ToLowerInvariant();
         }
     }
 }
