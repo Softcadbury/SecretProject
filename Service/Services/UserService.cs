@@ -1,7 +1,7 @@
 ﻿namespace Service.Services
 {
     using Infrastructure.BaseClasses;
-    using Infrastructure.ServiceBasePermission;
+    using Infrastructure.Services;
 
     using Repository.Models;
     using Repository.Repositories;

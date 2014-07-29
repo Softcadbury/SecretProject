@@ -1,4 +1,4 @@
-﻿namespace Infrastructure.Messaging.Responses
+﻿namespace Infrastructure.Services.Responses
 {
     /// <summary>
     /// Used as return by services

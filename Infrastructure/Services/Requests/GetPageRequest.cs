@@ -1,4 +1,4 @@
-﻿namespace Infrastructure.Messaging.Requests
+﻿namespace Infrastructure.Services.Requests
 {
     /// <summary>
     /// This class represents the request to get a list of models

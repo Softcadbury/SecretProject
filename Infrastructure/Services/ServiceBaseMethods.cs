@@ -1,4 +1,4 @@
-﻿namespace Infrastructure.ServiceBasePermission
+﻿namespace Infrastructure.Services
 {
     using System;
 

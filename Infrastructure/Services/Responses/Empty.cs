@@ -1,4 +1,4 @@
-﻿namespace Infrastructure.Messaging.Responses
+﻿namespace Infrastructure.Services.Responses
 {
     /// <summary>
     /// Used with the Response class for an empty response

@@ -1,11 +1,11 @@
 ﻿namespace Infrastructure.BaseClasses
 {
-    using Infrastructure.Messaging.Requests;
-    using Infrastructure.Messaging.Responses;
-    using Infrastructure.ServiceBasePermission;
     using System;
     using System.Collections.Generic;
     using System.Linq;
+    using Infrastructure.Services;
+    using Infrastructure.Services.Requests;
+    using Infrastructure.Services.Responses;
 
     /// <summary>
     /// A baseline definition that every service will inherit from

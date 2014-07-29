@@ -1,4 +1,4 @@
-﻿namespace Infrastructure.Messaging.Requests
+﻿namespace Infrastructure.Services.Requests
 {
     using Infrastructure.BaseClasses;
 

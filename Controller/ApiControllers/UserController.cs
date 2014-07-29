@@ -3,8 +3,8 @@
     using System.Collections.Generic;
     using System.Web.Http;
     using Infrastructure.BaseClasses;
-    using Infrastructure.Messaging.Requests;
-    using Infrastructure.Messaging.Responses;
+    using Infrastructure.Services.Requests;
+    using Infrastructure.Services.Responses;
     using Repository.Models;
     using Service.Services;
 

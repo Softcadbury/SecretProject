@@ -2,7 +2,7 @@
 {
     using System.Web.Http;
 
-    using Infrastructure.Messaging.Responses;
+    using Infrastructure.Services.Responses;
 
     /// <summary>
     /// A baseline definition that every api controller will inherit from
