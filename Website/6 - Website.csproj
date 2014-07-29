@@ -143,6 +143,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\flags.png" />
     <Content Include="Content\man.jpg" />
     <Content Include="Content\woman.jpg" />
     <Content Include="Scripts\app.js" />
