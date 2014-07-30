@@ -151,22 +151,22 @@
     <Content Include="Scripts\controllers\HomeCtrl.js" />
     <Content Include="Scripts\controllers\MenuCtrl.js" />
     <Content Include="Scripts\factories\UserFactory.js" />
-    <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Home\_Layout.cshtml" />
+    <Content Include="Views\Application\Index.cshtml" />
+    <Content Include="Views\Application\_Layout.cshtml" />
     <Content Include="Views\Web.config" />
     <Content Include="packages.config" />
-    <Content Include="Views\Home\_Menu.cshtml" />
+    <Content Include="Views\Application\_Menu.cshtml" />
     <Content Include="Styles\constant.less" />
-    <Content Include="Views\Home\_Header.cshtml" />
+    <Content Include="Views\Application\_Header.cshtml" />
     <Content Include="Styles\header.less" />
     <Content Include="Styles\menu.less" />
     <Content Include="Styles\content.less" />
-    <Content Include="Views\Home\Content\_Account.cshtml" />
-    <Content Include="Views\Home\Content\_Home.cshtml" />
+    <Content Include="Views\Application\Content\_Account.cshtml" />
+    <Content Include="Views\Application\Content\_Home.cshtml" />
     <None Include="BundleTransformer.Configuration.xsd">
       <SubType>Designer</SubType>
     </None>
-    <Content Include="Views\Preview\Index.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Account\Registration.cshtml" />
     <Content Include="Views\Account\Connection.cshtml" />
     <None Include="Web.Debug.config">

@@ -20,12 +20,12 @@
 
         public ActionResult ValidateRegistration()
         {
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Index", "Application");
         }
 
         public ActionResult ValidateConnection()
         {
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Index", "Application");
         }
     }
 }
