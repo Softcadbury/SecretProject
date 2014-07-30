@@ -5,12 +5,12 @@
 
     function configuration($routeProvider, $locationProvider) {
         $routeProvider.when('/', {
-            templateUrl: '/Home/HomeContent',
+            templateUrl: '/Application/HomeContent',
             controller: 'HomeCtrl',
         });
 
         $routeProvider.when('/account', {
-            templateUrl: '/Home/AccountContent',
+            templateUrl: '/Application/AccountContent',
             controller: 'AccountCtrl',
         });
 
