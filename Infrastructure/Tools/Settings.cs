@@ -4,6 +4,8 @@
     using System.Configuration;
     using System.Linq;
 
+    using Infrastructure.Keys;
+
     /// <summary>
     /// Class to get values of initializes in config files
     /// </summary>
@@ -22,7 +24,7 @@
         /// <summary>
         /// Get the key value matching the current environment
         /// </summary>
-        public static string GetSetting(string key)
+        private static string GetSetting(string key)
         {
             var keyWithEnvironment = string.Format("{0}_{1}", key, CurrentEnvironment);
 
@@ -41,37 +43,37 @@
 
         public static string CurrentEnvironment
         {
-            get { return ConfigurationManager.AppSettings["Current_Environment"]; }
+            get { return ConfigurationManager.AppSettings[SettingKeys.CurrentEnvironment]; }
         }
 
         public static string ConnectionString
         {
-            get { return GetSetting("Connection_String"); }
+            get { return GetSetting(SettingKeys.ConnectionString); }
         }
 
         public static string SmtpHost
         {
-            get { return GetSetting("Smtp_Host"); }
+            get { return GetSetting(SettingKeys.SmtpHost); }
         }
 
         public static string SmtpUserName
         {
-            get { return GetSetting("Smtp_User_Name"); }
+            get { return GetSetting(SettingKeys.SmtpUserName); }
         }
 
         public static string SmtpPassword
         {
-            get { return GetSetting("Smtp_Password"); }
+            get { return GetSetting(SettingKeys.SmtpPassword); }
         }
 
         public static string MailingContactFrom
         {
-            get { return GetSetting("Mailing_Contact_From"); }
+            get { return GetSetting(SettingKeys.MailingContactFrom); }
         }
 
         public static string MailingContactTo
         {
-            get { return GetSetting("Mailing_Contact_To"); }
+            get { return GetSetting(SettingKeys.MailingContactTo); }
         }
     }
 }
