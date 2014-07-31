@@ -1,6 +1,6 @@
 ﻿<h1 class="page-title">@Resource.Account</h1>
 
-@using (Html.BeginForm("SetCulture", "Home"))
+@using (Html.BeginForm("SetCulture", "Application"))
 {
     <fieldset>
         <div class="control-group">
@@ -13,7 +13,7 @@
         </div>
         <div class="control-group">
             <div class="controls">
-                <label for="es">
+                <label for="fr">
                     <input name="culture" id="fr" value="fr" type="radio" @(CultureHelper.IsCurrent("fr") ? "checked" : "") />
                     <span class="flag flag-fr"></span>Français
                 </label>

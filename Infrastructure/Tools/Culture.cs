@@ -9,7 +9,7 @@
     /// </summary>
     public static class Culture
     {
-        private static readonly List<string> _implementedCultures = new List<string> { "en", "fr" };
+        private static readonly List<string> ImplementedCultures = new List<string> { "en", "fr" };
 
         /// <summary>
         /// Returns a valid culture name based on "name" parameter. If "name" is not valid, it returns the default culture "en-US"
@@ -22,14 +22,14 @@
             }
 
             // Check is the culture is implemented
-            if (_implementedCultures.Any(c => c.Equals(name, StringComparison.InvariantCultureIgnoreCase)))
+            if (ImplementedCultures.Any(c => c.Equals(name, StringComparison.InvariantCultureIgnoreCase)))
             {
                 return name;
             }
 
             // Try to find a close match
             string neutralCulture = GetNeutralCulture(name);
-            foreach (string culture in _implementedCultures)
+            foreach (string culture in ImplementedCultures)
             {
                 if (culture.StartsWith(neutralCulture))
                 {
@@ -41,11 +41,11 @@
         }
 
         /// <summary>
-        /// Returns default culture name which is the first name decalared
+        /// Returns default culture name which is the first name decalared in ImplementedCultures
         /// </summary>
-        public static string GetDefaultCulture()
+        private static string GetDefaultCulture()
         {
-            return _implementedCultures[0];
+            return ImplementedCultures[0];
         }
 
         /// <summary>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -114,6 +114,7 @@
     <Compile Include="BaseClasses\BaseModel.cs" />
     <Compile Include="BaseClasses\BaseRepository.cs" />
     <Compile Include="BaseClasses\BaseService.cs" />
+    <Compile Include="Keys\CookieKeys.cs" />
     <Compile Include="Keys\SettingKeys.cs" />
     <Compile Include="Services\Requests\AddRequest.cs" />
     <Compile Include="Services\Requests\RemoveRequest.cs" />
@@ -126,6 +127,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\ServiceBaseMethods.cs" />
     <Compile Include="Services\ServiceBasePermissionAttribute.cs" />
+    <Compile Include="Tools\Cookies.cs" />
     <Compile Include="Tools\Culture.cs" />
     <Compile Include="Tools\Mailing.cs" />
     <Compile Include="Tools\Settings.cs" />

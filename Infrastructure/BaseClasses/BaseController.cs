@@ -2,7 +2,6 @@
 {
     using System;
     using System.Threading;
-    using System.Web;
     using System.Web.Mvc;
     using Infrastructure.Tools;
 
@@ -16,14 +15,9 @@
         /// </summary>
         protected override IAsyncResult BeginExecuteCore(AsyncCallback callback, object state)
         {
-            HttpCookie cultureCookie = GetCultureCookie();
-            string cultureName = null;
+            string cultureName = Cookies.GetCulture(HttpContext);
 
-            if (cultureCookie != null)
-            {
-                cultureName = cultureCookie.Value;
-            }
-            else if (Request.UserLanguages != null && Request.UserLanguages.Length > 0)
+            if (string.IsNullOrEmpty(cultureName) && Request.UserLanguages != null && Request.UserLanguages.Length > 0)
             {
                 cultureName = Request.UserLanguages[0];
             }
@@ -33,14 +27,6 @@
             Thread.CurrentThread.CurrentUICulture = Thread.CurrentThread.CurrentCulture;
 
             return base.BeginExecuteCore(callback, state);
-        }
-
-        /// <summary>
-        /// Get the culture cookie
-        /// </summary>
-        protected HttpCookie GetCultureCookie()
-        {
-            return Request.Cookies["_culture"];
         }
     }
 }

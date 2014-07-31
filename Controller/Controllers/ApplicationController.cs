@@ -1,7 +1,5 @@
 ﻿namespace Controller.Controllers
 {
-    using System;
-    using System.Web;
     using System.Web.Mvc;
     using Infrastructure.BaseClasses;
     using Infrastructure.Tools;
@@ -28,24 +26,7 @@
 
         public ActionResult SetCulture(string culture)
         {
-            culture = Culture.GetImplementedCulture(culture);
-
-            HttpCookie cultureCookie = GetCultureCookie();
-
-            if (cultureCookie != null)
-            {
-                cultureCookie.Value = culture;
-            }
-            else
-            {
-                cultureCookie = new HttpCookie("_culture")
-                                {
-                                    Value = culture,
-                                    Expires = DateTime.Now.AddYears(1)
-                                };
-            }
-
-            Response.Cookies.Add(cultureCookie);
+            Cookies.SetCulture(HttpContext, culture);
 
             return RedirectToAction("Index");
         }
