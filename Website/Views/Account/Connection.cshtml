@@ -1,1 +1,12 @@
-﻿@Html.ActionLink("connect", "ValidateConnection")
+﻿<div id="connection">
+    <h1 class="account-title">Sign in now</h1>
+    <div class="account-content">
+        <input type="text" class="form-control" placeholder="User ID">
+        <br />
+        <input type="text" class="form-control" placeholder="Password">
+        <button class="btn btn-block account-button" type="submit">
+            <i class="fa fa-lock"></i>
+            @Html.ActionLink("CONNECT", "ValidateConnection")
+        </button>
+    </div>
+</div>
