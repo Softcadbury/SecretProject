@@ -7,7 +7,7 @@
     /// /!\ [Flags] does not automatically make the enum values powers of two
     /// </summary>
     [Flags]
-    public enum ServiceBaseMethods
+    public enum ServiceMethods
     {
         Get = 1,
         GetPage = 2,

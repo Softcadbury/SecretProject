@@ -9,7 +9,7 @@
     /// <summary>
     /// User service
     /// </summary>
-    [ServiceBasePermission(ServiceBaseMethods.Get | ServiceBaseMethods.GetPage | ServiceBaseMethods.Add | ServiceBaseMethods.Update | ServiceBaseMethods.Remove)]
+    [MethodsAllowed(ServiceMethods.Get | ServiceMethods.GetPage | ServiceMethods.Add | ServiceMethods.Update | ServiceMethods.Remove)]
     public class UserService : BaseService<User, UserRepository>
     {
         private static readonly UserRepository UserRepository = new UserRepository();

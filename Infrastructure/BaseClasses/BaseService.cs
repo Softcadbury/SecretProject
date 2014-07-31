@@ -29,7 +29,7 @@
         /// </summary>
         public Response<TModel> Get(GetRequest request)
         {
-            EnsureMethodRight(ServiceBaseMethods.Get);
+            EnsureMethodRight(ServiceMethods.Get);
 
             TModel model = repository.GetById(request.Id);
 
@@ -46,7 +46,7 @@
         /// </summary>
         public Response<List<TModel>> GetPage(GetPageRequest request)
         {
-            EnsureMethodRight(ServiceBaseMethods.GetPage);
+            EnsureMethodRight(ServiceMethods.GetPage);
 
             List<TModel> models = repository.GetPage(request.PageIndex, request.PageSize);
 
@@ -58,7 +58,7 @@
         /// </summary>
         public Response<TModel> Add(AddRequest<TModel> request)
         {
-            EnsureMethodRight(ServiceBaseMethods.Add);
+            EnsureMethodRight(ServiceMethods.Add);
 
             TModel model = repository.Add(request.Model);
             repository.SaveChanges();
@@ -76,7 +76,7 @@
         /// </summary>
         public Response<TModel> Update(UpdateRequest<TModel> request)
         {
-            EnsureMethodRight(ServiceBaseMethods.Update);
+            EnsureMethodRight(ServiceMethods.Update);
 
             TModel model = repository.Update(request.Model);
             repository.SaveChanges();
@@ -94,7 +94,7 @@
         /// </summary>
         public Response<Empty> Remove(RemoveRequest request)
         {
-            EnsureMethodRight(ServiceBaseMethods.Remove);
+            EnsureMethodRight(ServiceMethods.Remove);
 
             repository.Remove(request.Id);
             repository.SaveChanges();
@@ -105,11 +105,11 @@
         /// <summary>
         /// Throw an exception if the method is not allowed
         /// </summary>
-        private void EnsureMethodRight(ServiceBaseMethods methodToCkeck)
+        private void EnsureMethodRight(ServiceMethods methodToCkeck)
         {
             Attribute[] attributes = Attribute.GetCustomAttributes(GetType());
 
-            if (attributes.OfType<ServiceBasePermissionAttribute>().Any(methodsAllowed => methodsAllowed.Flags.HasFlag(methodToCkeck)))
+            if (attributes.OfType<MethodsAllowedAttribute>().Any(methodsAllowed => methodsAllowed.Flags.HasFlag(methodToCkeck)))
             {
                 return;
             }

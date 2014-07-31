@@ -6,19 +6,19 @@
     /// Class used to set flags used to define methods allowed in service base
     /// </summary>
     [AttributeUsage(AttributeTargets.Class)]
-    public class ServiceBasePermissionAttribute : Attribute
+    public class MethodsAllowedAttribute : Attribute
     {
-        private readonly ServiceBaseMethods flags;
+        private readonly ServiceMethods flags;
 
         /// <summary>
         /// Constructor
         /// </summary>
-        public ServiceBasePermissionAttribute(ServiceBaseMethods flags)
+        public MethodsAllowedAttribute(ServiceMethods flags)
         {
             this.flags = flags;
         }
 
-        public ServiceBaseMethods Flags
+        public ServiceMethods Flags
         {
             get
             {
