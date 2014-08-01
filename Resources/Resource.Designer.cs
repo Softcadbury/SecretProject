@@ -61,83 +61,83 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Account.
-        /// </summary>
-        public static string Account {
-            get {
-                return ResourceManager.GetString("Account", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Re-enter password.
         /// </summary>
-        public static string ConfirmPassword {
+        public static string Account_ConfirmPassword {
             get {
-                return ResourceManager.GetString("ConfirmPassword", resourceCulture);
+                return ResourceManager.GetString("Account_ConfirmPassword", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Email.
         /// </summary>
-        public static string Email {
+        public static string Account_Email {
             get {
-                return ResourceManager.GetString("Email", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Home.
-        /// </summary>
-        public static string Home {
-            get {
-                return ResourceManager.GetString("Home", resourceCulture);
+                return ResourceManager.GetString("Account_Email", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Password.
         /// </summary>
-        public static string Password {
+        public static string Account_Password {
             get {
-                return ResourceManager.GetString("Password", resourceCulture);
+                return ResourceManager.GetString("Account_Password", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Register.
         /// </summary>
-        public static string Register {
+        public static string Account_Register {
             get {
-                return ResourceManager.GetString("Register", resourceCulture);
+                return ResourceManager.GetString("Account_Register", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Register Now.
         /// </summary>
-        public static string RegisterNow {
+        public static string Account_RegisterNow {
             get {
-                return ResourceManager.GetString("RegisterNow", resourceCulture);
+                return ResourceManager.GetString("Account_RegisterNow", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Sign In.
         /// </summary>
-        public static string SignIn {
+        public static string Account_SignIn {
             get {
-                return ResourceManager.GetString("SignIn", resourceCulture);
+                return ResourceManager.GetString("Account_SignIn", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Sign In Now.
         /// </summary>
-        public static string SignInNow {
+        public static string Account_SignInNow {
             get {
-                return ResourceManager.GetString("SignInNow", resourceCulture);
+                return ResourceManager.GetString("Account_SignInNow", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Account.
+        /// </summary>
+        public static string Application_Account {
+            get {
+                return ResourceManager.GetString("Application_Account", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Home.
+        /// </summary>
+        public static string Application_Home {
+            get {
+                return ResourceManager.GetString("Application_Home", resourceCulture);
             }
         }
     }

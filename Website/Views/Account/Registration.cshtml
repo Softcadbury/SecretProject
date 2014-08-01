@@ -1,14 +1,14 @@
 ﻿<div id="registration">
-    <h1 class="account-title">@Resource.RegisterNow</h1>
+    <h1 class="account-title">@Resource.Account_RegisterNow</h1>
     <div class="account-content">
-        <input type="text" class="form-control" placeholder="@Resource.Email">
+        <input type="text" class="form-control" placeholder="@Resource.Account_Email">
         <br />
-        <input type="text" class="form-control" placeholder="@Resource.Password">
+        <input type="text" class="form-control" placeholder="@Resource.Account_Password">
         <br />
-        <input type="text" class="form-control" placeholder="@Resource.ConfirmPassword">
+        <input type="text" class="form-control" placeholder="@Resource.Account_ConfirmPassword">
         <button class="btn btn-block account-button" type="submit">
             <i class="fa fa-lock"></i>
-            @Html.ActionLink(Resource.Register, "ValidateRegistration")
+            @Html.ActionLink(Resource.Account_Register, "ValidateRegistration")
         </button>
     </div>
 </div>

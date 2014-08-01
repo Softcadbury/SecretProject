@@ -1,12 +1,12 @@
 ﻿<div id="connection">
-    <h1 class="account-title">@Resource.SignInNow</h1>
+    <h1 class="account-title">@Resource.Account_SignInNow</h1>
     <div class="account-content">
-        <input type="text" class="form-control" placeholder="@Resource.Email">
+        <input type="text" class="form-control" placeholder="@Resource.Account_Email">
         <br />
-        <input type="text" class="form-control" placeholder="@Resource.Password">
+        <input type="text" class="form-control" placeholder="@Resource.Account_Password">
         <button class="btn btn-block account-button" type="submit">
             <i class="fa fa-lock"></i>
-            @Html.ActionLink(Resource.SignIn, "ValidateConnection")
+            @Html.ActionLink(Resource.Account_SignIn, "ValidateConnection")
         </button>
     </div>
 </div>
