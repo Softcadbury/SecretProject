@@ -1,7 +1,8 @@
 ﻿namespace Controller.Controllers
 {
-    using System.Web.Mvc;
+    using Controller.ViewModels.Account;
     using Infrastructure.BaseClasses;
+    using System.Web.Mvc;
 
     /// <summary>
     /// Account controller
@@ -18,13 +19,23 @@
             return View();
         }
 
-        public ActionResult ValidateRegistration()
+        public ActionResult ValidateRegistration(RegistrationViewModel registrationViewModel)
         {
+            if (!ModelState.IsValid)
+            {
+                return RedirectToAction("Registration");
+            }
+
             return RedirectToAction("Index", "Application");
         }
 
-        public ActionResult ValidateConnection()
+        public ActionResult ValidateConnection(ConnectionViewModel connectionViewModel)
         {
+            if (!ModelState.IsValid)
+            {
+                return RedirectToAction("Connection");
+            }
+
             return RedirectToAction("Index", "Application");
         }
     }

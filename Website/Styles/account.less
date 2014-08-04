@@ -4,7 +4,7 @@
     background-color: white;
     border-radius: 5px;
     margin: auto;
-    margin-top: 100px;
+    margin-top: 50px;
     width: 350px;
 
     .account-title {
@@ -20,10 +20,20 @@
     .account-content {
         padding: 1px 15px;
 
+        .validation-summary-errors {
+            color: red;
+            margin-bottom: 20px;
+            margin-left: -24px;
+        }
+
+        input {
+            margin-bottom: 20px;
+        }
+
         .account-button {
             background-color: @turquoise;
             color: white;
-            margin: 20px 0;
+            margin-bottom: 20px;
         }
     }
 }
