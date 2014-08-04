@@ -3,7 +3,7 @@
     using System;
 
     /// <summary>
-    /// A baseline definition that every model will inherit from
+    /// A baseline definition that every models will inherit from
     /// </summary>
     public abstract class BaseModel
     {

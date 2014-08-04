@@ -8,7 +8,7 @@
     using Infrastructure.Services.Responses;
 
     /// <summary>
-    /// A baseline definition that every service will inherit from
+    /// A baseline definition that every services will inherit from
     /// </summary>
     public abstract class BaseService<TModel, TRepository>
         where TModel : BaseModel

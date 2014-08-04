@@ -114,6 +114,7 @@
     <Compile Include="BaseClasses\BaseModel.cs" />
     <Compile Include="BaseClasses\BaseRepository.cs" />
     <Compile Include="BaseClasses\BaseService.cs" />
+    <Compile Include="BaseClasses\BaseViewModel.cs" />
     <Compile Include="Keys\CookieKeys.cs" />
     <Compile Include="Keys\SettingKeys.cs" />
     <Compile Include="Services\Requests\AddRequest.cs" />

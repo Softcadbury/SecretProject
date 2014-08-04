@@ -7,7 +7,7 @@
     using System.Linq;
 
     /// <summary>
-    /// A baseline definition that every repository will inherit from
+    /// A baseline definition that every repositories will inherit from
     /// </summary>
     public abstract class BaseRepository<TModel>
         where TModel : BaseModel

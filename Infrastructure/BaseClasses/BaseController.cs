@@ -6,7 +6,7 @@
     using Infrastructure.Tools;
 
     /// <summary>
-    /// A baseline definition that every controller will inherit from
+    /// A baseline definition that every controllers will inherit from
     /// </summary>
     public abstract class BaseController : Controller
     {

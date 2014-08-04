@@ -5,7 +5,7 @@
     using Infrastructure.Services.Responses;
 
     /// <summary>
-    /// A baseline definition that every api controller will inherit from
+    /// A baseline definition that every api controllers will inherit from
     /// </summary>
     public abstract class BaseApiController : ApiController
     {
