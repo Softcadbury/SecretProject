@@ -1,12 +1,17 @@
-﻿<div id="connection">
+﻿@model global::Controller.ViewModels.Account.ConnectionViewModel
+
+<div id="connection">
     <h1 class="account-title">@Resource.Account_SignInNow</h1>
     <div class="account-content">
-        <input type="text" class="form-control" placeholder="@Resource.Account_Email">
-        <br />
-        <input type="text" class="form-control" placeholder="@Resource.Account_Password">
-        <button class="btn btn-block account-button" type="submit">
-            <i class="fa fa-lock"></i>
-            @Html.ActionLink(Resource.Account_SignIn, "ValidateConnection")
-        </button>
+        @using (Html.BeginForm("ValidateConnection", "Account"))
+        {
+            @Html.TextBoxFor(model => model.Email, new { placeholder = @Resource.Account_Email, @class = "form-control" })
+            <br />
+            @Html.TextBoxFor(model => model.Password, new { placeholder = @Resource.Account_Password, @class = "form-control" })
+            <button class="btn btn-block account-button" type="submit">
+                <i class="fa fa-lock"></i>
+                @Resource.Account_SignIn
+            </button>
+        }
     </div>
 </div>
