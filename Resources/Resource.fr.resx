@@ -117,17 +117,23 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Account_ConfirmPassword" xml:space="preserve">
-    <value>Confirmation du mot de passe</value>
-  </data>
   <data name="Account_Email" xml:space="preserve">
     <value>Adresse électronique</value>
   </data>
-  <data name="Account_MinimumLengthError" xml:space="preserve">
+  <data name="Account_FieldMinimumLengthError" xml:space="preserve">
     <value>Le champ {0} doit avoir un minimum de {2} caractères.</value>
+  </data>
+  <data name="Account_FieldRequiredError" xml:space="preserve">
+    <value>Le champ {0} est requis.</value>
+  </data>
+  <data name="Account_FieldValidationError" xml:space="preserve">
+    <value>Le champ {0} n'est pas valide.</value>
   </data>
   <data name="Account_Password" xml:space="preserve">
     <value>Mot de passe</value>
+  </data>
+  <data name="Account_PasswordConfirmation" xml:space="preserve">
+    <value>Confirmation du mot de passe</value>
   </data>
   <data name="Account_PasswordMatchingError" xml:space="preserve">
     <value>Le mot de passe et la confirmation de mot de passe sont différents.</value>
@@ -137,9 +143,6 @@
   </data>
   <data name="Account_RegisterNow" xml:space="preserve">
     <value>Inscrivez-vous maintenant</value>
-  </data>
-  <data name="Account_RequiredError" xml:space="preserve">
-    <value>Le champ {0} est requis.</value>
   </data>
   <data name="Account_SignIn" xml:space="preserve">
     <value>Connexion</value>

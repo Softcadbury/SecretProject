@@ -61,15 +61,6 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Re-enter password.
-        /// </summary>
-        public static string Account_ConfirmPassword {
-            get {
-                return ResourceManager.GetString("Account_ConfirmPassword", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Email.
         /// </summary>
         public static string Account_Email {
@@ -81,9 +72,27 @@ namespace Resources {
         /// <summary>
         ///   Looks up a localized string similar to The {0} must be at least {2} characters long..
         /// </summary>
-        public static string Account_MinimumLengthError {
+        public static string Account_FieldMinimumLengthError {
             get {
-                return ResourceManager.GetString("Account_MinimumLengthError", resourceCulture);
+                return ResourceManager.GetString("Account_FieldMinimumLengthError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The {0} is required..
+        /// </summary>
+        public static string Account_FieldRequiredError {
+            get {
+                return ResourceManager.GetString("Account_FieldRequiredError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The {0} must be a valid email address..
+        /// </summary>
+        public static string Account_FieldValidationError {
+            get {
+                return ResourceManager.GetString("Account_FieldValidationError", resourceCulture);
             }
         }
         
@@ -93,6 +102,15 @@ namespace Resources {
         public static string Account_Password {
             get {
                 return ResourceManager.GetString("Account_Password", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Re-enter password.
+        /// </summary>
+        public static string Account_PasswordConfirmation {
+            get {
+                return ResourceManager.GetString("Account_PasswordConfirmation", resourceCulture);
             }
         }
         
@@ -120,15 +138,6 @@ namespace Resources {
         public static string Account_RegisterNow {
             get {
                 return ResourceManager.GetString("Account_RegisterNow", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to The {0} is required.
-        /// </summary>
-        public static string Account_RequiredError {
-            get {
-                return ResourceManager.GetString("Account_RequiredError", resourceCulture);
             }
         }
         

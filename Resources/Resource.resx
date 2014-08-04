@@ -117,17 +117,23 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Account_ConfirmPassword" xml:space="preserve">
-    <value>Re-enter password</value>
-  </data>
   <data name="Account_Email" xml:space="preserve">
     <value>Email</value>
   </data>
-  <data name="Account_MinimumLengthError" xml:space="preserve">
+  <data name="Account_FieldMinimumLengthError" xml:space="preserve">
     <value>The {0} must be at least {2} characters long.</value>
+  </data>
+  <data name="Account_FieldRequiredError" xml:space="preserve">
+    <value>The {0} is required.</value>
+  </data>
+  <data name="Account_FieldValidationError" xml:space="preserve">
+    <value>The {0} must be a valid email address.</value>
   </data>
   <data name="Account_Password" xml:space="preserve">
     <value>Password</value>
+  </data>
+  <data name="Account_PasswordConfirmation" xml:space="preserve">
+    <value>Re-enter password</value>
   </data>
   <data name="Account_PasswordMatchingError" xml:space="preserve">
     <value>The password and confirmation password do not match.</value>
@@ -137,9 +143,6 @@
   </data>
   <data name="Account_RegisterNow" xml:space="preserve">
     <value>Register Now</value>
-  </data>
-  <data name="Account_RequiredError" xml:space="preserve">
-    <value>The {0} is required</value>
   </data>
   <data name="Account_SignIn" xml:space="preserve">
     <value>Sign In</value>
