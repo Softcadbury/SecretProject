@@ -79,11 +79,29 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The {0} must be at least {2} characters long..
+        /// </summary>
+        public static string Account_MinimumLengthError {
+            get {
+                return ResourceManager.GetString("Account_MinimumLengthError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Password.
         /// </summary>
         public static string Account_Password {
             get {
                 return ResourceManager.GetString("Account_Password", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The password and confirmation password do not match..
+        /// </summary>
+        public static string Account_PasswordMatchingError {
+            get {
+                return ResourceManager.GetString("Account_PasswordMatchingError", resourceCulture);
             }
         }
         
@@ -102,6 +120,15 @@ namespace Resources {
         public static string Account_RegisterNow {
             get {
                 return ResourceManager.GetString("Account_RegisterNow", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The {0} is required.
+        /// </summary>
+        public static string Account_RequiredError {
+            get {
+                return ResourceManager.GetString("Account_RequiredError", resourceCulture);
             }
         }
         

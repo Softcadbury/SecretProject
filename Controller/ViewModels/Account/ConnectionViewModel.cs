@@ -9,13 +9,13 @@
     /// </summary>
     public class ConnectionViewModel
     {
-        [Required]
+        [Required(ErrorMessageResourceName = "Account_RequiredError", ErrorMessageResourceType = typeof(Resource))]
         [EmailAddress]
         [Display(Name = "Account_Email", ResourceType = typeof(Resource))]
         public string Email { get; set; }
 
-        [Required]
-        [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
+        [Required(ErrorMessageResourceName = "Account_RequiredError", ErrorMessageResourceType = typeof(Resource))]
+        [StringLength(100, MinimumLength = 6, ErrorMessageResourceName = "Account_MinimumLengthError", ErrorMessageResourceType = typeof(Resource))]
         [DataType(DataType.Password)]
         [Display(Name = "Account_Password", ResourceType = typeof(Resource))]
         public string Password { get; set; }
