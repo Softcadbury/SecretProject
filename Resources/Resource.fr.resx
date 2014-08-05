@@ -156,4 +156,7 @@
   <data name="Application_Home" xml:space="preserve">
     <value>Accueil</value>
   </data>
+  <data name="Site_Language" xml:space="preserve">
+    <value>Langue</value>
+  </data>
 </root>

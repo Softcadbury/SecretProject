@@ -176,5 +176,14 @@ namespace Resources {
                 return ResourceManager.GetString("Application_Home", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Language.
+        /// </summary>
+        public static string Site_Language {
+            get {
+                return ResourceManager.GetString("Site_Language", resourceCulture);
+            }
+        }
     }
 }
