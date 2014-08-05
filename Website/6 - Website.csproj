@@ -157,9 +157,9 @@
     <Content Include="Views\Application\_Menu.cshtml" />
     <Content Include="Styles\constant.less" />
     <Content Include="Views\Application\_Header.cshtml" />
-    <Content Include="Styles\header.less" />
-    <Content Include="Styles\menu.less" />
-    <Content Include="Styles\content.less" />
+    <Content Include="Styles\application\header.less" />
+    <Content Include="Styles\application\menu.less" />
+    <Content Include="Styles\application\content.less" />
     <Content Include="Views\Application\Content\_Account.cshtml" />
     <Content Include="Views\Application\Content\_Home.cshtml" />
     <None Include="BundleTransformer.Configuration.xsd">
@@ -171,8 +171,8 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Error\Index.cshtml" />
-    <Content Include="Styles\home.less" />
-    <Content Include="Styles\account.less" />
+    <Content Include="Styles\home\home.less" />
+    <Content Include="Styles\account\account.less" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
