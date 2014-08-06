@@ -14,6 +14,11 @@
             return View();
         }
 
+        public ActionResult ChatRoomsContent()
+        {
+            return PartialView("Content/_ChatRooms");
+        }
+
         public ActionResult HomeContent()
         {
             return PartialView("Content/_Home");
@@ -22,6 +27,11 @@
         public ActionResult AccountContent()
         {
             return PartialView("Content/_Account");
+        }
+
+        public ActionResult UsersContent()
+        {
+            return PartialView("Content/_Users");
         }
 
         public ActionResult SetCulture(string culture)

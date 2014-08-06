@@ -153,8 +153,14 @@
   <data name="Application_Account" xml:space="preserve">
     <value>Account</value>
   </data>
+  <data name="Application_ChatRooms" xml:space="preserve">
+    <value>Chat rooms</value>
+  </data>
   <data name="Application_Home" xml:space="preserve">
     <value>Home</value>
+  </data>
+  <data name="Application_Users" xml:space="preserve">
+    <value>Users</value>
   </data>
   <data name="Site_Language" xml:space="preserve">
     <value>Language</value>

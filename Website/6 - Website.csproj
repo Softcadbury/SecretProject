@@ -148,8 +148,10 @@
     <Content Include="Content\woman.jpg" />
     <Content Include="Scripts\app.js" />
     <Content Include="Scripts\controllers\AccountCtrl.js" />
+    <Content Include="Scripts\controllers\ChatRoomsCtrl.js" />
     <Content Include="Scripts\controllers\HomeCtrl.js" />
     <Content Include="Scripts\controllers\MenuCtrl.js" />
+    <Content Include="Scripts\controllers\UsersCtrl.js" />
     <Content Include="Scripts\factories\UserFactory.js" />
     <Content Include="Views\Application\Index.cshtml" />
     <Content Include="Views\Web.config" />
@@ -173,6 +175,8 @@
     <Content Include="Views\Error\Index.cshtml" />
     <Content Include="Styles\home\home.less" />
     <Content Include="Styles\account\account.less" />
+    <Content Include="Views\Application\Content\_ChatRooms.cshtml" />
+    <Content Include="Views\Application\Content\_Users.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

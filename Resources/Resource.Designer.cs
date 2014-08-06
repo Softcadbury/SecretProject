@@ -169,11 +169,29 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Chat rooms.
+        /// </summary>
+        public static string Application_ChatRooms {
+            get {
+                return ResourceManager.GetString("Application_ChatRooms", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Home.
         /// </summary>
         public static string Application_Home {
             get {
                 return ResourceManager.GetString("Application_Home", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Users.
+        /// </summary>
+        public static string Application_Users {
+            get {
+                return ResourceManager.GetString("Application_Users", resourceCulture);
             }
         }
         
