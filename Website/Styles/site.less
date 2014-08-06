@@ -1,4 +1,4 @@
-﻿@import "constant.less";
+@import "constant.less";
 
 body {
     background-color: @grey3;
@@ -6,22 +6,22 @@ body {
 }
 
 .page-title {
-    margin-top: 0;
     border-bottom: 1px solid #abb2ba;
+    margin-top: 0;
 }
 
 .section-title {
-    padding-bottom: 10px;
     border-bottom: 1px solid @grey3;
+    padding-bottom: 10px;
 }
 
 .flag {
-    width: 25px;
-    height: 15px;
     background: url(../Content/flags.png) no-repeat;
     display: inline-block;
+    height: 15px;
     margin-bottom: -2px;
     margin-right: 6px;
+    width: 25px;
 }
 
 .flag.flag-fr {
@@ -30,4 +30,8 @@ body {
 
 .flag.flag-gb {
     background-position: 0 -15px;
+}
+
+.dropdown-menu li.current {
+    text-decoration: underline;
 }
