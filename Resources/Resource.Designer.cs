@@ -160,15 +160,6 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Account.
-        /// </summary>
-        public static string Application_Account {
-            get {
-                return ResourceManager.GetString("Application_Account", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Chat rooms.
         /// </summary>
         public static string Application_ChatRooms {
@@ -183,6 +174,15 @@ namespace Resources {
         public static string Application_Home {
             get {
                 return ResourceManager.GetString("Application_Home", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Settings.
+        /// </summary>
+        public static string Application_Settings {
+            get {
+                return ResourceManager.GetString("Application_Settings", resourceCulture);
             }
         }
         

@@ -14,9 +14,9 @@
             controller: 'HomeCtrl',
         });
 
-        $routeProvider.when('/account', {
-            templateUrl: '/Application/AccountContent',
-            controller: 'AccountCtrl',
+        $routeProvider.when('/settings', {
+            templateUrl: '/Application/SettingsContent',
+            controller: 'SettingsCtrl',
         });
 
         $routeProvider.when('/users', {

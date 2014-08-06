@@ -24,9 +24,9 @@
             return PartialView("Content/_Home");
         }
 
-        public ActionResult AccountContent()
+        public ActionResult SettingsContent()
         {
-            return PartialView("Content/_Account");
+            return PartialView("Content/_Settings");
         }
 
         public ActionResult UsersContent()

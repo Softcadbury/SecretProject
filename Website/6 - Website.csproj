@@ -147,7 +147,7 @@
     <Content Include="Content\man.jpg" />
     <Content Include="Content\woman.jpg" />
     <Content Include="Scripts\app.js" />
-    <Content Include="Scripts\controllers\AccountCtrl.js" />
+    <Content Include="Scripts\controllers\SettingsCtrl.js" />
     <Content Include="Scripts\controllers\ChatRoomsCtrl.js" />
     <Content Include="Scripts\controllers\HomeCtrl.js" />
     <Content Include="Scripts\controllers\MenuCtrl.js" />
@@ -162,7 +162,7 @@
     <Content Include="Styles\application\header.less" />
     <Content Include="Styles\application\menu.less" />
     <Content Include="Styles\application\content.less" />
-    <Content Include="Views\Application\Content\_Account.cshtml" />
+    <Content Include="Views\Application\Content\_Settings.cshtml" />
     <Content Include="Views\Application\Content\_Home.cshtml" />
     <None Include="BundleTransformer.Configuration.xsd">
       <SubType>Designer</SubType>
