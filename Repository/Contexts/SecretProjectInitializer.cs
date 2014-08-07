@@ -17,7 +17,7 @@
         {
             var users = new List<User>
             {
-                new User { Name = "Softcadbury" },
+                new User { UserName = "Softcadbury" },
             };
 
             users.ForEach(s => context.Users.Add(s));

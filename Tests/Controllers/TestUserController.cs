@@ -32,7 +32,7 @@
 
             var negotiatedResult = result as OkNegotiatedContentResult<User>;
             Assert.IsNotNull(negotiatedResult);
-            Assert.AreEqual(UserName, negotiatedResult.Content.Name);
+            Assert.AreEqual(UserName, negotiatedResult.Content.UserName);
         }
     }
 }
