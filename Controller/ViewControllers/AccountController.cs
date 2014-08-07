@@ -5,11 +5,23 @@
     using Infrastructure.BaseClasses;
     using Infrastructure.Tools;
 
+    using Service.Services;
+
     /// <summary>
     /// Account controller
     /// </summary>
     public class AccountController : BaseController
     {
+        private readonly AccountService accountService;
+
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        public AccountController()
+        {
+            accountService = new AccountService();
+        }
+
         public ActionResult SetCulture(string returnUrl, string culture)
         {
             Cookies.SetCulture(HttpContext, culture);
