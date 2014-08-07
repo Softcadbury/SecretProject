@@ -116,6 +116,7 @@
     <Compile Include="BaseClasses\BaseService.cs" />
     <Compile Include="BaseClasses\BaseViewModel.cs" />
     <Compile Include="Configuration\CookieKeys.cs" />
+    <Compile Include="Configuration\LenghtLimits.cs" />
     <Compile Include="Configuration\SettingKeys.cs" />
     <Compile Include="Services\Requests\AddRequest.cs" />
     <Compile Include="Services\Requests\RemoveRequest.cs" />
