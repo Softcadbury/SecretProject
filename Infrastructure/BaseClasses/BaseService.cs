@@ -1,9 +1,7 @@
 ﻿namespace Infrastructure.BaseClasses
 {
-    using System;
     using System.Collections.Generic;
-    using System.Linq;
-    using Infrastructure.Services;
+
     using Infrastructure.Services.Requests;
     using Infrastructure.Services.Responses;
 
@@ -27,10 +25,8 @@
         /// <summary>
         /// Get a model
         /// </summary>
-        public Response<TModel> Get(GetRequest request)
+        protected Response<TModel> Get(GetRequest request)
         {
-            EnsureMethodRight(ServiceMethods.Get);
-
             TModel model = repository.GetById(request.Id);
 
             if (model == null)
@@ -44,10 +40,8 @@
         /// <summary>
         /// Get a list of models
         /// </summary>
-        public Response<List<TModel>> GetPage(GetPageRequest request)
+        protected Response<List<TModel>> GetPage(GetPageRequest request)
         {
-            EnsureMethodRight(ServiceMethods.GetPage);
-
             List<TModel> models = repository.GetPage(request.PageIndex, request.PageSize);
 
             return Response<List<TModel>>.CreateSuccess(models);
@@ -56,10 +50,8 @@
         /// <summary>
         /// Add a model
         /// </summary>
-        public Response<TModel> Add(AddRequest<TModel> request)
+        protected Response<TModel> Add(AddRequest<TModel> request)
         {
-            EnsureMethodRight(ServiceMethods.Add);
-
             TModel model = repository.Add(request.Model);
             repository.SaveChanges();
 
@@ -74,10 +66,8 @@
         /// <summary>
         /// Update a model
         /// </summary>
-        public Response<TModel> Update(UpdateRequest<TModel> request)
+        protected Response<TModel> Update(UpdateRequest<TModel> request)
         {
-            EnsureMethodRight(ServiceMethods.Update);
-
             TModel model = repository.Update(request.Model);
             repository.SaveChanges();
 
@@ -92,29 +82,12 @@
         /// <summary>
         /// Remove a model
         /// </summary>
-        public Response<Empty> Remove(RemoveRequest request)
+        protected Response<Empty> Remove(RemoveRequest request)
         {
-            EnsureMethodRight(ServiceMethods.Remove);
-
             repository.Remove(request.Id);
             repository.SaveChanges();
 
             return Response<Empty>.CreateSuccess();
-        }
-
-        /// <summary>
-        /// Throw an exception if the method is not allowed
-        /// </summary>
-        private void EnsureMethodRight(ServiceMethods methodToCkeck)
-        {
-            Attribute[] attributes = Attribute.GetCustomAttributes(GetType());
-
-            if (attributes.OfType<MethodsAllowedAttribute>().Any(methodsAllowed => methodsAllowed.Flags.HasFlag(methodToCkeck)))
-            {
-                return;
-            }
-
-            throw new InvalidOperationException("The service doesn't allow this method");
         }
     }
 }
