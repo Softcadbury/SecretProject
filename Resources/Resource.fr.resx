@@ -150,6 +150,9 @@
   <data name="Account_SignInNow" xml:space="preserve">
     <value>Connectez-vous maintenant</value>
   </data>
+  <data name="Account_UserName" xml:space="preserve">
+    <value>Nom d'utilisateur</value>
+  </data>
   <data name="Application_ChatRooms" xml:space="preserve">
     <value>Salles de chat</value>
   </data>

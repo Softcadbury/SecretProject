@@ -160,6 +160,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to User name.
+        /// </summary>
+        public static string Account_UserName {
+            get {
+                return ResourceManager.GetString("Account_UserName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Chat rooms.
         /// </summary>
         public static string Application_ChatRooms {
