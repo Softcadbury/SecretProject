@@ -1,24 +1,3 @@
 ﻿<h1 class="page-title">@Resource.Application_Settings</h1>
 
-@using (Html.BeginForm("SetCulture", "Application"))
-{
-    <fieldset>
-        <div class="control-group">
-            <div class="controls">
-                <label for="en">
-                    <input name="culture" id="en" value="en" type="radio" @(CultureHelper.IsCurrent("en") ? "checked" : "") />
-                    <span class="flag flag-gb"></span>English
-                </label>
-            </div>
-        </div>
-        <div class="control-group">
-            <div class="controls">
-                <label for="fr">
-                    <input name="culture" id="fr" value="fr" type="radio" @(CultureHelper.IsCurrent("fr") ? "checked" : "") />
-                    <span class="flag flag-fr"></span>Français
-                </label>
-            </div>
-        </div>
-    </fieldset>
-    <input type="submit" value="Submit" />
-}
+@Html.Partial("_LanguageSelection")

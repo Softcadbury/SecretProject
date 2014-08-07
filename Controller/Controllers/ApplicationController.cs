@@ -2,7 +2,6 @@
 {
     using System.Web.Mvc;
     using Infrastructure.BaseClasses;
-    using Infrastructure.Tools;
 
     /// <summary>
     /// Application controller
@@ -32,13 +31,6 @@
         public ActionResult UsersContent()
         {
             return PartialView("Content/_Users");
-        }
-
-        public ActionResult SetCulture(string culture)
-        {
-            Cookies.SetCulture(HttpContext, culture);
-
-            return RedirectToAction("Index");
         }
     }
 }

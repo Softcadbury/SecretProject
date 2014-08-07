@@ -1,14 +1,22 @@
 ﻿namespace Controller.Controllers
 {
+    using System.Web.Mvc;
     using Controller.ViewModels.Account;
     using Infrastructure.BaseClasses;
-    using System.Web.Mvc;
+    using Infrastructure.Tools;
 
     /// <summary>
     /// Account controller
     /// </summary>
     public class AccountController : BaseController
     {
+        public ActionResult SetCulture(string returnUrl, string culture)
+        {
+            Cookies.SetCulture(HttpContext, culture);
+
+            return Redirect(returnUrl);
+        }
+
         public ActionResult Registration()
         {
             return View();

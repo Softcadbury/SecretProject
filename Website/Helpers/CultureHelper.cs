@@ -14,5 +14,14 @@
         {
             return culture == Thread.CurrentThread.CurrentUICulture.Name.ToLowerInvariant();
         }
+
+        /// <summary>
+        /// Get the href to change the culture
+        /// </summary>
+        public static string GetCultureChangeHref(string culture)
+        {
+            const string Href = "javascript:window.location.href = './account/setculture?culture={0}&returnUrl=' + window.location.href";
+            return string.Format(Href, culture);
+        }
     }
 }

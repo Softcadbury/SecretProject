@@ -1,0 +1,13 @@
+﻿<div class="btn-group">
+    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+        @Resource.Site_Language <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu" role="menu">
+        <li class="@(CultureHelper.IsCurrent("en") ? "current" : "")">
+            <a href="@CultureHelper.GetCultureChangeHref("en")"><span class="flag flag-gb"></span>English</a>
+        </li>
+        <li class="@(CultureHelper.IsCurrent("fr") ? "current" : "")">
+            <a href="@CultureHelper.GetCultureChangeHref("fr")"><span class="flag flag-fr"></span>Français</a>
+        </li>
+    </ul>
+</div>
