@@ -6,7 +6,7 @@
         @using (Html.BeginForm("ValidateConnection", "Account"))
         {
             @Html.ValidationSummary(false)
-            @Html.TextBoxFor(model => model.Email, new { placeholder = @Resource.Account_Email, @class = "form-control" })
+            @Html.TextBoxFor(model => model.UserName, new { placeholder = @Resource.Account_UserName, @class = "form-control" })
             @Html.PasswordFor(model => model.Password, new { placeholder = @Resource.Account_Password, @class = "form-control" })
             <button class="btn btn-block account-button" type="submit">
                 <i class="fa fa-lock"></i>
