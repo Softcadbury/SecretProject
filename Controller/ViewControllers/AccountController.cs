@@ -1,4 +1,4 @@
-﻿namespace Controller.Controllers
+﻿namespace Controller.ViewControllers
 {
     using System.Web.Mvc;
     using Controller.ViewModels.Account;
