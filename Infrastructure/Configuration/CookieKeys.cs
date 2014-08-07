@@ -1,4 +1,4 @@
-﻿namespace Infrastructure.Keys
+﻿namespace Infrastructure.Configuration
 {
     /// <summary>
     /// Keys for cookies

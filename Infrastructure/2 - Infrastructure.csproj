@@ -115,8 +115,8 @@
     <Compile Include="BaseClasses\BaseRepository.cs" />
     <Compile Include="BaseClasses\BaseService.cs" />
     <Compile Include="BaseClasses\BaseViewModel.cs" />
-    <Compile Include="Keys\CookieKeys.cs" />
-    <Compile Include="Keys\SettingKeys.cs" />
+    <Compile Include="Configuration\CookieKeys.cs" />
+    <Compile Include="Configuration\SettingKeys.cs" />
     <Compile Include="Services\Requests\AddRequest.cs" />
     <Compile Include="Services\Requests\RemoveRequest.cs" />
     <Compile Include="Services\Requests\GetPageRequest.cs" />

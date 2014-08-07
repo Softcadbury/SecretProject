@@ -4,7 +4,7 @@
     using System.Configuration;
     using System.Linq;
 
-    using Infrastructure.Keys;
+    using Infrastructure.Configuration;
 
     /// <summary>
     /// Class to get values of initializes in config files

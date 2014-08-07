@@ -3,7 +3,7 @@
     using System;
     using System.Web;
 
-    using Infrastructure.Keys;
+    using Infrastructure.Configuration;
 
     /// <summary>
     /// Class to manage cookies
