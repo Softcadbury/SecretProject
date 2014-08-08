@@ -10,9 +10,17 @@
         /// <summary>
         /// Check if the parameter equals the current culture
         /// </summary>
-        public static bool IsCurrent(string culture)
+        public static bool IsCurrentCulture(string culture)
         {
             return culture == Thread.CurrentThread.CurrentUICulture.Name.ToLowerInvariant();
+        }
+
+        /// <summary>
+        /// Return the current culture
+        /// </summary>
+        public static string GetCurrentCulture()
+        {
+            return Thread.CurrentThread.CurrentUICulture.Name.ToLowerInvariant();
         }
 
         /// <summary>
