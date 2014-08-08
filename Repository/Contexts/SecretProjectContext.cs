@@ -29,8 +29,10 @@
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
 
             modelBuilder.Configurations.Add(new UserConfiguration());
+            modelBuilder.Configurations.Add(new ChatRoomConfiguration());
         }
 
         public DbSet<User> Users { get; set; }
+        public DbSet<ChatRoom> ChatRooms { get; set; }
     }
 }
