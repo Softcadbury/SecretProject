@@ -87,6 +87,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApiControllers\ChatRoomController.cs" />
     <Compile Include="ViewControllers\AccountController.cs" />
     <Compile Include="ViewControllers\ApplicationController.cs" />
     <Compile Include="ViewControllers\ErrorController.cs" />

@@ -151,6 +151,7 @@
     <Content Include="Scripts\controllers\HomeCtrl.js" />
     <Content Include="Scripts\controllers\MenuCtrl.js" />
     <Content Include="Scripts\controllers\UsersCtrl.js" />
+    <Content Include="Scripts\factories\ChatRoomFactory.js" />
     <Content Include="Scripts\factories\UserFactory.js" />
     <Content Include="Views\Application\Index.cshtml" />
     <Content Include="Views\Web.config" />
