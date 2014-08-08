@@ -7,7 +7,7 @@
         $scope.userName = '';
 
         UserFactory.get(1).success(function (user) {
-            $scope.userName = user.Name;
+            $scope.userName = user.UserName;
         });
 
         $scope.getClass = function (path) {
