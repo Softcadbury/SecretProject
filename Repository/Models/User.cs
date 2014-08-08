@@ -8,7 +8,7 @@
     /// <summary>
     /// User
     /// </summary>
-    public class User : BaseModel
+    public class User : ModelBase
     {
         [MaxLength(LenghtLimits.UserNameMaxLenght)]
         public string UserName { get; set; }

@@ -6,7 +6,7 @@
     /// This class represents the request to update a model
     /// </summary>
     public sealed class UpdateRequest<TModel>
-        where TModel : BaseModel
+        where TModel : ModelBase
     {
         /// <summary>
         /// Constructor

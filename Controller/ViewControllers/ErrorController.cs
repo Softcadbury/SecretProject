@@ -6,7 +6,7 @@
     /// <summary>
     /// Error controller
     /// </summary>
-    public class ErrorController : BaseViewController
+    public class ErrorController : ViewControllerBase
     {
         public ActionResult Index()
         {

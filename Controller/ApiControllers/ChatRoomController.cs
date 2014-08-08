@@ -12,7 +12,7 @@
     /// ChatRoom controller
     /// </summary>
     [RoutePrefix("api/chatrooms")]
-    public class ChatRoomController : BaseApiController
+    public class ChatRoomController : ApiControllerBase
     {
         private readonly ChatRoomService chatRoomService;
 

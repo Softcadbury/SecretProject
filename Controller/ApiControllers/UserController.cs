@@ -12,7 +12,7 @@
     /// User controller
     /// </summary>
     [RoutePrefix("api/users")]
-    public class UserController : BaseApiController
+    public class UserController : ApiControllerBase
     {
         private readonly UserService userService;
 

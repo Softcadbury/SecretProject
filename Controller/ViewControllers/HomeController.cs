@@ -6,7 +6,7 @@
     /// <summary>
     /// Home controller
     /// </summary>
-    public class HomeController : BaseViewController
+    public class HomeController : ViewControllerBase
     {
         public ActionResult Index()
         {

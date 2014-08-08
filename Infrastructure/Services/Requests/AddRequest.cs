@@ -6,7 +6,7 @@
     /// This class represents the request to add a model
     /// </summary>
     public sealed class AddRequest<TModel>
-        where TModel : BaseModel
+        where TModel : ModelBase
     {
         /// <summary>
         /// Constructor

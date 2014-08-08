@@ -5,7 +5,7 @@
     /// <summary>
     /// ChatRoom
     /// </summary>
-    public class ChatRoom : BaseModel
+    public class ChatRoom : ModelBase
     {
         public string Title { get; set; }
     }

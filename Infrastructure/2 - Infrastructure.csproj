@@ -109,12 +109,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BaseClasses\BaseApiController.cs" />
-    <Compile Include="BaseClasses\BaseViewController.cs" />
-    <Compile Include="BaseClasses\BaseModel.cs" />
-    <Compile Include="BaseClasses\BaseRepository.cs" />
-    <Compile Include="BaseClasses\BaseService.cs" />
-    <Compile Include="BaseClasses\BaseViewModel.cs" />
+    <Compile Include="BaseClasses\ApiControllerBase.cs" />
+    <Compile Include="BaseClasses\ViewControllerBase.cs" />
+    <Compile Include="BaseClasses\ModelBase.cs" />
+    <Compile Include="BaseClasses\RepositoryBase.cs" />
+    <Compile Include="BaseClasses\ServiceBase.cs" />
+    <Compile Include="BaseClasses\ViewModelBase.cs" />
     <Compile Include="Configuration\CookieKeys.cs" />
     <Compile Include="Configuration\LenghtLimits.cs" />
     <Compile Include="Configuration\SettingKeys.cs" />
