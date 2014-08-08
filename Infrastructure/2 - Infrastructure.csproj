@@ -110,7 +110,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseClasses\BaseApiController.cs" />
-    <Compile Include="BaseClasses\BaseController.cs" />
+    <Compile Include="BaseClasses\BaseViewController.cs" />
     <Compile Include="BaseClasses\BaseModel.cs" />
     <Compile Include="BaseClasses\BaseRepository.cs" />
     <Compile Include="BaseClasses\BaseService.cs" />

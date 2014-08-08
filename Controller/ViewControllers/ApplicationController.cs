@@ -6,7 +6,7 @@
     /// <summary>
     /// Application controller
     /// </summary>
-    public class ApplicationController : BaseController
+    public class ApplicationController : BaseViewController
     {
         public ActionResult Index()
         {

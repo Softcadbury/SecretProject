@@ -10,7 +10,7 @@
     /// <summary>
     /// Account controller
     /// </summary>
-    public class AccountController : BaseController
+    public class AccountController : BaseViewController
     {
         private readonly AccountService accountService;
 

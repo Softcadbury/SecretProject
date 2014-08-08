@@ -8,7 +8,7 @@
     /// <summary>
     /// A baseline definition that every controllers will inherit from
     /// </summary>
-    public abstract class BaseController : Controller
+    public abstract class BaseViewController : Controller
     {
         /// <summary>
         /// Override ExecuteCore method to manage internationalization
