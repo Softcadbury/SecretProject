@@ -1,11 +1,10 @@
 ﻿namespace Controller.ViewControllers
 {
-    using System.Web.Mvc;
-    using Controller.ViewModels.Account;
+    using Service.ViewModels.Account;
     using Infrastructure.BaseClasses;
     using Infrastructure.Tools;
-
     using Service.Services;
+    using System.Web.Mvc;
 
     /// <summary>
     /// Account controller

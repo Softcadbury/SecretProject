@@ -31,6 +31,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -45,6 +46,8 @@
     <Compile Include="Services\AccountService.cs" />
     <Compile Include="Services\ChatRoomService.cs" />
     <Compile Include="Services\UserService.cs" />
+    <Compile Include="ViewModels\Account\ConnectionViewModel.cs" />
+    <Compile Include="ViewModels\Account\RegistrationViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Infrastructure\2 - Infrastructure.csproj">
