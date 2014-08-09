@@ -1,5 +1,7 @@
 ﻿namespace Service.Account.Requests
 {
+    using Service.ViewModels.Account;
+
     /// <summary>
     /// This class represents the request to connect a user
     /// </summary>
@@ -8,8 +10,11 @@
         /// <summary>
         /// Constructor
         /// </summary>
-        public ConnectUserRequest()
+        public ConnectUserRequest(ConnectionViewModel model)
         {
+            Model = model;
         }
+
+        public ConnectionViewModel Model { get; private set; }
     }
 }

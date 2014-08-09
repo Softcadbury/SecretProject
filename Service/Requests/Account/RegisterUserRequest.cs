@@ -1,5 +1,7 @@
 ﻿namespace Service.Account.Requests
 {
+    using Service.ViewModels.Account;
+
     /// <summary>
     /// This class represents the request to register a user
     /// </summary>
@@ -8,8 +10,11 @@
         /// <summary>
         /// Constructor
         /// </summary>
-        public RegisterUserRequest()
+        public RegisterUserRequest(RegistrationViewModel model)
         {
+            Model = model;
         }
+
+        public RegistrationViewModel Model { get; private set; }
     }
 }
