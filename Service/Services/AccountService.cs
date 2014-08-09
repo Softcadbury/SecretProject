@@ -1,5 +1,7 @@
 ﻿namespace Service.Services
 {
+    using Infrastructure.Services.Responses;
+    using Resources;
     using Service.Account.Requests;
 
     /// <summary>
@@ -10,15 +12,17 @@
         /// <summary>
         /// Register a user
         /// </summary>
-        public void RegisterUser(RegisterUserRequest request)
+        public Response<Empty> RegisterUser(RegisterUserRequest request)
         {
+            return Response<Empty>.CreateError(ErrorCodes.Conflict, Resource.Account_CannotRegistered);
         }
 
         /// <summary>
         /// Connect a user
         /// </summary>
-        public void ConnectUser(ConnectUserRequest request)
+        public Response<Empty> ConnectUser(ConnectUserRequest request)
         {
+            return Response<Empty>.CreateError(ErrorCodes.NotFound, Resource.Account_CannotConnect);
         }
     }
 }

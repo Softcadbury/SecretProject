@@ -1,9 +1,11 @@
 ﻿namespace Controller.ViewControllers
 {
-    using Service.ViewModels.Account;
     using Infrastructure.BaseClasses;
+    using Infrastructure.Services.Responses;
     using Infrastructure.Tools;
+    using Service.Account.Requests;
     using Service.Services;
+    using Service.ViewModels.Account;
     using System.Web.Mvc;
 
     /// <summary>
@@ -42,7 +44,16 @@
         {
             if (!ModelState.IsValid)
             {
-                return RedirectToAction("Registration");
+                return View("Registration");
+            }
+
+            var request = new RegisterUserRequest(registrationViewModel);
+            Response<Empty> response = accountService.RegisterUser(request);
+
+            if (!response.IsSuccess)
+            {
+                ModelState.AddModelError(string.Empty, response.Message);
+                return View("Registration");
             }
 
             return RedirectToAction("Index", "Application");
@@ -52,7 +63,16 @@
         {
             if (!ModelState.IsValid)
             {
-                return RedirectToAction("Connection");
+                return View("Connection");
+            }
+
+            var request = new ConnectUserRequest(connectionViewModel);
+            Response<Empty> response = accountService.ConnectUser(request);
+
+            if (!response.IsSuccess)
+            {
+                ModelState.AddModelError(string.Empty, response.Message);
+                return View("Connection");
             }
 
             return RedirectToAction("Index", "Application");
