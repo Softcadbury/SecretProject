@@ -8,6 +8,7 @@
         public TContent Content { get; private set; }
         public bool IsSuccess { get; private set; }
         public ErrorCodes ErrorCode { get; private set; }
+        public string Message { get; private set; }
 
         /// <summary>
         /// Create a success response
@@ -28,9 +29,9 @@
         /// <summary>
         /// Create an error response
         /// </summary>
-        public static Response<TContent> CreateError(ErrorCodes errorCode)
+        public static Response<TContent> CreateError(ErrorCodes errorCode, string message = null)
         {
-            return new Response<TContent> { IsSuccess = false, ErrorCode = errorCode };
+            return new Response<TContent> { IsSuccess = false, ErrorCode = errorCode, Message = message };
         }
     }
 }
