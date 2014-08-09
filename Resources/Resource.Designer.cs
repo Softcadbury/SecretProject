@@ -61,6 +61,24 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Wrong user name or password..
+        /// </summary>
+        public static string Account_CannotConnect {
+            get {
+                return ResourceManager.GetString("Account_CannotConnect", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to User name or email already registered..
+        /// </summary>
+        public static string Account_CannotRegistered {
+            get {
+                return ResourceManager.GetString("Account_CannotRegistered", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Email.
         /// </summary>
         public static string Account_Email {
