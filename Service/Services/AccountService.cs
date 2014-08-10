@@ -3,6 +3,7 @@
     using Infrastructure.Services.Responses;
     using Resources;
     using Service.Account.Requests;
+    using System;
     using System.Web.Security;
     using WebMatrix.WebData;
 
@@ -18,9 +19,15 @@
         {
             try
             {
-                WebSecurity.CreateUserAndAccount(request.Model.UserName, request.Model.Password);
-                WebSecurity.Login(request.Model.UserName, request.Model.Password);
+                WebSecurity.CreateUserAndAccount(
+                    request.Model.UserName, request.Model.Password,
+                    propertyValues: new
+                    {
+                        CreationDate = DateTime.UtcNow,
+                        ModificationDate = DateTime.UtcNow
+                    });
 
+                WebSecurity.Login(request.Model.UserName, request.Model.Password);
                 FormsAuthentication.SetAuthCookie(request.Model.UserName, createPersistentCookie: false);
 
                 return Response<Empty>.CreateSuccess();

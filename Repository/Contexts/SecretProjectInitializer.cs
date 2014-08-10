@@ -15,14 +15,6 @@
         /// </summary>
         protected override void Seed(SecretProjectContext context)
         {
-            // Initialize users
-            var users = new List<User>
-            {
-                new User { UserName = "Softcadbury" }
-            };
-
-            users.ForEach(s => context.Users.Add(s));
-
             // Initialize chat rooms
             var chatRooms = new List<ChatRoom>
             {

@@ -25,9 +25,7 @@
         {
             public SimpleMembershipInitializer()
             {
-                WebSecurity.InitializeDatabaseConnection(
-                    Settings.ConnectionString, "System.Data.SqlClient",
-                    "UserProfile", "UserId", "UserName", autoCreateTables: true);
+                WebSecurity.InitializeDatabaseConnection(Settings.ConnectionString, "System.Data.SqlClient", "User", "Id", "UserName", autoCreateTables: true);
             }
         }
     }
