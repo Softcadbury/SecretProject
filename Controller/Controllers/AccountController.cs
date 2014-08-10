@@ -7,6 +7,7 @@
     using Service.Account.Requests;
     using Service.Services;
     using Service.ViewModels.Account;
+    using System.Web;
     using System.Web.Mvc;
     using WebMatrix.WebData;
 
@@ -32,7 +33,7 @@
         }
 
         [AllowAnonymous]
-        public ActionResult Connection()
+        public ActionResult Login()
         {
             return View();
         }
@@ -66,21 +67,21 @@
         }
 
         [AllowAnonymous]
-        public ActionResult ValidateConnection(ConnectionViewModel connectionViewModel)
+        public ActionResult ValidateLogin(LoginViewModel loginViewModel)
         {
             if (!ModelState.IsValid)
             {
-                return View("Connection");
+                return View("Login");
             }
 
             AccountService accountService = new AccountService();
-            var request = new ConnectUserRequest(connectionViewModel);
-            Response<Empty> response = accountService.ConnectUser(request);
+            var request = new LoginUserRequest(loginViewModel);
+            Response<Empty> response = accountService.LoginUser(request);
 
             if (!response.IsSuccess)
             {
                 ModelState.AddModelError(string.Empty, response.Message);
-                return View("Connection");
+                return View("Login");
             }
 
             return RedirectToAction("Index", "Application");

@@ -7,9 +7,9 @@
     using Resources;
 
     /// <summary>
-    /// Connection
+    /// Login
     /// </summary>
-    public class ConnectionViewModel
+    public class LoginViewModel
     {
         [Required(ErrorMessageResourceName = "Account_FieldRequiredError", ErrorMessageResourceType = typeof(Resource))]
         [StringLength(LenghtLimits.UserNameMaxLenght, MinimumLength = LenghtLimits.UserNameMinLenght, ErrorMessageResourceName = "Account_FieldMinimumLengthError", ErrorMessageResourceType = typeof(Resource))]

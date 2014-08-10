@@ -117,7 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Account_CannotConnect" xml:space="preserve">
+  <data name="Account_CannotLogin" xml:space="preserve">
     <value>Nom d'utilisateur ou mot de passe incorrect.</value>
   </data>
   <data name="Account_CannotRegistered" xml:space="preserve">
@@ -134,6 +134,12 @@
   </data>
   <data name="Account_FieldValidationError" xml:space="preserve">
     <value>Le champ {0} n'est pas valide.</value>
+  </data>
+  <data name="Account_Login" xml:space="preserve">
+    <value>Connexion</value>
+  </data>
+  <data name="Account_LoginNow" xml:space="preserve">
+    <value>Connectez-vous maintenant</value>
   </data>
   <data name="Account_LogOut" xml:space="preserve">
     <value>Déconnexion</value>
@@ -152,12 +158,6 @@
   </data>
   <data name="Account_RegisterNow" xml:space="preserve">
     <value>Inscrivez-vous maintenant</value>
-  </data>
-  <data name="Account_SignIn" xml:space="preserve">
-    <value>Connexion</value>
-  </data>
-  <data name="Account_SignInNow" xml:space="preserve">
-    <value>Connectez-vous maintenant</value>
   </data>
   <data name="Account_UserName" xml:space="preserve">
     <value>Nom d'utilisateur</value>

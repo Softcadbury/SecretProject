@@ -63,9 +63,9 @@ namespace Resources {
         /// <summary>
         ///   Looks up a localized string similar to Wrong user name or password..
         /// </summary>
-        public static string Account_CannotConnect {
+        public static string Account_CannotLogin {
             get {
-                return ResourceManager.GetString("Account_CannotConnect", resourceCulture);
+                return ResourceManager.GetString("Account_CannotLogin", resourceCulture);
             }
         }
         
@@ -111,6 +111,24 @@ namespace Resources {
         public static string Account_FieldValidationError {
             get {
                 return ResourceManager.GetString("Account_FieldValidationError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Login.
+        /// </summary>
+        public static string Account_Login {
+            get {
+                return ResourceManager.GetString("Account_Login", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Login Now.
+        /// </summary>
+        public static string Account_LoginNow {
+            get {
+                return ResourceManager.GetString("Account_LoginNow", resourceCulture);
             }
         }
         
@@ -165,24 +183,6 @@ namespace Resources {
         public static string Account_RegisterNow {
             get {
                 return ResourceManager.GetString("Account_RegisterNow", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Sign In.
-        /// </summary>
-        public static string Account_SignIn {
-            get {
-                return ResourceManager.GetString("Account_SignIn", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Sign In Now.
-        /// </summary>
-        public static string Account_SignInNow {
-            get {
-                return ResourceManager.GetString("Account_SignInNow", resourceCulture);
             }
         }
         

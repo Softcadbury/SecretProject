@@ -39,9 +39,9 @@
         }
 
         /// <summary>
-        /// Connect a user
+        /// Login a user
         /// </summary>
-        public Response<Empty> ConnectUser(ConnectUserRequest request)
+        public Response<Empty> LoginUser(LoginUserRequest request)
         {
             if (WebSecurity.Login(request.Model.UserName, request.Model.Password, persistCookie: true))
             {
@@ -51,7 +51,7 @@
             }
             else
             {
-                return Response<Empty>.CreateError(ErrorCodes.NotFound, Resource.Account_CannotConnect);
+                return Response<Empty>.CreateError(ErrorCodes.NotFound, Resource.Account_CannotLogin);
             }
         }
     }

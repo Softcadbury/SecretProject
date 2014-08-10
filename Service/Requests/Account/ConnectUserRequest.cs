@@ -3,18 +3,18 @@
     using Service.ViewModels.Account;
 
     /// <summary>
-    /// This class represents the request to connect a user
+    /// This class represents the request to login a user
     /// </summary>
-    public sealed class ConnectUserRequest
+    public sealed class LoginUserRequest
     {
         /// <summary>
         /// Constructor
         /// </summary>
-        public ConnectUserRequest(ConnectionViewModel model)
+        public LoginUserRequest(LoginViewModel model)
         {
             Model = model;
         }
 
-        public ConnectionViewModel Model { get; private set; }
+        public LoginViewModel Model { get; private set; }
     }
 }
