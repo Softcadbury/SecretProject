@@ -23,6 +23,7 @@
                     request.Model.UserName, request.Model.Password,
                     propertyValues: new
                     {
+                        Email = request.Model.Email,
                         CreationDate = DateTime.UtcNow,
                         ModificationDate = DateTime.UtcNow
                     });
