@@ -13,16 +13,6 @@
     /// </summary>
     public class AccountController : ViewControllerBase
     {
-        private readonly AccountService accountService;
-
-        /// <summary>
-        /// Constructor
-        /// </summary>
-        public AccountController()
-        {
-            accountService = new AccountService();
-        }
-
         public ActionResult SetCulture(string returnUrl, string culture)
         {
             Cookies.SetCulture(HttpContext, culture);
@@ -47,6 +37,7 @@
                 return View("Registration");
             }
 
+            AccountService accountService = new AccountService();
             var request = new RegisterUserRequest(registrationViewModel);
             Response<Empty> response = accountService.RegisterUser(request);
 
@@ -66,6 +57,7 @@
                 return View("Connection");
             }
 
+            AccountService accountService = new AccountService();
             var request = new ConnectUserRequest(connectionViewModel);
             Response<Empty> response = accountService.ConnectUser(request);
 
