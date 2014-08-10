@@ -6,6 +6,7 @@
     /// <summary>
     /// Application controller
     /// </summary>
+    [Authorize]
     public class ApplicationController : ViewControllerBase
     {
         public ActionResult Index()

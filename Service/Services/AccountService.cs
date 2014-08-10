@@ -3,6 +3,8 @@
     using Infrastructure.Services.Responses;
     using Resources;
     using Service.Account.Requests;
+    using System.Web.Security;
+    using WebMatrix.WebData;
 
     /// <summary>
     /// Account service
@@ -14,7 +16,19 @@
         /// </summary>
         public Response<Empty> RegisterUser(RegisterUserRequest request)
         {
-            return Response<Empty>.CreateError(ErrorCodes.Conflict, Resource.Account_CannotRegistered);
+            try
+            {
+                WebSecurity.CreateUserAndAccount(request.Model.UserName, request.Model.Password);
+                WebSecurity.Login(request.Model.UserName, request.Model.Password);
+
+                FormsAuthentication.SetAuthCookie(request.Model.UserName, createPersistentCookie: false);
+
+                return Response<Empty>.CreateSuccess();
+            }
+            catch
+            {
+                return Response<Empty>.CreateError(ErrorCodes.Conflict, Resource.Account_CannotRegistered);
+            }
         }
 
         /// <summary>
@@ -22,7 +36,16 @@
         /// </summary>
         public Response<Empty> ConnectUser(ConnectUserRequest request)
         {
-            return Response<Empty>.CreateError(ErrorCodes.NotFound, Resource.Account_CannotConnect);
+            if (WebSecurity.Login(request.Model.UserName, request.Model.Password, persistCookie: true))
+            {
+                FormsAuthentication.SetAuthCookie(request.Model.UserName, createPersistentCookie: true);
+
+                return Response<Empty>.CreateSuccess();
+            }
+            else
+            {
+                return Response<Empty>.CreateError(ErrorCodes.NotFound, Resource.Account_CannotConnect);
+            }
         }
     }
 }

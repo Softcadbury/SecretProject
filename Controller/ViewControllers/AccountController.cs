@@ -1,5 +1,6 @@
 ﻿namespace Controller.ViewControllers
 {
+    using Controller.Filters;
     using Infrastructure.BaseClasses;
     using Infrastructure.Services.Responses;
     using Infrastructure.Tools;
@@ -7,12 +8,16 @@
     using Service.Services;
     using Service.ViewModels.Account;
     using System.Web.Mvc;
+    using WebMatrix.WebData;
 
     /// <summary>
     /// Account controller
     /// </summary>
+    [Authorize]
+    [InitializeSimpleMembership]
     public class AccountController : ViewControllerBase
     {
+        [AllowAnonymous]
         public ActionResult SetCulture(string returnUrl, string culture)
         {
             Cookies.SetCulture(HttpContext, culture);
@@ -20,16 +25,19 @@
             return Redirect(returnUrl);
         }
 
+        [AllowAnonymous]
         public ActionResult Registration()
         {
             return View();
         }
 
+        [AllowAnonymous]
         public ActionResult Connection()
         {
             return View();
         }
 
+        [AllowAnonymous]
         public ActionResult ValidateRegistration(RegistrationViewModel registrationViewModel)
         {
             if (!ModelState.IsValid)
@@ -50,6 +58,7 @@
             return RedirectToAction("Index", "Application");
         }
 
+        [AllowAnonymous]
         public ActionResult ValidateConnection(ConnectionViewModel connectionViewModel)
         {
             if (!ModelState.IsValid)

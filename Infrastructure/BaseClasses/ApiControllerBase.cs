@@ -7,6 +7,7 @@
     /// <summary>
     /// A baseline definition that every api controllers will inherit from
     /// </summary>
+    [Authorize]
     public abstract class ApiControllerBase : ApiController
     {
         /// <summary>
