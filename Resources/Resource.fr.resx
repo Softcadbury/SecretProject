@@ -135,6 +135,9 @@
   <data name="Account_FieldValidationError" xml:space="preserve">
     <value>Le champ {0} n'est pas valide.</value>
   </data>
+  <data name="Account_LogOut" xml:space="preserve">
+    <value>Déconnexion</value>
+  </data>
   <data name="Account_Password" xml:space="preserve">
     <value>Mot de passe</value>
   </data>

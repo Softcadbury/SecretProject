@@ -6,6 +6,9 @@
     using System.Web.Mvc;
     using WebMatrix.WebData;
 
+    /// <summary>
+    /// Manage simple membership
+    /// </summary>
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method, AllowMultiple = false, Inherited = true)]
     public sealed class InitializeSimpleMembershipAttribute : ActionFilterAttribute
     {
@@ -23,7 +26,7 @@
             public SimpleMembershipInitializer()
             {
                 WebSecurity.InitializeDatabaseConnection(
-                    Settings.ConnectionString, "System.Data.SqlClient", 
+                    Settings.ConnectionString, "System.Data.SqlClient",
                     "UserProfile", "UserId", "UserName", autoCreateTables: true);
             }
         }

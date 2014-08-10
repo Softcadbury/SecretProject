@@ -37,6 +37,13 @@
             return View();
         }
 
+        public ActionResult LogOff()
+        {
+            WebSecurity.Logout();
+
+            return RedirectToAction("Index", "Home");
+        }
+
         [AllowAnonymous]
         public ActionResult ValidateRegistration(RegistrationViewModel registrationViewModel)
         {

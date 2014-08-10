@@ -135,6 +135,9 @@
   <data name="Account_FieldValidationError" xml:space="preserve">
     <value>The {0} must be a valid email address.</value>
   </data>
+  <data name="Account_LogOut" xml:space="preserve">
+    <value>Log Out</value>
+  </data>
   <data name="Account_Password" xml:space="preserve">
     <value>Password</value>
   </data>

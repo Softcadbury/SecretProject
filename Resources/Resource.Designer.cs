@@ -115,6 +115,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Log Out.
+        /// </summary>
+        public static string Account_LogOut {
+            get {
+                return ResourceManager.GetString("Account_LogOut", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Password.
         /// </summary>
         public static string Account_Password {
