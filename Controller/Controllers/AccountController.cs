@@ -1,4 +1,4 @@
-﻿namespace Controller.ViewControllers
+﻿namespace Controller.Controllers
 {
     using Controller.Filters;
     using Infrastructure.BaseClasses;

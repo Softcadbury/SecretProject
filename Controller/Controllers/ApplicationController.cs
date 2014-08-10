@@ -1,4 +1,4 @@
-﻿namespace Controller.ViewControllers
+﻿namespace Controller.Controllers
 {
     using System.Web.Mvc;
     using Infrastructure.BaseClasses;

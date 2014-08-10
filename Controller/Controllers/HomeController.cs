@@ -1,12 +1,12 @@
-﻿namespace Controller.ViewControllers
+﻿namespace Controller.Controllers
 {
     using System.Web.Mvc;
     using Infrastructure.BaseClasses;
 
     /// <summary>
-    /// Error controller
+    /// Home controller
     /// </summary>
-    public class ErrorController : ViewControllerBase
+    public class HomeController : ViewControllerBase
     {
         public ActionResult Index()
         {
