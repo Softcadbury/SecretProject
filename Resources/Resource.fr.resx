@@ -177,4 +177,7 @@
   <data name="Site_Language" xml:space="preserve">
     <value>Langue</value>
   </data>
+  <data name="Applications_Informations" xml:space="preserve">
+    <value>Informations</value>
+  </data>
 </root>
