@@ -152,7 +152,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\man.jpg" />
-    <Content Include="Content\woman.jpg" />
     <Content Include="Scripts\app.js" />
     <Content Include="Scripts\controllers\SettingsCtrl.js" />
     <Content Include="Scripts\controllers\ChatRoomsCtrl.js" />
