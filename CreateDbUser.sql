@@ -1,4 +1,4 @@
-CREATE LOGIN softcadbury WITH PASSWORD = 'softox';
+CREATE LOGIN softcadbury WITH PASSWORD = 'softoxsoftox';
 GO
 
 CREATE USER softcadbury FOR LOGIN softcadbury;
