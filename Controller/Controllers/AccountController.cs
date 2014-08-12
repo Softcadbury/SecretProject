@@ -7,7 +7,6 @@
     using Service.Account.Requests;
     using Service.Services;
     using Service.ViewModels.Account;
-    using System.Web;
     using System.Web.Mvc;
     using WebMatrix.WebData;
 
@@ -53,7 +52,7 @@
                 return View("Registration");
             }
 
-            AccountService accountService = new AccountService();
+            var accountService = new AccountService();
             var request = new RegisterUserRequest(registrationViewModel);
             Response<Empty> response = accountService.RegisterUser(request);
 
@@ -74,7 +73,7 @@
                 return View("Login");
             }
 
-            AccountService accountService = new AccountService();
+            var accountService = new AccountService();
             var request = new LoginUserRequest(loginViewModel);
             Response<Empty> response = accountService.LoginUser(request);
 

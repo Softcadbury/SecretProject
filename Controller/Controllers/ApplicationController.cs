@@ -3,15 +3,23 @@
     using System.Web.Mvc;
     using Infrastructure.BaseClasses;
 
+    using WebMatrix.WebData;
+
     /// <summary>
     /// Application controller
     /// </summary>
     [Authorize]
     public class ApplicationController : ViewControllerBase
     {
+        [AllowAnonymous]
         public ActionResult Index()
         {
-            return View();
+            if (WebSecurity.IsAuthenticated)
+            {
+                return View();
+            }
+
+            return RedirectToAction("Index", "Home");
         }
 
         public ActionResult ChatRoomsContent()
