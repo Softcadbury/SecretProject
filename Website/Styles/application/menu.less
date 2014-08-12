@@ -11,6 +11,7 @@
 
     .menu-img {
         margin: auto;
+        margin-top: 10px;
         width: 100px;
 
         img {
@@ -22,7 +23,7 @@
 
     .menu-username {
         color: white;
-        margin-top: 10px;
+        margin-top: 15px;
         text-align: center;
     }
 
@@ -47,5 +48,11 @@
         .active > a:focus {
             background-color: @turquoise !important;
         }
+    }
+}
+
+@media only screen and (max-width : @responsive-max-width) {
+    #menu {
+        display: none;
     }
 }
