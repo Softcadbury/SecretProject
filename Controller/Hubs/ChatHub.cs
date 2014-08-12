@@ -6,7 +6,7 @@
     /// <summary>
     /// Chat hub
     /// </summary>
-    [HubName("ChatHub")]
+    [HubName("chatHub")]
     public class ChatHub : Hub
     {
         public void Send(string name, string message)

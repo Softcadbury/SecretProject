@@ -1,9 +1,10 @@
 ﻿(function () {
     angular
         .module('app')
-        .controller('ChatRoomsCtrl', ['$scope', 'ChatRoomFactory', ChatRoomsCtrl]);
+        .controller('ChatRoomsCtrl', ['$scope', 'SignalRService', 'ChatRoomFactory', ChatRoomsCtrl]);
 
-    function ChatRoomsCtrl($scope, ChatRoomFactory) {
+    function ChatRoomsCtrl($scope, SignalRService, ChatRoomFactory) {
+        SignalRService.initialize();
         $scope.chatRooms = [];
 
         ChatRoomFactory.getPage(1).success(function (chatRooms) {
