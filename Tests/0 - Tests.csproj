@@ -67,8 +67,9 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="Controllers\TestUserController.cs" />
+    <Compile Include="TestControllers\TestUserController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestResources\TestResources.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Controller\5 - Controller.csproj">
