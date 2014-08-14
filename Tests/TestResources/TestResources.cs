@@ -1,26 +1,26 @@
 ﻿namespace Tests.TestResources
 {
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using Resources;
     using System.Collections;
     using System.Collections.Generic;
     using System.Linq;
     using System.Resources;
+    using NUnit.Framework;
+    using Resources;
 
-    [TestClass]
+    [TestFixture]
     public class TestResources
     {
         private List<string> englishResources;
         private List<string> frenchResources;
 
-        [TestInitialize]
+        [SetUp]
         public void SetUp()
         {
             englishResources = GetResourcesKeys("en");
             frenchResources = GetResourcesKeys("fr");
         }
 
-        [TestMethod]
+        [Test]
         public void Resources_FrenchResources_SameKeysThanEnglishResources()
         {
             // Assert
