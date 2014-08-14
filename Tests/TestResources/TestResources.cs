@@ -11,25 +11,26 @@
     public class TestResources
     {
         private List<string> englishResources;
-        private List<string> frenchResources;
 
         [SetUp]
         public void SetUp()
         {
             englishResources = GetResourcesKeys("en");
-            frenchResources = GetResourcesKeys("fr");
         }
 
-        [Test]
-        public void Resources_FrenchResources_SameKeysThanEnglishResources()
+        [TestCase("fr")]
+        public void Resources_AllResources_SameKeysThanEnglishResources(string resourceNameToCompare)
         {
-            // Assert
-            var deficitInFrenchResources = englishResources.Except(frenchResources).ToList();
-            var surplusInFrenchResources = frenchResources.Except(englishResources).ToList();
+            // Act
+            List<string> resourcesToCompare = this.GetResourcesKeys(resourceNameToCompare);
 
             // Assert
-            Assert.AreEqual(0, deficitInFrenchResources.Count);
-            Assert.AreEqual(0, surplusInFrenchResources.Count);
+            var deficitInResourcesToCompare = englishResources.Except(resourcesToCompare).ToList();
+            var surplusInResourcesToCompare = resourcesToCompare.Except(englishResources).ToList();
+
+            // Assert
+            Assert.IsEmpty(deficitInResourcesToCompare);
+            Assert.IsEmpty(surplusInResourcesToCompare);
         }
 
         /// <summary>
