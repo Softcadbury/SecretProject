@@ -207,36 +207,18 @@ namespace Resources {
         /// <summary>
         ///   Looks up a localized string similar to Home.
         /// </summary>
-        public static string Application_Home {
+        public static string Site_Home {
             get {
-                return ResourceManager.GetString("Application_Home", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Settings.
-        /// </summary>
-        public static string Application_Settings {
-            get {
-                return ResourceManager.GetString("Application_Settings", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Users.
-        /// </summary>
-        public static string Application_Users {
-            get {
-                return ResourceManager.GetString("Application_Users", resourceCulture);
+                return ResourceManager.GetString("Site_Home", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Informations.
         /// </summary>
-        public static string Applications_Informations {
+        public static string Site_Informations {
             get {
-                return ResourceManager.GetString("Applications_Informations", resourceCulture);
+                return ResourceManager.GetString("Site_Informations", resourceCulture);
             }
         }
         
@@ -246,6 +228,24 @@ namespace Resources {
         public static string Site_Language {
             get {
                 return ResourceManager.GetString("Site_Language", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Settings.
+        /// </summary>
+        public static string Site_Settings {
+            get {
+                return ResourceManager.GetString("Site_Settings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Users.
+        /// </summary>
+        public static string Site_Users {
+            get {
+                return ResourceManager.GetString("Site_Users", resourceCulture);
             }
         }
     }
