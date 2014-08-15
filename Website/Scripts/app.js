@@ -4,6 +4,11 @@
         .config(configuration);
 
     function configuration($routeProvider, $locationProvider) {
+        $routeProvider.when('/about', {
+            templateUrl: '/Application/AboutContent',
+            controller: 'AboutCtrl',
+        });
+
         $routeProvider.when('/rooms', {
             templateUrl: '/Application/ChatRoomsContent',
             controller: 'ChatRoomsCtrl',

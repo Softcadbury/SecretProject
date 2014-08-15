@@ -22,6 +22,11 @@
             return RedirectToAction("Index", "Home");
         }
 
+        public ActionResult AboutContent()
+        {
+            return PartialView("Content/_About");
+        }
+
         public ActionResult ChatRoomsContent()
         {
             return PartialView("Content/_ChatRooms");

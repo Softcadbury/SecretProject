@@ -172,6 +172,7 @@
   <ItemGroup>
     <Content Include="Content\man.jpg" />
     <Content Include="Scripts\app.js" />
+    <Content Include="Scripts\controllers\AboutCtrl.js" />
     <Content Include="Scripts\controllers\SettingsCtrl.js" />
     <Content Include="Scripts\controllers\ChatRoomsCtrl.js" />
     <Content Include="Scripts\controllers\HomeCtrl.js" />
@@ -208,6 +209,7 @@
     <Content Include="Styles\application\pub.less" />
     <Content Include="Views\Application\_Pub.cshtml" />
     <Content Include="Styles\application\application.less" />
+    <Content Include="Views\Application\Content\_About.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
