@@ -1,9 +1,8 @@
 ﻿namespace Repository.Contexts
 {
+    using Repository.Models;
     using System.Collections.Generic;
     using System.Data.Entity;
-
-    using Repository.Models;
 
     /// <summary>
     /// Initializer for the application database

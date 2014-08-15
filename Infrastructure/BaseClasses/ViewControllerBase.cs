@@ -1,9 +1,9 @@
 ﻿namespace Infrastructure.BaseClasses
 {
+    using Infrastructure.Tools;
     using System;
     using System.Threading;
     using System.Web.Mvc;
-    using Infrastructure.Tools;
 
     /// <summary>
     /// A baseline definition that every controllers will inherit from

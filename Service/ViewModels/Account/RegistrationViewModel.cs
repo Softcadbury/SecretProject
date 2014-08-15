@@ -1,10 +1,8 @@
 ﻿namespace Service.ViewModels.Account
 {
-    using System.ComponentModel.DataAnnotations;
-
     using Infrastructure.Configuration;
-
     using Resources;
+    using System.ComponentModel.DataAnnotations;
 
     /// <summary>
     /// Registration

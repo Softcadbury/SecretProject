@@ -1,10 +1,9 @@
 ﻿namespace Infrastructure.Tools
 {
+    using Infrastructure.Configuration;
     using System;
     using System.Configuration;
     using System.Linq;
-
-    using Infrastructure.Configuration;
 
     /// <summary>
     /// Class to get values of initializes in config files

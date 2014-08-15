@@ -1,9 +1,8 @@
 ﻿namespace Repository.Configurations
 {
+    using Repository.Models;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.ModelConfiguration;
-
-    using Repository.Models;
 
     /// <summary>
     /// Configuration for the model User

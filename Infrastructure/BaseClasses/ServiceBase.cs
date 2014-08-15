@@ -1,9 +1,8 @@
 ﻿namespace Infrastructure.BaseClasses
 {
-    using System.Collections.Generic;
-
     using Infrastructure.Services.Requests;
     using Infrastructure.Services.Responses;
+    using System.Collections.Generic;
 
     /// <summary>
     /// A baseline definition that every services will inherit from

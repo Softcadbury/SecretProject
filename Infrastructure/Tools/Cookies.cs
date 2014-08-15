@@ -1,9 +1,8 @@
 ﻿namespace Infrastructure.Tools
 {
+    using Infrastructure.Configuration;
     using System;
     using System.Web;
-
-    using Infrastructure.Configuration;
 
     /// <summary>
     /// Class to manage cookies

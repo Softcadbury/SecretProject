@@ -1,8 +1,7 @@
 ﻿namespace Controller.Controllers
 {
-    using System.Web.Mvc;
     using Infrastructure.BaseClasses;
-
+    using System.Web.Mvc;
     using WebMatrix.WebData;
 
     /// <summary>

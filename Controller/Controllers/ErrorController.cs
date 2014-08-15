@@ -1,7 +1,7 @@
 ﻿namespace Controller.Controllers
 {
-    using System.Web.Mvc;
     using Infrastructure.BaseClasses;
+    using System.Web.Mvc;
 
     /// <summary>
     /// Error controller

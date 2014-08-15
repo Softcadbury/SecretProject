@@ -1,8 +1,7 @@
 ﻿namespace Infrastructure.BaseClasses
 {
-    using System.Web.Http;
-
     using Infrastructure.Services.Responses;
+    using System.Web.Http;
 
     /// <summary>
     /// A baseline definition that every api controllers will inherit from

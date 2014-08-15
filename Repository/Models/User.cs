@@ -1,9 +1,8 @@
 ﻿namespace Repository.Models
 {
-    using System.ComponentModel.DataAnnotations;
-
     using Infrastructure.BaseClasses;
     using Infrastructure.Configuration;
+    using System.ComponentModel.DataAnnotations;
 
     /// <summary>
     /// User

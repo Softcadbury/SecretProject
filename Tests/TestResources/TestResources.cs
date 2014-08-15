@@ -1,11 +1,11 @@
 ﻿namespace Tests.TestResources
 {
+    using NUnit.Framework;
+    using Resources;
     using System.Collections;
     using System.Collections.Generic;
     using System.Linq;
     using System.Resources;
-    using NUnit.Framework;
-    using Resources;
 
     [TestFixture]
     public class TestResources

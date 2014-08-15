@@ -1,8 +1,7 @@
 ﻿namespace Infrastructure.Tools
 {
-    using System;
-
     using log4net;
+    using System;
 
     /// <summary>
     /// Class to manage logs

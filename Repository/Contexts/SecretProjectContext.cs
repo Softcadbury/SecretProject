@@ -1,12 +1,10 @@
 ﻿namespace Repository.Contexts
 {
-    using System.Data.Entity;
-    using System.Data.Entity.ModelConfiguration.Conventions;
-
     using Infrastructure.Tools;
-
     using Repository.Configurations;
     using Repository.Models;
+    using System.Data.Entity;
+    using System.Data.Entity.ModelConfiguration.Conventions;
 
     /// <summary>
     /// Database context for the application
