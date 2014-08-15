@@ -1,13 +1,13 @@
 ﻿namespace Service.Services
 {
-    using System.Collections.Generic;
-
     using Infrastructure.BaseClasses;
     using Infrastructure.Services.Requests;
     using Infrastructure.Services.Responses;
-
     using Repository.Models;
     using Repository.Repositories;
+    using System.Collections.Generic;
+    using System.Web;
+    using WebMatrix.WebData;
 
     /// <summary>
     /// User service
@@ -25,43 +25,23 @@
         }
 
         /// <summary>
-        /// Get a model
+        /// Get the current user
         /// </summary>
-        public new Response<User> Get(GetRequest request)
+        public Response<User> GetCurrent()
         {
+            string currentUserName = HttpContext.Current.User.Identity.Name;
+            int currentUserId = WebSecurity.GetUserId(currentUserName);
+            var request = new GetRequest(currentUserId);
+
             return base.Get(request);
         }
 
         /// <summary>
-        /// Get a list of models
+        /// Get a list of users
         /// </summary>
         public new Response<List<User>> GetPage(GetPageRequest request)
         {
             return base.GetPage(request);
-        }
-
-        /// <summary>
-        /// Add a model
-        /// </summary>
-        public new Response<User> Add(AddRequest<User> request)
-        {
-            return base.Add(request);
-        }
-
-        /// <summary>
-        /// Update a model
-        /// </summary>
-        public new Response<User> Update(UpdateRequest<User> request)
-        {
-            return base.Update(request);
-        }
-
-        /// <summary>
-        /// Remove a model
-        /// </summary>
-        public new Response<Empty> Remove(RemoveRequest request)
-        {
-            return base.Remove(request);
         }
     }
 }

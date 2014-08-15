@@ -6,7 +6,7 @@
     function MenuCtrl($scope, $location, UserFactory) {
         $scope.userName = '';
 
-        UserFactory.get(1).success(function (user) {
+        UserFactory.getCurrent().success(function (user) {
             $scope.userName = user.UserName;
         });
 

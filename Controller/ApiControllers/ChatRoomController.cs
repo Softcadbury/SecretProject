@@ -11,6 +11,7 @@
     /// <summary>
     /// ChatRoom controller
     /// </summary>
+    [Authorize]
     [RoutePrefix("api/chatrooms")]
     public class ChatRoomController : ApiControllerBase
     {
