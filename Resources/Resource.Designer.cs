@@ -61,6 +61,24 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Already have an account?.
+        /// </summary>
+        public static string Account_AlreadyAnAccount {
+            get {
+                return ResourceManager.GetString("Account_AlreadyAnAccount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Retour.
+        /// </summary>
+        public static string Account_Back {
+            get {
+                return ResourceManager.GetString("Account_Back", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Wrong user name or password..
         /// </summary>
         public static string Account_CannotLogin {
@@ -142,6 +160,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Don&apos;t have an account yet?.
+        /// </summary>
+        public static string Account_NoAccountYet {
+            get {
+                return ResourceManager.GetString("Account_NoAccountYet", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Password.
         /// </summary>
         public static string Account_Password {
@@ -201,6 +228,24 @@ namespace Resources {
         public static string Application_ChatRooms {
             get {
                 return ResourceManager.GetString("Application_ChatRooms", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Chat with everyone.
+        /// </summary>
+        public static string Home_SubTitle {
+            get {
+                return ResourceManager.GetString("Home_SubTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Marketing stuff!.
+        /// </summary>
+        public static string Home_Title {
+            get {
+                return ResourceManager.GetString("Home_Title", resourceCulture);
             }
         }
         

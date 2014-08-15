@@ -139,7 +139,7 @@
     <value>Connexion</value>
   </data>
   <data name="Account_LoginNow" xml:space="preserve">
-    <value>Connectez-vous maintenant</value>
+    <value>Connectez-vous</value>
   </data>
   <data name="Account_LogOut" xml:space="preserve">
     <value>Déconnexion</value>
@@ -157,7 +157,7 @@
     <value>Inscription</value>
   </data>
   <data name="Account_RegisterNow" xml:space="preserve">
-    <value>Inscrivez-vous maintenant</value>
+    <value>Inscrivez-vous</value>
   </data>
   <data name="Account_UserName" xml:space="preserve">
     <value>Nom d'utilisateur</value>
@@ -179,5 +179,20 @@
   </data>
   <data name="Site_Informations" xml:space="preserve">
     <value>Informations</value>
+  </data>
+  <data name="Home_SubTitle" xml:space="preserve">
+    <value>Chat with everyone</value>
+  </data>
+  <data name="Home_Title" xml:space="preserve">
+    <value>Marketing stuff!</value>
+  </data>
+  <data name="Account_AlreadyAnAccount" xml:space="preserve">
+    <value>Déja un compte ?</value>
+  </data>
+  <data name="Account_Back" xml:space="preserve">
+    <value>Back</value>
+  </data>
+  <data name="Account_NoAccountYet" xml:space="preserve">
+    <value>Pas encore de compte ?</value>
   </data>
 </root>
