@@ -8,7 +8,7 @@
     width: 350px;
 
     .account-title {
-        background-color: @turquoise;
+        background-color: @turquoise1;
         border-top-left-radius: 5px;
         border-top-right-radius: 5px;
         color: white;
@@ -31,9 +31,25 @@
         }
 
         .account-button {
-            background-color: @turquoise;
+            background-color: @turquoise1;
+            border-color: @turquoise2;
             color: white;
             margin-bottom: 20px;
+        }
+
+        .account-button:hover {
+            background-color: @turquoise2;
+        }
+    }
+
+    .account-footer {
+        border-top: 1px solid @grey1;
+        margin: 1px 15px;
+        padding: 15px 0;
+        text-align: center;
+
+        p {
+            margin: 0;
         }
     }
 }
