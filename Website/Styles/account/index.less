@@ -1,0 +1,55 @@
+@import "../constant.less";
+
+#registration, #login {
+    background-color: white;
+    border-radius: 5px;
+    margin: auto;
+    margin-top: 50px;
+    width: 350px;
+
+    .account-title {
+        background-color: @turquoise1;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        color: white;
+        margin-bottom: 20px;
+        padding: 25px 20px;
+        text-align: center;
+    }
+
+    .account-content {
+        padding: 1px 15px;
+
+        .validation-summary-errors {
+            color: red;
+            margin-bottom: 20px;
+            margin-left: -24px;
+        }
+
+        input {
+            margin-bottom: 20px;
+        }
+
+        .account-button {
+            background-color: @turquoise1;
+            border-color: @turquoise2;
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .account-button:hover {
+            background-color: @turquoise2;
+        }
+    }
+
+    .account-footer {
+        border-top: 1px solid @grey1;
+        margin: 1px 15px;
+        padding: 15px 0;
+        text-align: center;
+
+        p {
+            margin: 0;
+        }
+    }
+}

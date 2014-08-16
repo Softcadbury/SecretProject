@@ -198,8 +198,8 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Error\Index.cshtml" />
-    <Content Include="Styles\home\home.less" />
-    <Content Include="Styles\account\account.less" />
+    <Content Include="Styles\home\index.less" />
+    <Content Include="Styles\account\index.less" />
     <Content Include="Views\Shared\_LanguageSelection.cshtml" />
     <Content Include="Views\Application\Content\_ChatRooms.cshtml" />
     <Content Include="Views\Application\Content\_Users.cshtml" />
@@ -208,7 +208,7 @@
     </None>
     <Content Include="Styles\application\pub.less" />
     <Content Include="Views\Application\_Pub.cshtml" />
-    <Content Include="Styles\application\application.less" />
+    <Content Include="Styles\application\index.less" />
     <Content Include="Views\Application\Content\_About.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
