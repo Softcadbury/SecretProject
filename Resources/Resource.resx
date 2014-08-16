@@ -177,9 +177,6 @@
   <data name="Site_Language" xml:space="preserve">
     <value>Language</value>
   </data>
-  <data name="Site_Informations" xml:space="preserve">
-    <value>Informations</value>
-  </data>
   <data name="Home_SubTitle" xml:space="preserve">
     <value>Chat with everyone</value>
   </data>

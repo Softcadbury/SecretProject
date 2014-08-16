@@ -268,15 +268,6 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Informations.
-        /// </summary>
-        public static string Site_Informations {
-            get {
-                return ResourceManager.GetString("Site_Informations", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Language.
         /// </summary>
         public static string Site_Language {

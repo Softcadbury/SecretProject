@@ -1,7 +1,19 @@
 ﻿<h1 class="page-title">@Resource.Application_ChatRooms</h1>
 
-<ul ng-repeat="chatRoom in chatRooms">
-    <li>
-        <span>{{ chatRoom.Title }}</span>
-    </li>
-</ul>
+<div class="row">
+    <div class="col-sm-4">
+        <ul ng-repeat="chatRoom in chatRooms">
+            <li>
+                <span>{{ chatRoom.Title }}</span>
+            </li>
+        </ul>
+    </div>
+    <div class="col-sm-8">
+        <div class="input-group">
+            <input type="text" class="form-control">
+            <span class="input-group-btn">
+                <button class="btn btn-default" type="button">Send</button>
+            </span>
+        </div>
+    </div>
+</div>

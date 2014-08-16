@@ -1,14 +1,22 @@
 ﻿<h1 class="page-title">@Resource.Site_Settings</h1>
 
-<h3>@Resource.Site_Language</h3>
-@Html.Partial("_LanguageSelection")
-
-<h3>@Resource.Site_Informations</h3>
-<div class="form-group">
-    <label for="inputUserName">@Resource.Account_UserName</label>
-    <input type="email" class="form-control" id="inputUserName">
-</div>
-<div class="form-group">
-    <label for="inputEmail">@Resource.Account_Email</label>
-    <input type="email" class="form-control" id="inputEmail">
-</div>
+<form class="form-horizontal" role="form">
+    <div class="form-group">
+        <label class="col-sm-3 control-label">@Resource.Site_Language</label>
+        <div class="col-sm-9">
+            @Html.Partial("_LanguageSelection")
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="inputUserName" class="col-sm-3 control-label">@Resource.Account_UserName</label>
+        <div class="col-sm-9">
+            <input class="form-control" id="inputUserName">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="inputEmail" class="col-sm-3 control-label">@Resource.Account_Email</label>
+        <div class="col-sm-9">
+            <input type="email" class="form-control" id="inputEmail">
+        </div>
+    </div>
+</form>
