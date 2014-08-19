@@ -9,17 +9,21 @@
 
         $scope.chatRooms = [];
         $scope.messages = [];
+        $scope.newMessage = '';
 
         ChatRoomFactory.getPage(1).success(function (chatRooms) {
             $scope.chatRooms = chatRooms;
         });
 
         $scope.send = function () {
-            chatHub.server.send('romain', 'lola');
+            chatHub.server.send('romain', $scope.newMessage);
+            $scope.newMessage = '';
         };
 
-        chatHub.client.broadcastMessage = function (name, message) {
-            $scope.messages.push({ name: name, message: message });
+        chatHub.client.broadcastMessage = function (user, message) {
+            $scope.$apply(function() {
+                $scope.messages.push({ user: user, message: message });
+            });
         };
     }
 })();

@@ -9,9 +9,9 @@
     [HubName("chatHub")]
     public class ChatHub : Hub
     {
-        public void Send(string name, string message)
+        public void Send(string user, string message)
         {
-            Clients.All.broadcastMessage(name, message);
+            Clients.All.broadcastMessage(user, message);
         }
     }
 }
