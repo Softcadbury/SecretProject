@@ -1,13 +1,13 @@
 ﻿(function () {
     angular
         .module('app')
-        .controller('MenuCtrl', ['$scope', '$location', 'UserFactory', MenuCtrl]);
+        .controller('MenuCtrl', ['$rootScope', '$scope', '$location', MenuCtrl]);
 
-    function MenuCtrl($scope, $location, UserFactory) {
-        $scope.userName = '';
+    function MenuCtrl($rootScope, $scope, $location) {
+        $scope.userName = $rootScope.currentUser ? $rootScope.currentUser.UserName : '';
 
-        UserFactory.getCurrent().success(function (user) {
-            $scope.userName = user.UserName;
+        $rootScope.$on('currentUser.updated', function () {
+            $scope.userName = $rootScope.currentUser.UserName;
         });
 
         $scope.getClass = function (path) {

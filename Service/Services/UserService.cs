@@ -33,7 +33,7 @@
             int currentUserId = WebSecurity.GetUserId(currentUserName);
             var request = new GetRequest(currentUserId);
 
-            return base.Get(request);
+            return Get(request);
         }
 
         /// <summary>

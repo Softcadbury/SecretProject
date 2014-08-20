@@ -1,27 +1,32 @@
 ﻿(function () {
     angular
         .module('app')
-        .controller('ChatRoomsCtrl', ['$scope', 'ChatRoomFactory', ChatRoomsCtrl]);
+        .controller('ChatRoomsCtrl', ['$rootScope', '$scope', 'ChatRoomFactory', ChatRoomsCtrl]);
 
-    function ChatRoomsCtrl($scope, ChatRoomFactory) {
+    function ChatRoomsCtrl($rootScope, $scope, ChatRoomFactory) {
         var chatHub = $.connection.chatHub;
         $.connection.hub.start();
 
         $scope.chatRooms = [];
         $scope.messages = [];
         $scope.newMessage = '';
+        $scope.userName = $rootScope.currentUser ? $rootScope.currentUser.UserName : '';
+
+        $scope.$on('currentUser.updated', function () {
+            $scope.userName = $rootScope.currentUser.UserName;
+        });
 
         ChatRoomFactory.getPage(1).success(function (chatRooms) {
             $scope.chatRooms = chatRooms;
         });
 
         $scope.send = function () {
-            chatHub.server.send('romain', $scope.newMessage);
+            chatHub.server.send($scope.userName, $scope.newMessage);
             $scope.newMessage = '';
         };
 
         chatHub.client.broadcastMessage = function (user, message) {
-            $scope.$apply(function() {
+            $scope.$apply(function () {
                 $scope.messages.push({ user: user, message: message });
             });
         };

@@ -1,7 +1,8 @@
 ﻿(function () {
     angular
         .module('app', ['ngRoute'])
-        .config(configuration);
+        .config(configuration)
+        .run(run);
 
     function configuration($routeProvider, $locationProvider) {
         $routeProvider.when('/about', {
@@ -34,5 +35,12 @@
         });
 
         $locationProvider.html5Mode(false).hashPrefix('!');
+    }
+
+    function run($rootScope, UserFactory) {
+        UserFactory.getCurrent().success(function (user) {
+            $rootScope.currentUser = user;
+            $rootScope.$broadcast('currentUser.updated');
+        });
     }
 })();
