@@ -21,6 +21,10 @@
         });
 
         $scope.send = function () {
+            if ($scope.newMessage.trim() == '') {
+                return;
+            }
+
             chatHub.server.send($scope.userName, $scope.newMessage);
             $scope.newMessage = '';
         };
