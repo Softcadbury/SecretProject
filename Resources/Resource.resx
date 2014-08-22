@@ -195,4 +195,7 @@
   <data name="Site_About" xml:space="preserve">
     <value>About</value>
   </data>
+  <data name="Site_SaveChanges" xml:space="preserve">
+    <value>Save changes</value>
+  </data>
 </root>
