@@ -15,12 +15,14 @@
                     <p>{{ message.user }} : {{ message.message }}</p>
                 </div>
             </div>
-            <div class="input-group">
-                <input type="text" class="form-control" ng-model="newMessage">
-                <span class="input-group-btn">
-                    <button class="btn btn-default" type="button" ng-click="send()">Send</button>
-                </span>
-            </div>
+            <form role="form">
+                <div class="input-group">
+                    <input type="text" class="form-control" ng-model="newMessage">
+                    <span class="input-group-btn">
+                        <button class="btn btn-default" type="submit" ng-click="send()">Send</button>
+                    </span>
+                </div>
+            </form>
         </div>
     </div>
 </div>
