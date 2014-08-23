@@ -8,6 +8,7 @@
     /// </summary>
     public class ErrorController : ViewControllerBase
     {
+        // GET: /Error
         public ActionResult Index()
         {
             return View();

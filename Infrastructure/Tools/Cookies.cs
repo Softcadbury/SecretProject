@@ -42,6 +42,8 @@
             return cookie != null ? cookie.Value : string.Empty;
         }
 
+        #region Public methods
+
         public static void SetCulture(HttpContextBase httpContext, string value)
         {
             SetCookie(httpContext, CookieKeys.Culture, value);
@@ -51,5 +53,7 @@
         {
             return GetCookie(httpContext, CookieKeys.Culture);
         }
+
+        #endregion
     }
 }

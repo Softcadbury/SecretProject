@@ -17,6 +17,7 @@
     [InitializeSimpleMembership]
     public class AccountController : ViewControllerBase
     {
+        // GET: /Account/SetCulture
         [AllowAnonymous]
         public ActionResult SetCulture(string returnUrl, string culture)
         {
@@ -25,18 +26,21 @@
             return Redirect(returnUrl);
         }
 
+        // GET: /Account/Registration
         [AllowAnonymous]
         public ActionResult Registration()
         {
             return View();
         }
 
+        // GET: /Account/Login
         [AllowAnonymous]
         public ActionResult Login()
         {
             return View();
         }
 
+        // GET: /Account/LogOff
         public ActionResult LogOff()
         {
             WebSecurity.Logout();
@@ -44,6 +48,7 @@
             return RedirectToAction("Index", "Home");
         }
 
+        // GET: /Account/ValidateRegistration
         [AllowAnonymous]
         public ActionResult ValidateRegistration(RegistrationViewModel registrationViewModel)
         {
@@ -65,6 +70,7 @@
             return RedirectToAction("Index", "Application");
         }
 
+        // GET: /Account/ValidateLogin
         [AllowAnonymous]
         public ActionResult ValidateLogin(LoginViewModel loginViewModel)
         {

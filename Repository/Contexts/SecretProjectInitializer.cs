@@ -24,7 +24,6 @@
             };
 
             chatRooms.ForEach(s => context.ChatRooms.Add(s));
-
             context.SaveChanges();
         }
     }

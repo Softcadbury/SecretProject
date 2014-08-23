@@ -6,7 +6,7 @@
     using System.Linq;
 
     /// <summary>
-    /// Class to get values of initializes in config files
+    /// Class to get values in config files
     /// </summary>
     public static class Settings
     {
@@ -40,10 +40,15 @@
             throw new Exception(string.Format(@"Can't find the key ""{0}""", key));
         }
 
-        public static string CurrentEnvironment
+        /// <summary>
+        /// Get the current environment
+        /// </summary>
+        private static string CurrentEnvironment
         {
             get { return ConfigurationManager.AppSettings[SettingKeys.CurrentEnvironment]; }
         }
+
+        #region Public methods
 
         public static string ConnectionString
         {
@@ -74,5 +79,7 @@
         {
             get { return GetSetting(SettingKeys.MailingContactTo); }
         }
+
+        #endregion
     }
 }

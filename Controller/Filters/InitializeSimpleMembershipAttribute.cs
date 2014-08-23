@@ -16,11 +16,17 @@
         private static object _initializerLock = new object();
         private static bool _isInitialized;
 
+        /// <summary>
+        /// Override OnActionExecuting method to manage simple membership
+        /// </summary>
         public override void OnActionExecuting(ActionExecutingContext filterContext)
         {
             LazyInitializer.EnsureInitialized(ref _initializer, ref _isInitialized, ref _initializerLock);
         }
 
+        /// <summary>
+        /// Inner class used as a initilizer
+        /// </summary>
         private class SimpleMembershipInitializer
         {
             public SimpleMembershipInitializer()

@@ -12,7 +12,7 @@
         private static readonly List<string> ImplementedCultures = new List<string> { "en", "fr" };
 
         /// <summary>
-        /// Returns a valid culture name based on "name" parameter. If "name" is not valid, it returns the default culture "en-US"
+        /// Returns a valid culture name based on name parameter. If name is not valid, it returns the default culture "en"
         /// </summary>
         public static string GetImplementedCulture(string name)
         {

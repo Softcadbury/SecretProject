@@ -8,6 +8,7 @@
     /// </summary>
     public class HomeController : ViewControllerBase
     {
+        // GET: /Home
         public ActionResult Index()
         {
             return View();
