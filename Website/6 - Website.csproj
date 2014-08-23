@@ -212,6 +212,7 @@
     <Content Include="Styles\application\index.less" />
     <Content Include="Views\Application\Content\_About.cshtml" />
     <Content Include="Styles\application\content\chatRooms.less" />
+    <Content Include="Styles\application\content\settings.less" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
