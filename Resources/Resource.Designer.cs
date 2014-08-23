@@ -61,6 +61,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Actual password.
+        /// </summary>
+        public static string Account_ActualPassword {
+            get {
+                return ResourceManager.GetString("Account_ActualPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Already have an account?.
         /// </summary>
         public static string Account_AlreadyAnAccount {
@@ -156,6 +165,15 @@ namespace Resources {
         public static string Account_LogOut {
             get {
                 return ResourceManager.GetString("Account_LogOut", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to New password.
+        /// </summary>
+        public static string Account_NewPassword {
+            get {
+                return ResourceManager.GetString("Account_NewPassword", resourceCulture);
             }
         }
         
@@ -291,6 +309,15 @@ namespace Resources {
         public static string Site_Settings {
             get {
                 return ResourceManager.GetString("Site_Settings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Upload an avatar.
+        /// </summary>
+        public static string Site_UploadAnAvatar {
+            get {
+                return ResourceManager.GetString("Site_UploadAnAvatar", resourceCulture);
             }
         }
         

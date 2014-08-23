@@ -198,4 +198,13 @@
   <data name="Site_SaveChanges" xml:space="preserve">
     <value>Enregistrer les modifications</value>
   </data>
+  <data name="Account_ActualPassword" xml:space="preserve">
+    <value>Mot de passe actuel</value>
+  </data>
+  <data name="Account_NewPassword" xml:space="preserve">
+    <value>Nouveau mot de passe</value>
+  </data>
+  <data name="Site_UploadAnAvatar" xml:space="preserve">
+    <value>Télécharger un avatar</value>
+  </data>
 </root>
