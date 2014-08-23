@@ -3,7 +3,7 @@
     <div class="row">
         <div class="col-sm-4">
             <div class="list-group">
-                <div href="#" class="list-group-item" ng-repeat="chatRoom in chatRooms" ng-class="getClass(chatRoom)" ng-click="changeRoom(chatRoom)">
+                <div class="list-group-item" ng-repeat="chatRoom in chatRooms" ng-class="{ active: isActive(chatRoom)}" ng-click="changeRoom(chatRoom)">
                     {{ chatRoom.Title }}
                     <span class="badge">14</span>
                 </div>

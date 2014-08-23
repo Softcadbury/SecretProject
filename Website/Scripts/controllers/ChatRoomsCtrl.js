@@ -17,8 +17,8 @@
             $scope.selectedRoomId = $scope.chatRooms[0].Id;
         });
 
-        $scope.getClass = function (chatRoom) {
-            return chatRoom.Id === $scope.selectedRoomId ? 'active' : '';
+        $scope.isActive = function (chatRoom) {
+            return chatRoom.Id === $scope.selectedRoomId;
         }
 
         $scope.changeRoom = function (chatRoom) {

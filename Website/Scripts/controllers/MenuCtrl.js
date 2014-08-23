@@ -10,8 +10,8 @@
             $scope.userName = $rootScope.currentUser.UserName;
         });
 
-        $scope.getClass = function (path) {
-            return $location.path() == path ? 'active' : '';
-        }
+        $scope.isActive = function (path) {
+            return path === $location.path();
+        };
     }
 })();
