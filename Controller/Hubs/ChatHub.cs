@@ -9,9 +9,12 @@
     [HubName("chatHub")]
     public class ChatHub : Hub
     {
-        public void Send(string user, string message)
+        /// <summary>
+        /// Send a message to users in the specified chat room
+        /// </summary>
+        public void SendToChatRoom(int chatRoomId, string user, string message)
         {
-            Clients.All.broadcastMessage(user, message);
+            Clients.All.broadcastToChatRoom(user, message);
         }
     }
 }

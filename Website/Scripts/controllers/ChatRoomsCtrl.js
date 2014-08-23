@@ -23,26 +23,26 @@
 
         $scope.changeRoom = function (chatRoom) {
             $scope.selectedRoomId = chatRoom.Id;
+            $scope.messages = [];
+            $scope.newMessage = '';
         }
 
         $scope.$on('currentUser.updated', function () {
             $scope.userName = $rootScope.currentUser.UserName;
         });
 
-        chatHub.client.broadcastMessage = function (user, message) {
+        chatHub.client.broadcastToChatRoom = function (user, message) {
             $scope.$apply(function () {
                 $scope.messages.push({ user: user, message: message });
             });
         };
 
         $.connection.hub.start().done(function () {
-            $scope.send = function () {
-                if ($scope.newMessage.trim() === '') {
-                    return;
+            $scope.sendToChatRoom = function () {
+                if ($scope.newMessage.trim() !== '') {
+                    chatHub.server.sendToChatRoom($scope.selectedRoomId, $scope.userName, $scope.newMessage);
+                    $scope.newMessage = '';
                 }
-
-                chatHub.server.send($scope.userName, $scope.newMessage);
-                $scope.newMessage = '';
             };
         });
     }
