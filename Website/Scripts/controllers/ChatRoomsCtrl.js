@@ -5,7 +5,6 @@
 
     function ChatRoomsCtrl($rootScope, $scope, ChatRoomFactory) {
         var chatHub = $.connection.chatHub;
-        $.connection.hub.start();
 
         $scope.chatRooms = [];
         $scope.messages = [];
@@ -20,19 +19,21 @@
             $scope.chatRooms = chatRooms;
         });
 
-        $scope.send = function () {
-            if ($scope.newMessage.trim() == '') {
-                return;
-            }
-
-            chatHub.server.send($scope.userName, $scope.newMessage);
-            $scope.newMessage = '';
-        };
-
         chatHub.client.broadcastMessage = function (user, message) {
             $scope.$apply(function () {
                 $scope.messages.push({ user: user, message: message });
             });
         };
+
+        $.connection.hub.start().done(function () {
+            $scope.send = function () {
+                if ($scope.newMessage.trim() == '') {
+                    return;
+                }
+
+                chatHub.server.send($scope.userName, $scope.newMessage);
+                $scope.newMessage = '';
+            };
+        });
     }
 })();
