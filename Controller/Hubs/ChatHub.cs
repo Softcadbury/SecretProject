@@ -12,9 +12,9 @@
         /// <summary>
         /// Send a message to users in the specified chat room
         /// </summary>
-        public void SendToChatRoom(int chatRoomId, string user, string message)
+        public void sendMessageToChatRoom(int chatRoomId, string user, string message)
         {
-            Clients.All.broadcastToChatRoom(user, message);
+            Clients.All.broadcastMessageToChatRoom(user, message);
         }
     }
 }

@@ -35,21 +35,24 @@
             $scope.userName = $rootScope.currentUser.UserName;
         });
 
-        // Function called by SignalR when a mesage is received
-        chatHub.client.broadcastToChatRoom = function (user, message) {
+        // Function to send a message to a chat room
+        function sendMessageToChatRoom() {
+            if ($scope.newMessage.trim() !== '') {
+                chatHub.server.sendMessageToChatRoom($scope.selectedRoomId, $scope.userName, $scope.newMessage);
+                $scope.newMessage = '';
+            }
+        };
+
+        // Function called by SignalR when a mesage is received in a chat room
+        chatHub.client.broadcastMessageToChatRoom = function (user, message) {
             $scope.$apply(function () {
                 $scope.messages.push({ user: user, message: message });
             });
         };
 
+        // Register SingalR functions
         $.connection.hub.start().done(function () {
-            // Function to send a message to a chat room
-            $scope.sendToChatRoom = function () {
-                if ($scope.newMessage.trim() !== '') {
-                    chatHub.server.sendToChatRoom($scope.selectedRoomId, $scope.userName, $scope.newMessage);
-                    $scope.newMessage = '';
-                }
-            };
+            $scope.sendMessageToChatRoom = sendMessageToChatRoom;
         });
     }
 })();
