@@ -18,8 +18,19 @@
         };
 
         // Function to update a user
-        factory.update = function (user) {
-            return $http.put(urlBase + '/' + user.Id, user);
+        factory.update = function (currentUser) {
+            return $http.put(urlBase + '/' + currentUser.Id, currentUser);
+        };
+
+        // Function to update the user's password
+        factory.updatePassword = function (currentUser, actualPassword, newPassword, passwordConfirmation) {
+            var changePassword = {
+                ActualPassword: actualPassword,
+                NewPassword: newPassword,
+                ConfirmPassword: passwordConfirmation
+            };
+
+            return $http.put(urlBase + '/' + currentUser.Id + '/changePassword', changePassword);
         };
 
         return factory;

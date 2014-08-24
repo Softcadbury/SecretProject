@@ -5,6 +5,7 @@
     using Infrastructure.Services.Responses;
     using Repository.Models;
     using Service.Services;
+    using Service.ViewModels.Account;
     using System.Collections.Generic;
     using System.Web.Http;
 
@@ -65,6 +66,19 @@
             Response<User> response = userService.Update(request);
 
             return RenderResponse(response);
+        }
+
+        // PUT: /api/users/1/changePassword
+        [HttpPut]
+        [Route("{id:int}/changePassword")]
+        public IHttpActionResult ChangePassword([FromBody] ChangePasswordViewModel changePassword)
+        {
+            if (!ModelState.IsValid || changePassword == null)
+            {
+                return BadRequest("");
+            }
+
+            return null;
         }
     }
 }
