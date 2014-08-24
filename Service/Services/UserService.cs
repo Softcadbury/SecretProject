@@ -51,7 +51,7 @@
         public new Response<User> Update(UpdateRequest<User> request)
         {
             var isCurrentRequest = new IsCurrentRequest(request.Id);
-            if (IsCurrent(isCurrentRequest).Content)
+            if (!IsCurrent(isCurrentRequest).Content)
             {
                 return Response<User>.CreateError(ErrorCodes.Unauthorized);
             }
@@ -66,7 +66,7 @@
         public Response<Empty> UpdatePassword(UpdatePasswordRequest request)
         {
             var isCurrentRequest = new IsCurrentRequest(request.UserId);
-            if (IsCurrent(isCurrentRequest).Content)
+            if (!IsCurrent(isCurrentRequest).Content)
             {
                 return Response<Empty>.CreateError(ErrorCodes.Unauthorized);
             }
