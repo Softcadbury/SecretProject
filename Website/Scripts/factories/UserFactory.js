@@ -7,10 +7,12 @@
         var urlBase = '/api/users';
         var factory = {};
 
+        // Function to get the current user
         factory.getCurrent = function () {
             return $http.get(urlBase + '/current');
         };
 
+        // Function to get a page of users
         factory.getPage = function (pageIndex) {
             return $http.get(urlBase + '/?pageIndex=' + pageIndex);
         };
