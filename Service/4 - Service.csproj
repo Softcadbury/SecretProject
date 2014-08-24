@@ -55,6 +55,7 @@
     <Compile Include="Services\AccountService.cs" />
     <Compile Include="Services\ChatRoomService.cs" />
     <Compile Include="Services\UserService.cs" />
+    <Compile Include="ViewModels\Account\ChangePasswordViewModel.cs" />
     <Compile Include="ViewModels\Account\LoginViewModel.cs" />
     <Compile Include="ViewModels\Account\RegistrationViewModel.cs" />
     <Compile Include="ViewModels\UserViewModel.cs" />
