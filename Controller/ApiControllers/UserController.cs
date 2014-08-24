@@ -50,5 +50,21 @@
 
             return RenderResponse(response);
         }
+
+        // PUT: /api/users/1
+        [HttpPut]
+        [Route("{id:int}")]
+        public IHttpActionResult Update(int id, [FromBody] User user)
+        {
+            if (!ModelState.IsValid || user == null)
+            {
+                return BadRequest("");
+            }
+
+            var request = new UpdateRequest<User>(id, user);
+            Response<User> response = userService.Update(request);
+
+            return RenderResponse(response);
+        }
     }
 }

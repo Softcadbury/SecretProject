@@ -43,5 +43,13 @@
         {
             return base.GetPage(request);
         }
+
+        /// <summary>
+        /// Update a user
+        /// </summary>
+        public new Response<User> Update(UpdateRequest<User> request)
+        {
+            return base.Update(request);
+        }
     }
 }

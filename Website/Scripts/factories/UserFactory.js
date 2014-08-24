@@ -17,6 +17,11 @@
             return $http.get(urlBase + '/?pageIndex=' + pageIndex);
         };
 
+        // Function to update a user
+        factory.update = function (user) {
+            return $http.put(urlBase + '/' + user.Id, user);
+        };
+
         return factory;
     }
 })();

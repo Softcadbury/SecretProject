@@ -1,9 +1,9 @@
 ﻿(function () {
     angular
         .module('app')
-        .controller('SettingsCtrl', ['$rootScope', '$scope', SettingsCtrl]);
+        .controller('SettingsCtrl', ['$rootScope', '$scope', 'UserFactory', SettingsCtrl]);
 
-    function SettingsCtrl($rootScope, $scope) {
+    function SettingsCtrl($rootScope, $scope, UserFactory) {
         $scope.userName = $rootScope.currentUser ? $rootScope.currentUser.UserName : '';
         $scope.userEmail = $rootScope.currentUser ? $rootScope.currentUser.Email : '';
 
@@ -15,13 +15,18 @@
 
         // Function to save the change of user's information
         $scope.saveChanges = function () {
-            // todo : save information
+            $rootScope.currentUser.UserName = $scope.userName;
+            $rootScope.currentUser.Email = $scope.userEmail;
             $rootScope.$broadcast('currentUser.updated');
+
+            // todo: check errors
+            UserFactory.update($rootScope.currentUser);
         };
 
         // Function to save the change of user's password
         $scope.savePassword = function () {
-            // todo : save password
+            // todo: save password and check errors
+
             $scope.actualPassword = '';
             $scope.newPassword = '';
             $scope.passwordConfirmation = '';
