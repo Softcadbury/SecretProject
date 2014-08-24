@@ -24,13 +24,13 @@
 
         // Function to update the user's password
         factory.updatePassword = function (currentUser, actualPassword, newPassword, passwordConfirmation) {
-            var changePassword = {
+            var updatePassword = {
                 ActualPassword: actualPassword,
                 NewPassword: newPassword,
                 ConfirmPassword: passwordConfirmation
             };
 
-            return $http.put(urlBase + '/' + currentUser.Id + '/changePassword', changePassword);
+            return $http.put(urlBase + '/' + currentUser.Id + '/updatePassword', updatePassword);
         };
 
         return factory;

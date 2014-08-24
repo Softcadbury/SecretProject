@@ -56,7 +56,23 @@
                 return Response<User>.CreateError(ErrorCodes.Unauthorized);
             }
 
+            // todo: fix update exception
             return base.Update(request);
+        }
+
+        /// <summary>
+        /// Update the user's passeword
+        /// </summary>
+        public Response<Empty> UpdatePassword(UpdatePasswordRequest request)
+        {
+            var isCurrentRequest = new IsCurrentRequest(request.UserId);
+            if (IsCurrent(isCurrentRequest).Content)
+            {
+                return Response<Empty>.CreateError(ErrorCodes.Unauthorized);
+            }
+
+            // todo: update password
+            return Response<Empty>.CreateSuccess();
         }
 
         /// <summary>

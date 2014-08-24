@@ -25,7 +25,7 @@
 
         // Function to save the change of user's password
         $scope.savePassword = function () {
-            // todo: save password and check errors
+            // todo: check errors
             UserFactory.updatePassword($rootScope.currentUser, $scope.actualPassword, $scope.newPassword, $scope.passwordConfirmation);
 
             $scope.actualPassword = '';
