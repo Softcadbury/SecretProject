@@ -61,15 +61,6 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Actual password.
-        /// </summary>
-        public static string Account_ActualPassword {
-            get {
-                return ResourceManager.GetString("Account_ActualPassword", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Already have an account?.
         /// </summary>
         public static string Account_AlreadyAnAccount {
@@ -169,15 +160,6 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to New password.
-        /// </summary>
-        public static string Account_NewPassword {
-            get {
-                return ResourceManager.GetString("Account_NewPassword", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Don&apos;t have an account yet?.
         /// </summary>
         public static string Account_NoAccountYet {
@@ -196,6 +178,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Actual password.
+        /// </summary>
+        public static string Account_PasswordActual {
+            get {
+                return ResourceManager.GetString("Account_PasswordActual", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Re-enter password.
         /// </summary>
         public static string Account_PasswordConfirmation {
@@ -210,6 +201,15 @@ namespace Resources {
         public static string Account_PasswordMatchingError {
             get {
                 return ResourceManager.GetString("Account_PasswordMatchingError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to New password.
+        /// </summary>
+        public static string Account_PasswordNew {
+            get {
+                return ResourceManager.GetString("Account_PasswordNew", resourceCulture);
             }
         }
         

@@ -12,13 +12,13 @@
         [Required(ErrorMessageResourceName = "Account_FieldRequiredError", ErrorMessageResourceType = typeof(Resource))]
         [StringLength(LenghtLimits.PasswordMaxLenght, MinimumLength = LenghtLimits.PasswordMinLenght, ErrorMessageResourceName = "Account_FieldMinimumLengthError", ErrorMessageResourceType = typeof(Resource))]
         [DataType(DataType.Password)]
-        [Display(Name = "Account_NewPassword", ResourceType = typeof(Resource))]
+        [Display(Name = "Account_PasswordNew", ResourceType = typeof(Resource))]
         public string NewPassword { get; set; }
 
         [Required(ErrorMessageResourceName = "Account_FieldRequiredError", ErrorMessageResourceType = typeof(Resource))]
         [StringLength(LenghtLimits.PasswordMaxLenght, MinimumLength = LenghtLimits.PasswordMinLenght, ErrorMessageResourceName = "Account_FieldMinimumLengthError", ErrorMessageResourceType = typeof(Resource))]
         [DataType(DataType.Password)]
-        [Display(Name = "Account_ActualPassword", ResourceType = typeof(Resource))]
+        [Display(Name = "Account_PasswordActual", ResourceType = typeof(Resource))]
         public string ActualPassword { get; set; }
 
         [Compare("ActualPassword", ErrorMessageResourceName = "Account_PasswordMatchingError", ErrorMessageResourceType = typeof(Resource))]
