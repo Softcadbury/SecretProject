@@ -277,6 +277,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Avatar.
+        /// </summary>
+        public static string Site_Avatar {
+            get {
+                return ResourceManager.GetString("Site_Avatar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Home.
         /// </summary>
         public static string Site_Home {
@@ -304,20 +313,20 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Save password.
+        /// </summary>
+        public static string Site_SavePassword {
+            get {
+                return ResourceManager.GetString("Site_SavePassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Settings.
         /// </summary>
         public static string Site_Settings {
             get {
                 return ResourceManager.GetString("Site_Settings", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Upload an avatar.
-        /// </summary>
-        public static string Site_UploadAnAvatar {
-            get {
-                return ResourceManager.GetString("Site_UploadAnAvatar", resourceCulture);
             }
         }
         

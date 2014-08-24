@@ -204,7 +204,10 @@
   <data name="Account_NewPassword" xml:space="preserve">
     <value>Nouveau mot de passe</value>
   </data>
-  <data name="Site_UploadAnAvatar" xml:space="preserve">
-    <value>Télécharger un avatar</value>
+  <data name="Site_Avatar" xml:space="preserve">
+    <value>Avatar</value>
+  </data>
+  <data name="Site_SavePassword" xml:space="preserve">
+    <value>Enregistrer le mot de passe</value>
   </data>
 </root>
