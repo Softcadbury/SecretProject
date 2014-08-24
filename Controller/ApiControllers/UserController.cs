@@ -43,7 +43,7 @@
         {
             if (pageIndex < 0)
             {
-                return BadRequest("");
+                return BadRequest();
             }
 
             var request = new GetPageRequest(pageIndex, 20);
@@ -59,7 +59,7 @@
         {
             if (!ModelState.IsValid || user == null)
             {
-                return BadRequest("");
+                return BadRequest();
             }
 
             var request = new UpdateRequest<User>(id, user);
@@ -71,11 +71,11 @@
         // PUT: /api/users/1/changePassword
         [HttpPut]
         [Route("{id:int}/changePassword")]
-        public IHttpActionResult ChangePassword([FromBody] ChangePasswordViewModel changePassword)
+        public IHttpActionResult ChangePassword(int id, [FromBody] ChangePasswordViewModel changePassword)
         {
             if (!ModelState.IsValid || changePassword == null)
             {
-                return BadRequest("");
+                return BadRequest();
             }
 
             return null;

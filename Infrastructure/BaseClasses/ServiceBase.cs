@@ -67,6 +67,11 @@
         /// </summary>
         protected Response<TModel> Update(UpdateRequest<TModel> request)
         {
+            if (request.Id != request.Model.Id)
+            {
+                return Response<TModel>.CreateError(ErrorCodes.BadRequest);
+            }
+
             TModel model = repository.Update(request.Model);
             repository.SaveChanges();
 

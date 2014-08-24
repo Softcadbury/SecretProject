@@ -32,7 +32,7 @@
         {
             if (pageIndex < 0)
             {
-                return BadRequest("");
+                return BadRequest();
             }
 
             var request = new GetPageRequest(pageIndex, 20);

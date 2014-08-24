@@ -5,9 +5,11 @@
     /// </summary>
     public enum ErrorCodes
     {
-        NotFound,
+        BadRequest,
         Conflict,
         NotAdded,
-        NotUpdated
+        NotFound,
+        NotUpdated,
+        Unauthorized
     }
 }
