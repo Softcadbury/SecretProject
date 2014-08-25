@@ -23,7 +23,7 @@
         /// <summary>
         /// Get a model
         /// </summary>
-        protected Response<TModel> Get(int id)
+        protected Response<TModel> BaseGet(int id)
         {
             TModel model = repository.GetById(id);
 
@@ -38,7 +38,7 @@
         /// <summary>
         /// Get a list of models
         /// </summary>
-        protected Response<List<TModel>> GetPage(int pageIndex, int pageSize)
+        protected Response<List<TModel>> BaseGetPage(int pageIndex, int pageSize)
         {
             List<TModel> models = repository.GetPage(pageIndex, pageSize);
 
@@ -48,7 +48,7 @@
         /// <summary>
         /// Add a model
         /// </summary>
-        protected Response<TModel> Add(TModel model)
+        protected Response<TModel> BaseAdd(TModel model)
         {
             TModel modelAdded = repository.Add(model);
             repository.SaveChanges();
@@ -64,7 +64,7 @@
         /// <summary>
         /// Update a model
         /// </summary>
-        protected Response<TModel> Update(int id, TModel model)
+        protected Response<TModel> BaseUpdate(int id, TModel model)
         {
             if (id != model.Id)
             {
@@ -85,7 +85,7 @@
         /// <summary>
         /// Remove a model
         /// </summary>
-        protected Response<Empty> Remove(int id)
+        protected Response<Empty> BaseRemove(int id)
         {
             repository.Remove(id);
             repository.SaveChanges();

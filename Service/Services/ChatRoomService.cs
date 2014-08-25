@@ -24,9 +24,9 @@
         /// <summary>
         /// Get a list of chat rooms
         /// </summary>
-        public new Response<List<ChatRoom>> GetPage(int pageIndex, int pageSize)
+        public Response<List<ChatRoom>> GetPage(int pageIndex, int pageSize)
         {
-            return base.GetPage(pageIndex, pageSize);
+            return BaseGetPage(pageIndex, pageSize);
         }
     }
 }

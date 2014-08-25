@@ -32,21 +32,21 @@
             string currentUserName = HttpContext.Current.User.Identity.Name;
             int currentUserId = WebSecurity.GetUserId(currentUserName);
 
-            return Get(currentUserId);
+            return BaseGet(currentUserId);
         }
 
         /// <summary>
         /// Get a list of users
         /// </summary>
-        public new Response<List<User>> GetPage(int pageIndex, int pageSize)
+        public Response<List<User>> GetPage(int pageIndex, int pageSize)
         {
-            return base.GetPage(pageIndex, pageSize);
+            return BaseGetPage(pageIndex, pageSize);
         }
 
         /// <summary>
         /// Update a user
         /// </summary>
-        public new Response<User> Update(int userId, User user)
+        public Response<User> Update(int userId, User user)
         {
             if (!IsCurrent(userId).Content)
             {
@@ -54,7 +54,7 @@
             }
 
             // todo: fix update exception
-            return base.Update(userId, user);
+            return BaseUpdate(userId, user);
         }
 
         /// <summary>
