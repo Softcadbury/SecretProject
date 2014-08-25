@@ -1,4 +1,4 @@
-﻿(function () {
+﻿(function (angular) {
     angular
         .module('app')
         .controller('ChatRoomsCtrl', ['$rootScope', '$scope', 'ChatRoomFactory', ChatRoomsCtrl]);
@@ -55,4 +55,4 @@
             $scope.sendMessageToChatRoom = sendMessageToChatRoom;
         });
     }
-})();
+})(angular);

@@ -50,7 +50,7 @@
         {
             if (!IsCurrent(userId).Content)
             {
-                return Response<User>.CreateError(ErrorCodes.Unauthorized);
+                return Response<User>.CreateError(ErrorCodes.Forbidden);
             }
 
             // todo: fix update exception
@@ -64,7 +64,7 @@
         {
             if (!IsCurrent(userId).Content)
             {
-                return Response<Empty>.CreateError(ErrorCodes.Unauthorized);
+                return Response<Empty>.CreateError(ErrorCodes.Forbidden);
             }
 
             // todo: update password

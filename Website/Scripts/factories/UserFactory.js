@@ -1,4 +1,4 @@
-﻿(function () {
+﻿(function (angular) {
     angular
         .module('app')
         .factory('UserFactory', ['$http', UserFactory]);
@@ -35,4 +35,4 @@
 
         return factory;
     }
-})();
+})(angular);

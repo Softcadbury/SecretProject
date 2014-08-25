@@ -11,7 +11,7 @@
         public string Message { get; private set; }
 
         /// <summary>
-        /// Create a success response
+        /// Create a success response with a content
         /// </summary>
         public static Response<TContent> CreateSuccess(TContent content)
         {

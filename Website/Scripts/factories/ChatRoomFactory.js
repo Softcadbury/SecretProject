@@ -1,4 +1,4 @@
-﻿(function () {
+﻿(function (angular) {
     angular
         .module('app')
         .factory('ChatRoomFactory', ['$http', ChatRoomFactory]);
@@ -14,4 +14,4 @@
 
         return factory;
     }
-})();
+})(angular);

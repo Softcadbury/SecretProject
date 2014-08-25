@@ -1,4 +1,4 @@
-﻿(function () {
+﻿(function (angular) {
     angular
         .module('app')
         .controller('MenuCtrl', ['$rootScope', '$scope', '$location', MenuCtrl]);
@@ -16,4 +16,4 @@
             return path === $location.path();
         };
     }
-})();
+})(angular);

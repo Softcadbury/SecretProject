@@ -1,4 +1,4 @@
-﻿(function () {
+﻿(function (angular) {
     angular
         .module('app')
         .controller('SettingsCtrl', ['$rootScope', '$scope', 'UserFactory', SettingsCtrl]);
@@ -33,4 +33,4 @@
             $scope.passwordConfirmation = '';
         };
     }
-})();
+})(angular);

@@ -1,4 +1,4 @@
-﻿(function () {
+﻿(function (angular) {
     angular
         .module('app', ['ngRoute'])
         .config(configuration)
@@ -45,4 +45,4 @@
             $rootScope.$broadcast('currentUser.updated');
         });
     }
-})();
+})(angular);

@@ -12,16 +12,16 @@
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method, AllowMultiple = false, Inherited = true)]
     public sealed class InitializeSimpleMembershipAttribute : ActionFilterAttribute
     {
-        private static SimpleMembershipInitializer _initializer;
-        private static object _initializerLock = new object();
-        private static bool _isInitialized;
+        private static SimpleMembershipInitializer initializer;
+        private static object initializerLock = new object();
+        private static bool isInitialized;
 
         /// <summary>
         /// Override OnActionExecuting method to manage simple membership
         /// </summary>
         public override void OnActionExecuting(ActionExecutingContext filterContext)
         {
-            LazyInitializer.EnsureInitialized(ref _initializer, ref _isInitialized, ref _initializerLock);
+            LazyInitializer.EnsureInitialized(ref initializer, ref isInitialized, ref initializerLock);
         }
 
         /// <summary>
