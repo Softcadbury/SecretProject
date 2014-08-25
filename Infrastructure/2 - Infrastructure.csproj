@@ -109,8 +109,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BaseClasses\ApiControllerBase.cs" />
-    <Compile Include="BaseClasses\ViewControllerBase.cs" />
+    <Compile Include="BaseClasses\ControllerApiBase.cs" />
+    <Compile Include="BaseClasses\ControllerViewBase.cs" />
     <Compile Include="BaseClasses\ModelBase.cs" />
     <Compile Include="BaseClasses\RepositoryBase.cs" />
     <Compile Include="BaseClasses\ServiceBase.cs" />

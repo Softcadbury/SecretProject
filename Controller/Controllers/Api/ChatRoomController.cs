@@ -1,4 +1,4 @@
-﻿namespace Controller.ApiControllers
+﻿namespace Controller.Controllers.Api
 {
     using System.Collections.Generic;
     using System.Web.Http;
@@ -12,7 +12,7 @@
     /// </summary>
     [Authorize]
     [RoutePrefix("api/chatrooms")]
-    public class ChatRoomController : ApiControllerBase
+    public class ChatRoomController : ControllerApiBase
     {
         private readonly ChatRoomService chatRoomService;
 

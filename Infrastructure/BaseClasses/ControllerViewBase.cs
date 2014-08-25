@@ -6,9 +6,9 @@
     using System.Web.Mvc;
 
     /// <summary>
-    /// A baseline definition that every controllers will inherit from
+    /// A baseline definition that every view controllers will inherit from
     /// </summary>
-    public abstract class ViewControllerBase : Controller
+    public abstract class ControllerViewBase : Controller
     {
         /// <summary>
         /// Override ExecuteCore method to manage internationalization

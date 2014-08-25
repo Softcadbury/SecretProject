@@ -1,14 +1,14 @@
-﻿namespace Controller.Controllers
+﻿namespace Controller.Controllers.View
 {
     using Infrastructure.BaseClasses;
     using System.Web.Mvc;
 
     /// <summary>
-    /// Error controller
+    /// Home controller
     /// </summary>
-    public class ErrorController : ViewControllerBase
+    public class HomeController : ControllerViewBase
     {
-        // GET: /Error
+        // GET: /Home
         public ActionResult Index()
         {
             return View();

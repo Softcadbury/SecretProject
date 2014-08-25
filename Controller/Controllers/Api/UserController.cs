@@ -1,4 +1,4 @@
-﻿namespace Controller.ApiControllers
+﻿namespace Controller.Controllers.Api
 {
     using System.Collections.Generic;
     using System.Web.Http;
@@ -13,7 +13,7 @@
     /// </summary>
     [Authorize]
     [RoutePrefix("api/users")]
-    public class UserController : ApiControllerBase
+    public class UserController : ControllerApiBase
     {
         private readonly UserService userService;
 

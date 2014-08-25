@@ -1,4 +1,4 @@
-﻿namespace Controller.Controllers
+﻿namespace Controller.Controllers.View
 {
     using Infrastructure.BaseClasses;
     using System.Web.Mvc;
@@ -8,7 +8,7 @@
     /// Application controller
     /// </summary>
     [Authorize]
-    public class ApplicationController : ViewControllerBase
+    public class ApplicationController : ControllerViewBase
     {
         // GET: /Application
         [AllowAnonymous]
