@@ -11,13 +11,11 @@
     /// </summary>
     public class ChatRoomService : BaseService<ChatRoom, ChatRoomRepository>
     {
-        private static readonly ChatRoomRepository ChatRoomRepository = new ChatRoomRepository();
-
         /// <summary>
         /// Constructor
         /// </summary>
         public ChatRoomService()
-            : base(ChatRoomRepository)
+            : base(new ChatRoomRepository())
         {
         }
 

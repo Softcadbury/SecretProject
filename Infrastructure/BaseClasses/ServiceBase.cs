@@ -10,7 +10,7 @@
         where TModel : ModelBase
         where TRepository : BaseRepository<TModel>
     {
-        private readonly TRepository repository;
+        public readonly TRepository repository;
 
         /// <summary>
         /// Constructor

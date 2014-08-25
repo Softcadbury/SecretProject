@@ -1,12 +1,12 @@
 ﻿namespace Service.Services
 {
-    using System.Collections.Generic;
-    using System.Web;
     using Infrastructure.BaseClasses;
     using Infrastructure.ServiceResponses;
     using Repository.Models;
     using Repository.Repositories;
     using Service.ViewModels.Account;
+    using System.Collections.Generic;
+    using System.Web;
     using WebMatrix.WebData;
 
     /// <summary>
@@ -14,13 +14,11 @@
     /// </summary>
     public class UserService : BaseService<User, UserRepository>
     {
-        private static readonly UserRepository UserRepository = new UserRepository();
-
         /// <summary>
         /// Constructor
         /// </summary>
         public UserService()
-            : base(UserRepository)
+            : base(new UserRepository())
         {
         }
 
@@ -29,10 +27,7 @@
         /// </summary>
         public Response<User> GetCurrent()
         {
-            string currentUserName = HttpContext.Current.User.Identity.Name;
-            int currentUserId = WebSecurity.GetUserId(currentUserName);
-
-            return BaseGet(currentUserId);
+            return BaseGet(WebSecurity.CurrentUserId);
         }
 
         /// <summary>
@@ -53,7 +48,6 @@
                 return Response<User>.CreateError(ErrorCodes.Forbidden);
             }
 
-            // todo: fix update exception
             return BaseUpdate(userId, user);
         }
 
