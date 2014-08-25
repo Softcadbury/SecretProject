@@ -1,10 +1,10 @@
 ﻿namespace Service.Services
 {
-    using System;
-    using System.Web.Security;
     using Infrastructure.ServiceResponses;
     using Resources;
     using Service.ViewModels.Account;
+    using System;
+    using System.Web.Security;
     using WebMatrix.WebData;
 
     /// <summary>
@@ -19,15 +19,14 @@
         {
             try
             {
-                WebSecurity.CreateUserAndAccount(
-                    model.UserName, model.Password,
-                    propertyValues: new
+                var propertyValues = new
                     {
                         Email = model.Email,
                         CreationDate = DateTime.UtcNow,
                         ModificationDate = DateTime.UtcNow
-                    });
+                    };
 
+                WebSecurity.CreateUserAndAccount(model.UserName, model.Password, propertyValues: propertyValues);
                 WebSecurity.Login(model.UserName, model.Password);
                 FormsAuthentication.SetAuthCookie(model.UserName, createPersistentCookie: false);
 

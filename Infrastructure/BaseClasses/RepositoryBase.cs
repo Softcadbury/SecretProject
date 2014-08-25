@@ -6,6 +6,7 @@
     using System.Data.Entity;
     using System.Data.Entity.Validation;
     using System.Linq;
+    using System.Linq.Expressions;
 
     /// <summary>
     /// A baseline definition that every repositories will inherit from
@@ -41,6 +42,14 @@
         public virtual TModel GetById(int id)
         {
             return dbSet.Find(id);
+        }
+
+        /// <summary>
+        /// Get a list of models from the database with a predicate
+        /// </summary>
+        public List<TModel> GetByPredicate(Expression<Func<TModel, bool>> expression)
+        {
+            return dbSet.Where(expression).ToList();
         }
 
         /// <summary>

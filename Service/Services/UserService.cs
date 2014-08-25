@@ -6,6 +6,7 @@
     using Repository.Repositories;
     using Service.ViewModels.Account;
     using System.Collections.Generic;
+    using System.Linq;
     using System.Web;
     using WebMatrix.WebData;
 
@@ -46,6 +47,13 @@
             if (!IsCurrent(userId).Content)
             {
                 return Response<User>.CreateError(ErrorCodes.Forbidden);
+            }
+
+            User existingUser = repository.GetByPredicate(u => u.UserName == user.UserName && u.Id != user.Id).FirstOrDefault();
+
+            if (existingUser != null)
+            {
+                return Response<User>.CreateError(ErrorCodes.Conflict);
             }
 
             return BaseUpdate(userId, user);
