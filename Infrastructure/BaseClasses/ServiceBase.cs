@@ -1,8 +1,7 @@
 ﻿namespace Infrastructure.BaseClasses
 {
-    using Infrastructure.Services.Requests;
-    using Infrastructure.Services.Responses;
     using System.Collections.Generic;
+    using Infrastructure.ServiceResponses;
 
     /// <summary>
     /// A baseline definition that every services will inherit from
@@ -24,9 +23,9 @@
         /// <summary>
         /// Get a model
         /// </summary>
-        protected Response<TModel> Get(GetRequest request)
+        protected Response<TModel> Get(int id)
         {
-            TModel model = repository.GetById(request.Id);
+            TModel model = repository.GetById(id);
 
             if (model == null)
             {
@@ -39,9 +38,9 @@
         /// <summary>
         /// Get a list of models
         /// </summary>
-        protected Response<List<TModel>> GetPage(GetPageRequest request)
+        protected Response<List<TModel>> GetPage(int pageIndex, int pageSize)
         {
-            List<TModel> models = repository.GetPage(request.PageIndex, request.PageSize);
+            List<TModel> models = repository.GetPage(pageIndex, pageSize);
 
             return Response<List<TModel>>.CreateSuccess(models);
         }
@@ -49,46 +48,46 @@
         /// <summary>
         /// Add a model
         /// </summary>
-        protected Response<TModel> Add(AddRequest<TModel> request)
+        protected Response<TModel> Add(TModel model)
         {
-            TModel model = repository.Add(request.Model);
+            TModel modelAdded = repository.Add(model);
             repository.SaveChanges();
 
-            if (model == null)
+            if (modelAdded == null)
             {
                 return Response<TModel>.CreateError(ErrorCodes.NotAdded);
             }
 
-            return Response<TModel>.CreateSuccess(model);
+            return Response<TModel>.CreateSuccess(modelAdded);
         }
 
         /// <summary>
         /// Update a model
         /// </summary>
-        protected Response<TModel> Update(UpdateRequest<TModel> request)
+        protected Response<TModel> Update(int id, TModel model)
         {
-            if (request.Id != request.Model.Id)
+            if (id != model.Id)
             {
                 return Response<TModel>.CreateError(ErrorCodes.BadRequest);
             }
 
-            TModel model = repository.Update(request.Model);
+            TModel modelUpdated = repository.Update(model);
             repository.SaveChanges();
 
-            if (model == null)
+            if (modelUpdated == null)
             {
                 return Response<TModel>.CreateError(ErrorCodes.NotUpdated);
             }
 
-            return Response<TModel>.CreateSuccess(model);
+            return Response<TModel>.CreateSuccess(modelUpdated);
         }
 
         /// <summary>
         /// Remove a model
         /// </summary>
-        protected Response<Empty> Remove(RemoveRequest request)
+        protected Response<Empty> Remove(int id)
         {
-            repository.Remove(request.Id);
+            repository.Remove(id);
             repository.SaveChanges();
 
             return Response<Empty>.CreateSuccess();

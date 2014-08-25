@@ -1,10 +1,10 @@
 ﻿namespace Service.Services
 {
-    using Infrastructure.Services.Responses;
-    using Resources;
-    using Service.Account.Requests;
     using System;
     using System.Web.Security;
+    using Infrastructure.ServiceResponses;
+    using Resources;
+    using Service.ViewModels.Account;
     using WebMatrix.WebData;
 
     /// <summary>
@@ -15,21 +15,21 @@
         /// <summary>
         /// Register a user
         /// </summary>
-        public Response<Empty> RegisterUser(RegisterUserRequest request)
+        public Response<Empty> RegisterUser(RegistrationViewModel model)
         {
             try
             {
                 WebSecurity.CreateUserAndAccount(
-                    request.Model.UserName, request.Model.Password,
+                    model.UserName, model.Password,
                     propertyValues: new
                     {
-                        Email = request.Model.Email,
+                        Email = model.Email,
                         CreationDate = DateTime.UtcNow,
                         ModificationDate = DateTime.UtcNow
                     });
 
-                WebSecurity.Login(request.Model.UserName, request.Model.Password);
-                FormsAuthentication.SetAuthCookie(request.Model.UserName, createPersistentCookie: false);
+                WebSecurity.Login(model.UserName, model.Password);
+                FormsAuthentication.SetAuthCookie(model.UserName, createPersistentCookie: false);
 
                 return Response<Empty>.CreateSuccess();
             }
@@ -42,11 +42,11 @@
         /// <summary>
         /// Login a user
         /// </summary>
-        public Response<Empty> LoginUser(LoginUserRequest request)
+        public Response<Empty> LoginUser(LoginViewModel model)
         {
-            if (WebSecurity.Login(request.Model.UserName, request.Model.Password, persistCookie: true))
+            if (WebSecurity.Login(model.UserName, model.Password, persistCookie: true))
             {
-                FormsAuthentication.SetAuthCookie(request.Model.UserName, createPersistentCookie: true);
+                FormsAuthentication.SetAuthCookie(model.UserName, createPersistentCookie: true);
 
                 return Response<Empty>.CreateSuccess();
             }

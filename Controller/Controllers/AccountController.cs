@@ -2,9 +2,8 @@
 {
     using Controller.Filters;
     using Infrastructure.BaseClasses;
-    using Infrastructure.Services.Responses;
+    using Infrastructure.ServiceResponses;
     using Infrastructure.Tools;
-    using Service.Account.Requests;
     using Service.Services;
     using Service.ViewModels.Account;
     using System.Web.Mvc;
@@ -58,8 +57,7 @@
             }
 
             var accountService = new AccountService();
-            var request = new RegisterUserRequest(registrationViewModel);
-            Response<Empty> response = accountService.RegisterUser(request);
+            Response<Empty> response = accountService.RegisterUser(registrationViewModel);
 
             if (!response.IsSuccess)
             {
@@ -80,8 +78,7 @@
             }
 
             var accountService = new AccountService();
-            var request = new LoginUserRequest(loginViewModel);
-            Response<Empty> response = accountService.LoginUser(request);
+            Response<Empty> response = accountService.LoginUser(loginViewModel);
 
             if (!response.IsSuccess)
             {

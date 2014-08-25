@@ -1,12 +1,11 @@
 ﻿namespace Controller.ApiControllers
 {
-    using Infrastructure.BaseClasses;
-    using Infrastructure.Services.Requests;
-    using Infrastructure.Services.Responses;
-    using Repository.Models;
-    using Service.Services;
     using System.Collections.Generic;
     using System.Web.Http;
+    using Infrastructure.BaseClasses;
+    using Infrastructure.ServiceResponses;
+    using Repository.Models;
+    using Service.Services;
 
     /// <summary>
     /// ChatRoom controller
@@ -35,8 +34,7 @@
                 return BadRequest();
             }
 
-            var request = new GetPageRequest(pageIndex, 20);
-            Response<List<ChatRoom>> response = chatRoomService.GetPage(request);
+            Response<List<ChatRoom>> response = chatRoomService.GetPage(pageIndex, 20);
 
             return RenderResponse(response);
         }

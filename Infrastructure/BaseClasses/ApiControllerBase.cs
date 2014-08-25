@@ -1,6 +1,6 @@
 ﻿namespace Infrastructure.BaseClasses
 {
-    using Infrastructure.Services.Responses;
+    using Infrastructure.ServiceResponses;
     using System.Web.Http;
 
     /// <summary>

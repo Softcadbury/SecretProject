@@ -1,14 +1,12 @@
 ﻿namespace Controller.ApiControllers
 {
-    using Infrastructure.BaseClasses;
-    using Infrastructure.Services.Requests;
-    using Infrastructure.Services.Responses;
-    using Repository.Models;
-    using Service.Requests.User;
-    using Service.Services;
-    using Service.ViewModels.Account;
     using System.Collections.Generic;
     using System.Web.Http;
+    using Infrastructure.BaseClasses;
+    using Infrastructure.ServiceResponses;
+    using Repository.Models;
+    using Service.Services;
+    using Service.ViewModels.Account;
 
     /// <summary>
     /// User controller
@@ -47,8 +45,7 @@
                 return BadRequest();
             }
 
-            var request = new GetPageRequest(pageIndex, 20);
-            Response<List<User>> response = userService.GetPage(request);
+            Response<List<User>> response = userService.GetPage(pageIndex, 20);
 
             return RenderResponse(response);
         }
@@ -63,8 +60,7 @@
                 return BadRequest();
             }
 
-            var request = new UpdateRequest<User>(id, user);
-            Response<User> response = userService.Update(request);
+            Response<User> response = userService.Update(id, user);
 
             return RenderResponse(response);
         }
@@ -79,8 +75,7 @@
                 return BadRequest();
             }
 
-            var request = new UpdatePasswordRequest(id, changePassword);
-            Response<Empty> response = userService.UpdatePassword(request);
+            Response<Empty> response = userService.UpdatePassword(id, changePassword);
 
             return RenderResponse(response);
         }

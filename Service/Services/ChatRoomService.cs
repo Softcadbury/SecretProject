@@ -1,11 +1,10 @@
 ﻿namespace Service.Services
 {
+    using System.Collections.Generic;
     using Infrastructure.BaseClasses;
-    using Infrastructure.Services.Requests;
-    using Infrastructure.Services.Responses;
+    using Infrastructure.ServiceResponses;
     using Repository.Models;
     using Repository.Repositories;
-    using System.Collections.Generic;
 
     /// <summary>
     /// ChatRoom service
@@ -25,9 +24,9 @@
         /// <summary>
         /// Get a list of chat rooms
         /// </summary>
-        public new Response<List<ChatRoom>> GetPage(GetPageRequest request)
+        public new Response<List<ChatRoom>> GetPage(int pageIndex, int pageSize)
         {
-            return base.GetPage(request);
+            return base.GetPage(pageIndex, pageSize);
         }
     }
 }
