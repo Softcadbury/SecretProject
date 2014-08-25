@@ -1,6 +1,7 @@
 ﻿namespace Infrastructure.BaseClasses
 {
     using Infrastructure.Tools;
+    using System;
     using System.Collections.Generic;
     using System.Data.Entity;
     using System.Data.Entity.Validation;
@@ -55,6 +56,8 @@
         /// </summary>
         public virtual TModel Add(TModel model)
         {
+            model.CreationDate = DateTime.UtcNow;
+            model.ModificationDate = DateTime.UtcNow;
             dbSet.Add(model);
 
             return model;
@@ -73,6 +76,7 @@
                 entry = context.Entry(model);
             }
 
+            model.ModificationDate = DateTime.UtcNow;
             entry.State = EntityState.Modified;
 
             return model;

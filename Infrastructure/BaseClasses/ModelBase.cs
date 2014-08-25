@@ -8,22 +8,13 @@
     /// </summary>
     public abstract class ModelBase
     {
-        /// <summary>
-        /// Constructor
-        /// </summary>
-        protected ModelBase()
-        {
-            CreationDate = DateTime.UtcNow;
-            ModificationDate = DateTime.UtcNow;
-        }
-
         [Required]
         public int Id { get; set; }
 
         public int? CreatorId { get; set; }
 
         [Required]
-        public DateTime CreationDate { get; private set; }
+        public DateTime CreationDate { get; set; }
 
         [Required]
         public DateTime ModificationDate { get; set; }
