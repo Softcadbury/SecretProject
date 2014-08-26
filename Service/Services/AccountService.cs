@@ -26,7 +26,7 @@
                         ModificationDate = DateTime.UtcNow
                     };
 
-                WebSecurity.CreateUserAndAccount(model.UserName, model.Password, propertyValues: propertyValues);
+                WebSecurity.CreateUserAndAccount(model.UserName, model.Password, propertyValues);
                 WebSecurity.Login(model.UserName, model.Password);
                 FormsAuthentication.SetAuthCookie(model.UserName, createPersistentCookie: false);
 

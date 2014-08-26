@@ -49,7 +49,7 @@
                 return Response<User>.CreateError(ErrorCodes.Forbidden);
             }
 
-            User existingUser = repository.GetByPredicate(u => u.UserName == user.UserName && u.Id != user.Id).FirstOrDefault();
+            User existingUser = Repository.GetByPredicate(u => u.UserName == user.UserName && u.Id != user.Id).FirstOrDefault();
 
             if (existingUser != null)
             {

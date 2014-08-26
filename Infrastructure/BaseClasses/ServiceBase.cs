@@ -10,22 +10,22 @@
         where TModel : ModelBase
         where TRepository : BaseRepository<TModel>
     {
-        public readonly TRepository repository;
-
         /// <summary>
         /// Constructor
         /// </summary>
         protected BaseService(TRepository repository)
         {
-            this.repository = repository;
+            Repository = repository;
         }
+
+        public readonly TRepository Repository;
 
         /// <summary>
         /// Get a model
         /// </summary>
         protected Response<TModel> BaseGet(int id)
         {
-            TModel model = repository.GetById(id);
+            TModel model = Repository.GetById(id);
 
             if (model == null)
             {
@@ -40,7 +40,7 @@
         /// </summary>
         protected Response<List<TModel>> BaseGetPage(int pageIndex, int pageSize)
         {
-            List<TModel> models = repository.GetPage(pageIndex, pageSize);
+            List<TModel> models = Repository.GetPage(pageIndex, pageSize);
 
             return Response<List<TModel>>.CreateSuccess(models);
         }
@@ -50,8 +50,8 @@
         /// </summary>
         protected Response<TModel> BaseAdd(TModel model)
         {
-            TModel modelAdded = repository.Add(model);
-            repository.SaveChanges();
+            TModel modelAdded = Repository.Add(model);
+            Repository.SaveChanges();
 
             if (modelAdded == null)
             {
@@ -71,8 +71,8 @@
                 return Response<TModel>.CreateError(ErrorCodes.BadRequest);
             }
 
-            TModel modelUpdated = repository.Update(model);
-            repository.SaveChanges();
+            TModel modelUpdated = Repository.Update(model);
+            Repository.SaveChanges();
 
             if (modelUpdated == null)
             {
@@ -87,8 +87,8 @@
         /// </summary>
         protected Response<Empty> BaseRemove(int id)
         {
-            repository.Remove(id);
-            repository.SaveChanges();
+            Repository.Remove(id);
+            Repository.SaveChanges();
 
             return Response<Empty>.CreateSuccess();
         }
