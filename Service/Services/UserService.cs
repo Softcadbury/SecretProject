@@ -69,7 +69,11 @@
                 return Response<Empty>.CreateError(ErrorCodes.Forbidden);
             }
 
-            // todo: update password
+            if (!WebSecurity.ChangePassword(WebSecurity.CurrentUserName, changePassword.ActualPassword, changePassword.NewPassword))
+            {
+                return Response<Empty>.CreateError(ErrorCodes.Forbidden);
+            }
+
             return Response<Empty>.CreateSuccess();
         }
 
