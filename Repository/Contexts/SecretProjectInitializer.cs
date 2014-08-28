@@ -1,6 +1,7 @@
 ﻿namespace Repository.Contexts
 {
     using Repository.Models;
+    using Repository.Repositories;
     using System.Collections.Generic;
     using System.Data.Entity;
 
@@ -23,8 +24,9 @@
                 new ChatRoom { Title = "Dating" }
             };
 
-            chatRooms.ForEach(s => context.ChatRooms.Add(s));
-            context.SaveChanges();
+            var chatRoomRepository = new ChatRoomRepository();
+            chatRooms.ForEach(c => chatRoomRepository.Add(c));
+            chatRoomRepository.SaveChanges();
         }
     }
 }
