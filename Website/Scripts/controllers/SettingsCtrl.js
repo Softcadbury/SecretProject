@@ -32,5 +32,10 @@
             $scope.newPassword = '';
             $scope.passwordConfirmation = '';
         };
+
+        // Function to delete the user's account
+        $scope.deleteAccount = function() {
+
+        };
     }
 })(angular);

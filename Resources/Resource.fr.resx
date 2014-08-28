@@ -210,4 +210,10 @@
   <data name="Site_SavePassword" xml:space="preserve">
     <value>Changer</value>
   </data>
+  <data name="Site_Account" xml:space="preserve">
+    <value>Compte</value>
+  </data>
+  <data name="Site_DeleteAccount" xml:space="preserve">
+    <value>Supprimer mon compte</value>
+  </data>
 </root>

@@ -277,11 +277,29 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Account.
+        /// </summary>
+        public static string Site_Account {
+            get {
+                return ResourceManager.GetString("Site_Account", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Avatar.
         /// </summary>
         public static string Site_Avatar {
             get {
                 return ResourceManager.GetString("Site_Avatar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Delete my account.
+        /// </summary>
+        public static string Site_DeleteAccount {
+            get {
+                return ResourceManager.GetString("Site_DeleteAccount", resourceCulture);
             }
         }
         
