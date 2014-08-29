@@ -1,11 +1,11 @@
 ﻿namespace Controller.Controllers.Api
 {
-    using System.Collections.Generic;
-    using System.Web.Http;
     using Infrastructure.BaseClasses;
     using Infrastructure.ServiceResponses;
     using Repository.Models;
     using Service.Services;
+    using System.Collections.Generic;
+    using System.Web.Http;
 
     /// <summary>
     /// ChatRoom controller

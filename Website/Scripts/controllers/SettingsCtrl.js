@@ -34,8 +34,7 @@
         };
 
         // Function to delete the user's account
-        $scope.deleteAccount = function() {
-
+        $scope.deleteAccount = function () {
         };
     }
 })(angular);

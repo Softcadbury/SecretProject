@@ -1,7 +1,6 @@
 ﻿namespace Repository.Repositories
 {
     using Infrastructure.BaseClasses;
-
     using Repository.Contexts;
     using Repository.Models;
 

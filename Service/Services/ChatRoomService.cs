@@ -1,10 +1,10 @@
 ﻿namespace Service.Services
 {
-    using System.Collections.Generic;
     using Infrastructure.BaseClasses;
     using Infrastructure.ServiceResponses;
     using Repository.Models;
     using Repository.Repositories;
+    using System.Collections.Generic;
 
     /// <summary>
     /// ChatRoom service
