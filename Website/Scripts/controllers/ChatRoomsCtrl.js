@@ -13,10 +13,11 @@
         $scope.newMessage = '';
 
         // Get the first page of chat rooms
-        ChatRoomFactory.getPage(1).success(function (chatRooms) {
-            $scope.chatRooms = chatRooms;
-            $scope.selectedRoomId = $scope.chatRooms[0].Id;
-        });
+        ChatRoomFactory.getPage(1).
+            success(function (chatRooms) {
+                $scope.chatRooms = chatRooms;
+                $scope.selectedRoomId = $scope.chatRooms[0].Id;
+            });
 
         // Function to know if the chat room is the selected chat room
         $scope.isActive = function (chatRoom) {

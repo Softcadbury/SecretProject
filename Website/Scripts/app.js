@@ -40,9 +40,10 @@
 
     // Function called at application runtime
     function run($rootScope, UserFactory) {
-        UserFactory.getCurrent().success(function (user) {
-            $rootScope.currentUser = user;
-            $rootScope.$broadcast('currentUser.updated');
-        });
+        UserFactory.getCurrent().
+            success(function (user) {
+                $rootScope.currentUser = user;
+                $rootScope.$broadcast('currentUser.updated');
+            });
     }
 })(angular);
