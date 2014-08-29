@@ -26,9 +26,11 @@
             UserFactory.update($rootScope.currentUser).
                 success(function () {
                     $scope.userUpdateSuccess = true;
+                    $scope.userUpdateError = false;
                     $rootScope.$broadcast('currentUser.updated');
                 }).
                 error(function () {
+                    $scope.userUpdateSuccess = false;
                     $scope.userUpdateError = true;
                 });
         };
@@ -38,11 +40,13 @@
             UserFactory.updatePassword($rootScope.currentUser, $scope.actualPassword, $scope.newPassword, $scope.passwordConfirmation).
                 success(function () {
                     $scope.passwordUpdateSuccess = true;
+                    $scope.passwordUpdateError = false;
                     $scope.actualPassword = '';
                     $scope.newPassword = '';
                     $scope.passwordConfirmation = '';
                 }).
                 error(function () {
+                    $scope.passwordUpdateSuccess = false;
                     $scope.passwordUpdateError = true;
                 });
         };
