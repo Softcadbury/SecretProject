@@ -25,12 +25,12 @@
 
             UserFactory.update($rootScope.currentUser).
                 success(function () {
+                    hideAlerts();
                     $scope.userUpdateSuccess = true;
-                    $scope.userUpdateError = false;
                     $rootScope.$broadcast('currentUser.updated');
                 }).
                 error(function () {
-                    $scope.userUpdateSuccess = false;
+                    hideAlerts();
                     $scope.userUpdateError = true;
                 });
         };
@@ -39,14 +39,14 @@
         $scope.savePassword = function () {
             UserFactory.updatePassword($rootScope.currentUser, $scope.actualPassword, $scope.newPassword, $scope.passwordConfirmation).
                 success(function () {
+                    hideAlerts();
                     $scope.passwordUpdateSuccess = true;
-                    $scope.passwordUpdateError = false;
                     $scope.actualPassword = '';
                     $scope.newPassword = '';
                     $scope.passwordConfirmation = '';
                 }).
                 error(function () {
-                    $scope.passwordUpdateSuccess = false;
+                    hideAlerts();
                     $scope.passwordUpdateError = true;
                 });
         };
@@ -54,5 +54,13 @@
         // Function to delete the user's account
         $scope.deleteAccount = function () {
         };
+
+        // Function to hide all alerts
+        function hideAlerts() {
+            $scope.userUpdateSuccess = false;
+            $scope.userUpdateError = false;
+            $scope.passwordUpdateSuccess = false;
+            $scope.passwordUpdateError = false;
+        }
     }
 })(angular);
