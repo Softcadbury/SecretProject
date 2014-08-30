@@ -33,6 +33,12 @@
             return $http.put(urlBase + '/' + currentUser.Id + '/updatePassword', updatePassword);
         };
 
+        // Function to delete the current user
+        factory.removeCurrent = function () {
+            // Todo: ask for password
+            return $http.delete(urlBase + '/current');
+        };
+
         return factory;
     }
 })(angular);

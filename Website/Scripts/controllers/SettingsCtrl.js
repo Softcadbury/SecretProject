@@ -53,6 +53,8 @@
 
         // Function to delete the user's account
         $scope.deleteAccount = function () {
+            // Todo: manage success or error
+            UserFactory.removeCurrent();
         };
 
         // Function to hide all alerts

@@ -4,6 +4,7 @@
     using Infrastructure.ServiceResponses;
     using Repository.Models;
     using Service.Services;
+    using Service.ViewModels;
     using Service.ViewModels.Account;
     using System.Collections.Generic;
     using System.Web.Http;
@@ -25,7 +26,7 @@
             userService = new UserService();
         }
 
-        // GET: /api/users/1
+        // GET: /api/users/current
         [HttpGet]
         [Route("current")]
         public IHttpActionResult GetCurrent()
@@ -76,6 +77,21 @@
             }
 
             Response<Empty> response = userService.UpdatePassword(id, changePassword);
+
+            return RenderResponse(response);
+        }
+
+        // DELETE: /api/users/current
+        [HttpDelete]
+        [Route("current")]
+        public IHttpActionResult RemoveCurrent([FromBody] DeleteAccountViewModel deleteAccount)
+        {
+            if (!ModelState.IsValid || deleteAccount == null)
+            {
+                return BadRequest();
+            }
+
+            Response<Empty> response = userService.RemoveCurrent(deleteAccount);
 
             return RenderResponse(response);
         }

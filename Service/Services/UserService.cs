@@ -4,6 +4,7 @@
     using Infrastructure.ServiceResponses;
     using Repository.Models;
     using Repository.Repositories;
+    using Service.ViewModels;
     using Service.ViewModels.Account;
     using System.Collections.Generic;
     using System.Linq;
@@ -75,6 +76,22 @@
             }
 
             return Response<Empty>.CreateSuccess();
+        }
+
+        /// <summary>
+        /// Remove the current user
+        /// </summary>
+        public Response<Empty> RemoveCurrent(DeleteAccountViewModel deleteAccount)
+        {
+            // Todo: check password
+            if (true)
+            {
+                return Response<Empty>.CreateError(ErrorCodes.Forbidden);
+            }
+            else
+            {
+                return BaseRemove(WebSecurity.CurrentUserId);
+            }
         }
 
         /// <summary>
