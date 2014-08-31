@@ -7,7 +7,7 @@
         var chatHub = $.connection.chatHub;
 
         $scope.chatRooms = [];
-        $scope.selectedRoomId = null;
+        $scope.selectedChatRoomId = null;
         $scope.userName = $rootScope.currentUser ? $rootScope.currentUser.UserName : '';
         $scope.messages = [];
         $scope.newMessage = '';
@@ -16,17 +16,18 @@
         ChatRoomFactory.getPage(1).
             success(function (chatRooms) {
                 $scope.chatRooms = chatRooms;
-                $scope.selectedRoomId = $scope.chatRooms[0].Id;
+                $scope.selectedChatRoomId = $scope.chatRooms[0].Id;
             });
 
         // Function to know if the chat room is the selected chat room
         $scope.isActive = function (chatRoom) {
-            return chatRoom.Id === $scope.selectedRoomId;
+            return chatRoom.Id === $scope.selectedChatRoomId;
         }
 
         // Function to change the selected chat room
-        $scope.changeRoom = function (chatRoom) {
-            $scope.selectedRoomId = chatRoom.Id;
+        $scope.changeChatRoom = function (chatRoom) {
+            chatRoomsParticipantsUpdate($scope.selectedChatRoomId, chatRoom.Id);
+            $scope.selectedChatRoomId = chatRoom.Id;
             $scope.messages = [];
             $scope.newMessage = '';
         }
@@ -39,9 +40,20 @@
         // Function to send a message to a chat room
         function sendMessageToChatRoom() {
             if ($scope.newMessage.trim() !== '') {
-                chatHub.server.sendMessageToChatRoom($scope.selectedRoomId, $scope.userName, $scope.newMessage);
+                chatHub.server.sendMessageToChatRoom($scope.selectedChatRoomId, $scope.userName, $scope.newMessage);
                 $scope.newMessage = '';
             }
+        };
+
+        // Function that indicates users that the current user change of chat room
+        function chatRoomsParticipantsUpdate(oldChatRoomId, newChatRoomId) {
+            chatHub.server.chatRoomsParticipantsUpdate(oldChatRoomId, newChatRoomId);
+        }
+
+        // Function called by SignalR to refresh the count of participants in chat rooms
+        chatHub.client.broadcastChatRoomsParticipantsUpdate = function (test) {
+            // Todo: manage the result
+            console.log(test);
         };
 
         // Function called by SignalR when a mesage is received in a chat room
@@ -54,6 +66,7 @@
         // Register SingalR functions
         $.connection.hub.start().done(function () {
             $scope.sendMessageToChatRoom = sendMessageToChatRoom;
+            $scope.chatRoomsParticipantsUpdate = chatRoomsParticipantsUpdate;
         });
     }
 })(angular);
