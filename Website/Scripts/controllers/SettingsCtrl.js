@@ -11,6 +11,7 @@
         $scope.userUpdateError = false;
         $scope.passwordUpdateSuccess = false;
         $scope.passwordUpdateError = false;
+        $scope.deleteAccountError = false;
 
         // Event fired when the current user is updated
         $rootScope.$on('currentUser.updated', function () {
@@ -53,8 +54,14 @@
 
         // Function to delete the user's account
         $scope.deleteAccount = function () {
-            // Todo: manage success or error
-            UserFactory.removeCurrent();
+            UserFactory.removeCurrent().
+                success(function () {
+                    // Todo: redirect to home
+                }).
+                error(function () {
+                    hideAlerts();
+                    $scope.deleteAccountError = true;
+                });
         };
 
         // Function to hide all alerts
@@ -63,6 +70,7 @@
             $scope.userUpdateError = false;
             $scope.passwordUpdateSuccess = false;
             $scope.passwordUpdateError = false;
+            $scope.deleteAccountError = false;
         }
     }
 })(angular);
