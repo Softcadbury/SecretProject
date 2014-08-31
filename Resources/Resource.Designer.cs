@@ -322,6 +322,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Password updated.
+        /// </summary>
+        public static string Site_PasswordUpdated {
+            get {
+                return ResourceManager.GetString("Site_PasswordUpdated", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Save changes.
         /// </summary>
         public static string Site_SaveChanges {
@@ -354,6 +363,15 @@ namespace Resources {
         public static string Site_Users {
             get {
                 return ResourceManager.GetString("Site_Users", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Account updated.
+        /// </summary>
+        public static string Site_UserUpdated {
+            get {
+                return ResourceManager.GetString("Site_UserUpdated", resourceCulture);
             }
         }
     }

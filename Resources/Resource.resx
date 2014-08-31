@@ -216,4 +216,10 @@
   <data name="Site_DeleteAccount" xml:space="preserve">
     <value>Delete my account</value>
   </data>
+  <data name="Site_PasswordUpdated" xml:space="preserve">
+    <value>Password updated</value>
+  </data>
+  <data name="Site_UserUpdated" xml:space="preserve">
+    <value>Account updated</value>
+  </data>
 </root>
