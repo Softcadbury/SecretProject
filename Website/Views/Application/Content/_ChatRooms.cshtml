@@ -5,7 +5,7 @@
             <div class="list-group">
                 <div class="list-group-item" ng-repeat="chatRoom in chatRooms" ng-class="{ active: isActive(chatRoom)}" ng-click="changeChatRoom(chatRoom)">
                     {{ chatRoom.Title }}
-                    <span class="badge">14</span>
+                    <span class="badge">{{ chatRoom.Participants }}</span>
                 </div>
             </div>
         </div>

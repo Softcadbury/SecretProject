@@ -51,9 +51,10 @@
         }
 
         // Function called by SignalR to refresh the count of participants in chat rooms
-        chatHub.client.broadcastChatRoomsParticipantsUpdate = function (test) {
-            // Todo: manage the result
-            console.log(test);
+        chatHub.client.broadcastChatRoomsParticipantsUpdate = function (chatRoomsParticipants) {
+            $scope.chatRooms.forEach(function(chatRoom) {
+                chatRoom.Participants = chatRoomsParticipants[chatRoom.Id];
+            });
         };
 
         // Function called by SignalR when a mesage is received in a chat room

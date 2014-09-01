@@ -12,7 +12,7 @@
     [HubName("chatHub")]
     public class ChatHub : Hub
     {
-        private static readonly Dictionary<int, int> chatRoomsParticipants;
+        private static readonly Dictionary<int, int> ChatRoomsParticipants;
 
         /// <summary>
         /// Static constructor
@@ -22,8 +22,8 @@
             var chatRoomService = new ChatRoomService();
             List<ChatRoom> chatRooms = chatRoomService.GetPage(1, 20).Content;
 
-            chatRoomsParticipants = new Dictionary<int, int>();
-            chatRooms.ForEach(cr => chatRoomsParticipants.Add(cr.Id, 0));
+            ChatRoomsParticipants = new Dictionary<int, int>();
+            chatRooms.ForEach(cr => ChatRoomsParticipants.Add(cr.Id, 0));
         }
 
         /// <summary>
@@ -31,10 +31,10 @@
         /// </summary>
         public void ChatRoomsParticipantsUpdate(int oldChatRoomId, int newChatRoomId)
         {
-            chatRoomsParticipants[oldChatRoomId] = chatRoomsParticipants[oldChatRoomId] > 0 ? chatRoomsParticipants[oldChatRoomId] - 1 : 0;
-            chatRoomsParticipants[newChatRoomId] = chatRoomsParticipants[newChatRoomId] + 1;
+            ChatRoomsParticipants[oldChatRoomId] = ChatRoomsParticipants[oldChatRoomId] > 0 ? ChatRoomsParticipants[oldChatRoomId] - 1 : 0;
+            ChatRoomsParticipants[newChatRoomId] = ChatRoomsParticipants[newChatRoomId] + 1;
 
-            Clients.All.broadcastChatRoomsParticipantsUpdate(chatRoomsParticipants);
+            Clients.All.broadcastChatRoomsParticipantsUpdate(ChatRoomsParticipants);
         }
 
         /// <summary>
