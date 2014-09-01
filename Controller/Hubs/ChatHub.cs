@@ -1,9 +1,10 @@
 ﻿namespace Controller.Hubs
 {
+    using System.Linq;
+    using System.Threading.Tasks;
+
     using Microsoft.AspNet.SignalR;
     using Microsoft.AspNet.SignalR.Hubs;
-    using Repository.Models;
-    using Service.Services;
     using System.Collections.Generic;
 
     /// <summary>
@@ -12,29 +13,33 @@
     [HubName("chatHub")]
     public class ChatHub : Hub
     {
-        private static readonly Dictionary<int, int> ChatRoomsParticipants;
+        private static readonly Dictionary<string, int> ChatRoomsParticipants;
 
         /// <summary>
         /// Static constructor
         /// </summary>
         static ChatHub()
         {
-            var chatRoomService = new ChatRoomService();
-            List<ChatRoom> chatRooms = chatRoomService.GetPage(1, 20).Content;
+            ChatRoomsParticipants = new Dictionary<string, int>();
+        }
 
-            ChatRoomsParticipants = new Dictionary<int, int>();
-            chatRooms.ForEach(cr => ChatRoomsParticipants.Add(cr.Id, 0));
+        /// <summary>
+        /// Called when a user disconnect
+        /// </summary>
+        public override Task OnDisconnected(bool stopCalled)
+        {
+            ChatRoomsParticipants.Remove(Context.User.Identity.Name);
+
+            return base.OnDisconnected(stopCalled);
         }
 
         /// <summary>
         /// Indicates users that the current user change of chat room
         /// </summary>
-        public void ChatRoomsParticipantsUpdate(int oldChatRoomId, int newChatRoomId)
+        public void ChatRoomsParticipantsUpdate(int newChatRoomId)
         {
-            ChatRoomsParticipants[oldChatRoomId] = ChatRoomsParticipants[oldChatRoomId] > 0 ? ChatRoomsParticipants[oldChatRoomId] - 1 : 0;
-            ChatRoomsParticipants[newChatRoomId] = ChatRoomsParticipants[newChatRoomId] + 1;
-
-            Clients.All.broadcastChatRoomsParticipantsUpdate(ChatRoomsParticipants);
+            ChatRoomsParticipants[Context.User.Identity.Name] = newChatRoomId;
+            Clients.All.broadcastChatRoomsParticipantsUpdate(ChatRoomsParticipants.Values.GroupBy(v => v).ToDictionary(v => v.Key, v => v.Count()));
         }
 
         /// <summary>

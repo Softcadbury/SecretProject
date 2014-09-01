@@ -17,6 +17,13 @@
             success(function (chatRooms) {
                 $scope.chatRooms = chatRooms;
                 $scope.selectedChatRoomId = $scope.chatRooms[0].Id;
+
+                // Register SingalR functions
+                $.connection.hub.start().done(function () {
+                    $scope.sendMessageToChatRoom = sendMessageToChatRoom;
+                    $scope.chatRoomsParticipantsUpdate = chatRoomsParticipantsUpdate;
+                    chatRoomsParticipantsUpdate($scope.chatRooms[0].Id);
+                });
             });
 
         // Function to know if the chat room is the selected chat room
@@ -26,7 +33,7 @@
 
         // Function to change the selected chat room
         $scope.changeChatRoom = function (chatRoom) {
-            chatRoomsParticipantsUpdate($scope.selectedChatRoomId, chatRoom.Id);
+            chatRoomsParticipantsUpdate(chatRoom.Id);
             $scope.selectedChatRoomId = chatRoom.Id;
             $scope.messages = [];
             $scope.newMessage = '';
@@ -46,14 +53,16 @@
         };
 
         // Function that indicates users that the current user change of chat room
-        function chatRoomsParticipantsUpdate(oldChatRoomId, newChatRoomId) {
-            chatHub.server.chatRoomsParticipantsUpdate(oldChatRoomId, newChatRoomId);
+        function chatRoomsParticipantsUpdate(newChatRoomId) {
+            chatHub.server.chatRoomsParticipantsUpdate(newChatRoomId);
         }
 
         // Function called by SignalR to refresh the count of participants in chat rooms
         chatHub.client.broadcastChatRoomsParticipantsUpdate = function (chatRoomsParticipants) {
-            $scope.chatRooms.forEach(function(chatRoom) {
-                chatRoom.Participants = chatRoomsParticipants[chatRoom.Id];
+            $scope.$apply(function () {
+                $scope.chatRooms.forEach(function (chatRoom) {
+                    chatRoom.Participants = chatRoomsParticipants[chatRoom.Id];
+                });
             });
         };
 
@@ -63,11 +72,5 @@
                 $scope.messages.push({ user: user, message: message });
             });
         };
-
-        // Register SingalR functions
-        $.connection.hub.start().done(function () {
-            $scope.sendMessageToChatRoom = sendMessageToChatRoom;
-            $scope.chatRoomsParticipantsUpdate = chatRoomsParticipantsUpdate;
-        });
     }
 })(angular);
