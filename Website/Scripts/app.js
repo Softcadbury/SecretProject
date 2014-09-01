@@ -11,7 +11,7 @@
             controller: 'AboutCtrl',
         });
 
-        $routeProvider.when('/rooms', {
+        $routeProvider.when('/chatRooms', {
             templateUrl: '/Application/ChatRoomsContent',
             controller: 'ChatRoomsCtrl',
         });
