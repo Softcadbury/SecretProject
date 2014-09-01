@@ -61,7 +61,7 @@
         chatHub.client.broadcastChatRoomsParticipantsUpdate = function (chatRoomsParticipants) {
             $scope.$apply(function () {
                 $scope.chatRooms.forEach(function (chatRoom) {
-                    chatRoom.Participants = chatRoomsParticipants[chatRoom.Id];
+                    chatRoom.Participants = chatRoomsParticipants[chatRoom.Id] ? chatRoomsParticipants[chatRoom.Id] : 0;
                 });
             });
         };

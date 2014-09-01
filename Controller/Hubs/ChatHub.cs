@@ -1,11 +1,10 @@
 ﻿namespace Controller.Hubs
 {
-    using System.Linq;
-    using System.Threading.Tasks;
-
     using Microsoft.AspNet.SignalR;
     using Microsoft.AspNet.SignalR.Hubs;
     using System.Collections.Generic;
+    using System.Linq;
+    using System.Threading.Tasks;
 
     /// <summary>
     /// Chat hub
@@ -29,6 +28,7 @@
         public override Task OnDisconnected(bool stopCalled)
         {
             ChatRoomsParticipants.Remove(Context.User.Identity.Name);
+            Clients.All.broadcastChatRoomsParticipantsUpdate(ChatRoomsParticipants.Values.GroupBy(v => v).ToDictionary(v => v.Key, v => v.Count()));
 
             return base.OnDisconnected(stopCalled);
         }
