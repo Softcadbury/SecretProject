@@ -1,23 +1,11 @@
-﻿<div ng-app="app" id="application">
-    <div>
-        <div id="header">
-            <div class="navbar navbar-inverse navbar-fixed-top header-navbar" role="navigation">
-                @Html.Partial("_Header")
-            </div>
+﻿<div id="application">
+    <div ng-app="app">
+        @Html.Partial("_Header")
+        @Html.Partial("_Menu")
+        <div id="content">
+            <ng-view></ng-view>
         </div>
-        <div>
-            <div>
-                <div id="menu">
-                    @Html.Partial("_Menu")
-                </div>
-                <div id="content">
-                    <ng-view></ng-view>
-                </div>
-                <div id="pub">
-                    @Html.Partial("_Pub")
-                </div>
-            </div>
-        </div>
+        @Html.Partial("_Pub")
     </div>
 </div>
 
