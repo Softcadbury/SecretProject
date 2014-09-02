@@ -188,7 +188,7 @@
     <Content Include="Views\Web.config" />
     <Content Include="packages.config" />
     <Content Include="Views\Application\_Menu.cshtml" />
-    <Content Include="Styles\constant.less" />
+    <Content Include="Styles\shared\constant.less" />
     <Content Include="Views\Application\_Header.cshtml" />
     <Content Include="Styles\application\header.less" />
     <Content Include="Styles\application\menu.less" />
@@ -218,6 +218,7 @@
     <Content Include="Styles\application\content\users.less" />
     <Content Include="Views\Application\Modals\_DeleteAccountConfirmationModal.cshtml" />
     <Content Include="Views\Application\Modals\_ContactModal.cshtml" />
+    <Content Include="Styles\shared\flags.less" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -226,7 +227,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Styles\site.less" />
+    <Content Include="Styles\shared\site.less" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
   </ItemGroup>
