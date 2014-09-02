@@ -216,6 +216,8 @@
     <Content Include="Styles\application\content\chatRooms.less" />
     <Content Include="Styles\application\content\settings.less" />
     <Content Include="Styles\application\content\users.less" />
+    <Content Include="Views\Application\Modals\_DeleteAccountConfirmationModal.cshtml" />
+    <Content Include="Views\Application\Modals\_ContactModal.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
