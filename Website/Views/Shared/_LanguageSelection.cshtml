@@ -3,7 +3,7 @@
         <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
             @Resource.Site_Language<span class="flag flag-current flag-@CultureHelper.GetCurrentCulture()"></span><span class="caret"></span>
         </button>
-        <ul class="dropdown-menu" role="menu">
+        <ul class="dropdown-menu">
             <li class="@(CultureHelper.IsCurrentCulture("en") ? "current" : "")">
                 <a href="@CultureHelper.GetCultureChangeHref("en")"><span class="flag flag-en"></span>English</a>
             </li>
