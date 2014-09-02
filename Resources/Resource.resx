@@ -222,4 +222,22 @@
   <data name="Site_UserUpdated" xml:space="preserve">
     <value>Account updated</value>
   </data>
+  <data name="Site_About_Contact" xml:space="preserve">
+    <value>Contact</value>
+  </data>
+  <data name="Site_About_Privacy" xml:space="preserve">
+    <value>Privacy Policy</value>
+  </data>
+  <data name="Site_About_PrivacyBody" xml:space="preserve">
+    <value>todo: privacy body</value>
+  </data>
+  <data name="Site_About_Terms" xml:space="preserve">
+    <value>Terms of Service</value>
+  </data>
+  <data name="Site_About_TermsBody" xml:space="preserve">
+    <value>todo: terms body</value>
+  </data>
+  <data name="Site_About_ContactBody" xml:space="preserve">
+    <value>Contact me</value>
+  </data>
 </root>

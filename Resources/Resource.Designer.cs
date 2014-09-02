@@ -277,6 +277,60 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Contact.
+        /// </summary>
+        public static string Site_About_Contact {
+            get {
+                return ResourceManager.GetString("Site_About_Contact", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Contact me.
+        /// </summary>
+        public static string Site_About_ContactBody {
+            get {
+                return ResourceManager.GetString("Site_About_ContactBody", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Privacy Policy.
+        /// </summary>
+        public static string Site_About_Privacy {
+            get {
+                return ResourceManager.GetString("Site_About_Privacy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to todo: privacy body.
+        /// </summary>
+        public static string Site_About_PrivacyBody {
+            get {
+                return ResourceManager.GetString("Site_About_PrivacyBody", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Terms of Service.
+        /// </summary>
+        public static string Site_About_Terms {
+            get {
+                return ResourceManager.GetString("Site_About_Terms", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to todo: terms body.
+        /// </summary>
+        public static string Site_About_TermsBody {
+            get {
+                return ResourceManager.GetString("Site_About_TermsBody", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Account.
         /// </summary>
         public static string Site_Account {
