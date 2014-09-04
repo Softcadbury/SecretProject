@@ -349,6 +349,24 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Cancel.
+        /// </summary>
+        public static string Site_Cancel {
+            get {
+                return ResourceManager.GetString("Site_Cancel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Close.
+        /// </summary>
+        public static string Site_Close {
+            get {
+                return ResourceManager.GetString("Site_Close", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Delete my account.
         /// </summary>
         public static string Site_DeleteAccount {
@@ -376,6 +394,24 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Message.
+        /// </summary>
+        public static string Site_Message {
+            get {
+                return ResourceManager.GetString("Site_Message", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enter your message.
+        /// </summary>
+        public static string Site_Message_PlaceHolder {
+            get {
+                return ResourceManager.GetString("Site_Message_PlaceHolder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Password updated.
         /// </summary>
         public static string Site_PasswordUpdated {
@@ -399,6 +435,15 @@ namespace Resources {
         public static string Site_SavePassword {
             get {
                 return ResourceManager.GetString("Site_SavePassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Send.
+        /// </summary>
+        public static string Site_Send {
+            get {
+                return ResourceManager.GetString("Site_Send", resourceCulture);
             }
         }
         

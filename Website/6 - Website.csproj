@@ -219,6 +219,7 @@
     <Content Include="Views\Application\Modals\_DeleteAccountConfirmationModal.cshtml" />
     <Content Include="Views\Application\Modals\_ContactModal.cshtml" />
     <Content Include="Styles\shared\flags.less" />
+    <Content Include="Styles\application\modals.less" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

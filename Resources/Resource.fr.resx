@@ -240,4 +240,19 @@
   <data name="Site_About_ContactBody" xml:space="preserve">
     <value>Me contacter</value>
   </data>
+  <data name="Site_Cancel" xml:space="preserve">
+    <value>Annuler</value>
+  </data>
+  <data name="Site_Close" xml:space="preserve">
+    <value>Fermer</value>
+  </data>
+  <data name="Site_Message" xml:space="preserve">
+    <value>Message</value>
+  </data>
+  <data name="Site_Message_PlaceHolder" xml:space="preserve">
+    <value>Entrez votre message</value>
+  </data>
+  <data name="Site_Send" xml:space="preserve">
+    <value>Envoyer</value>
+  </data>
 </root>
