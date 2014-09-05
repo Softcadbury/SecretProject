@@ -11,7 +11,7 @@
     public class UserViewModel : ViewModelBase
     {
         [Required(ErrorMessageResourceName = "Error_IsRequired", ErrorMessageResourceType = typeof(Resource))]
-        [StringLength(LenghtLimits.UserNameMaxLenght, MinimumLength = LenghtLimits.UserNameMinLenght, ErrorMessageResourceName = "Error_MinimumLength", ErrorMessageResourceType = typeof(Resource))]
+        [StringLength(LenghtLimits.UserNameMaxLenght, MinimumLength = LenghtLimits.UserNameMinLenght, ErrorMessageResourceName = "Error_BadLength", ErrorMessageResourceType = typeof(Resource))]
         [Display(Name = "Field_UserName", ResourceType = typeof(Resource))]
         public string UserName { get; set; }
 

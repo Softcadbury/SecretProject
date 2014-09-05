@@ -126,8 +126,8 @@
   <data name="Field_Email" xml:space="preserve">
     <value>Adresse électronique</value>
   </data>
-  <data name="Error_MinimumLength" xml:space="preserve">
-    <value>Le champ {0} doit avoir un minimum de {2} caractères.</value>
+  <data name="Error_BadLength" xml:space="preserve">
+    <value>Le champ {0} doit avoir entre {2} et {1} caractères.</value>
   </data>
   <data name="Error_IsRequired" xml:space="preserve">
     <value>Le champ {0} est requis.</value>

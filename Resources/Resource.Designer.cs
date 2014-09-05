@@ -331,6 +331,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The {0} must be between {2} and {1} characters long..
+        /// </summary>
+        public static string Error_BadLength {
+            get {
+                return ResourceManager.GetString("Error_BadLength", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Wrong user name or password..
         /// </summary>
         public static string Error_CannotLogin {
@@ -354,15 +363,6 @@ namespace Resources {
         public static string Error_IsRequired {
             get {
                 return ResourceManager.GetString("Error_IsRequired", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to The {0} must be at least {2} characters long..
-        /// </summary>
-        public static string Error_MinimumLength {
-            get {
-                return ResourceManager.GetString("Error_MinimumLength", resourceCulture);
             }
         }
         
