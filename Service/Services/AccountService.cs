@@ -34,7 +34,7 @@
             }
             catch
             {
-                return Response<Empty>.CreateError(ErrorCodes.Conflict, Resource.Account_CannotRegistered);
+                return Response<Empty>.CreateError(ErrorCodes.Conflict, Resource.Error_CannotRegistered);
             }
         }
 
@@ -51,7 +51,7 @@
             }
             else
             {
-                return Response<Empty>.CreateError(ErrorCodes.NotFound, Resource.Account_CannotLogin);
+                return Response<Empty>.CreateError(ErrorCodes.NotFound, Resource.Error_CannotLogin);
             }
         }
     }

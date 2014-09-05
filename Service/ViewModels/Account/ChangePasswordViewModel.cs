@@ -9,21 +9,21 @@
     /// </summary>
     public class ChangePasswordViewModel
     {
-        [Required(ErrorMessageResourceName = "Account_FieldRequiredError", ErrorMessageResourceType = typeof(Resource))]
-        [StringLength(LenghtLimits.PasswordMaxLenght, MinimumLength = LenghtLimits.PasswordMinLenght, ErrorMessageResourceName = "Account_FieldMinimumLengthError", ErrorMessageResourceType = typeof(Resource))]
+        [Required(ErrorMessageResourceName = "Error_IsRequired", ErrorMessageResourceType = typeof(Resource))]
+        [StringLength(LenghtLimits.PasswordMaxLenght, MinimumLength = LenghtLimits.PasswordMinLenght, ErrorMessageResourceName = "Error_MinimumLength", ErrorMessageResourceType = typeof(Resource))]
         [DataType(DataType.Password)]
-        [Display(Name = "Account_PasswordActual", ResourceType = typeof(Resource))]
+        [Display(Name = "Field_PasswordActual", ResourceType = typeof(Resource))]
         public string ActualPassword { get; set; }
 
-        [Required(ErrorMessageResourceName = "Account_FieldRequiredError", ErrorMessageResourceType = typeof(Resource))]
-        [StringLength(LenghtLimits.PasswordMaxLenght, MinimumLength = LenghtLimits.PasswordMinLenght, ErrorMessageResourceName = "Account_FieldMinimumLengthError", ErrorMessageResourceType = typeof(Resource))]
+        [Required(ErrorMessageResourceName = "Error_IsRequired", ErrorMessageResourceType = typeof(Resource))]
+        [StringLength(LenghtLimits.PasswordMaxLenght, MinimumLength = LenghtLimits.PasswordMinLenght, ErrorMessageResourceName = "Error_MinimumLength", ErrorMessageResourceType = typeof(Resource))]
         [DataType(DataType.Password)]
-        [Display(Name = "Account_PasswordNew", ResourceType = typeof(Resource))]
+        [Display(Name = "Field_PasswordNew", ResourceType = typeof(Resource))]
         public string NewPassword { get; set; }
 
-        [Compare("NewPassword", ErrorMessageResourceName = "Account_PasswordMatchingError", ErrorMessageResourceType = typeof(Resource))]
+        [Compare("NewPassword", ErrorMessageResourceName = "Error_PasswordMatching", ErrorMessageResourceType = typeof(Resource))]
         [DataType(DataType.Password)]
-        [Display(Name = "Account_PasswordConfirmation", ResourceType = typeof(Resource))]
+        [Display(Name = "Field_PasswordConfirmation", ResourceType = typeof(Resource))]
         public string ConfirmPassword { get; set; }
     }
 }

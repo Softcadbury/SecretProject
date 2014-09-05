@@ -9,10 +9,10 @@
     /// </summary>
     public class DeleteAccountViewModel
     {
-        [Required(ErrorMessageResourceName = "Account_FieldRequiredError", ErrorMessageResourceType = typeof(Resource))]
-        [StringLength(LenghtLimits.PasswordMaxLenght, MinimumLength = LenghtLimits.PasswordMinLenght, ErrorMessageResourceName = "Account_FieldMinimumLengthError", ErrorMessageResourceType = typeof(Resource))]
+        [Required(ErrorMessageResourceName = "Error_IsRequired", ErrorMessageResourceType = typeof(Resource))]
+        [StringLength(LenghtLimits.PasswordMaxLenght, MinimumLength = LenghtLimits.PasswordMinLenght, ErrorMessageResourceName = "Error_MinimumLength", ErrorMessageResourceType = typeof(Resource))]
         [DataType(DataType.Password)]
-        [Display(Name = "Account_PasswordActual", ResourceType = typeof(Resource))]
+        [Display(Name = "Field_PasswordActual", ResourceType = typeof(Resource))]
         public string Password { get; set; }
     }
 }

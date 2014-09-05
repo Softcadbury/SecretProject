@@ -1,9 +1,9 @@
 ﻿<div id="settingsContent">
-    <h1 class="page-title">@Resource.Site_Settings</h1>
+    <h1 class="page-title">@Resource.Common_Settings</h1>
 
     <div class="form-horizontal">
         <div class="form-group">
-            <label class="col-sm-3 col-lg-2 control-label">@Resource.Site_Language</label>
+            <label class="col-sm-3 col-lg-2 control-label">@Resource.Common_Language</label>
             <div class="col-sm-9 col-lg-10">
                 @Html.Partial("_LanguageSelection")
             </div>
@@ -13,30 +13,30 @@
     <hr />
 
     <div class="form-horizontal">
-        <div ng-show="userUpdateSuccess" class="alert alert-success">@Resource.Site_UserUpdated</div>
+        <div ng-show="userUpdateSuccess" class="alert alert-success">@Resource.Success_UserUpdated</div>
         <div ng-show="userUpdateError" class="alert alert-danger">error</div>
         <div class="form-group">
-            <label class="col-sm-3 col-lg-2 control-label">@Resource.Site_Avatar</label>
+            <label class="col-sm-3 col-lg-2 control-label">@Resource.Common_Avatar</label>
             <div class="col-sm-9 col-lg-10">
                 <img class="img-thumbnail" src="~/Content/man.jpg" alt="user" width="100" height="100">
                 <input class="form-control" type="file" ng-model="userPicture">
             </div>
         </div>
         <div class="form-group">
-            <label for="inputUserName" class="col-sm-3 col-lg-2 control-label">@Resource.Account_UserName</label>
+            <label for="inputUserName" class="col-sm-3 col-lg-2 control-label">@Resource.Field_UserName</label>
             <div class="col-sm-9 col-lg-10">
                 <input class="form-control" id="inputUserName" ng-model="userName">
             </div>
         </div>
         <div class="form-group">
-            <label for="inputEmail" class="col-sm-3 col-lg-2 control-label">@Resource.Account_Email</label>
+            <label for="inputEmail" class="col-sm-3 col-lg-2 control-label">@Resource.Field_Email</label>
             <div class="col-sm-9 col-lg-10">
                 <input class="form-control" id="inputEmail" ng-model="userEmail">
             </div>
         </div>
         <div class="form-group">
             <div class="col-sm-offset-3 col-sm-9 col-lg-offset-2 col-lg-10">
-                <button class="btn btn-primary" ng-click="saveChanges()">@Resource.Site_SaveChanges</button>
+                <button class="btn btn-primary" ng-click="saveChanges()">@Resource.Action_SaveChanges</button>
             </div>
         </div>
     </div>
@@ -44,29 +44,29 @@
     <hr />
 
     <div class="form-horizontal">
-        <div ng-show="passwordUpdateSuccess" class="alert alert-success">@Resource.Site_PasswordUpdated</div>
+        <div ng-show="passwordUpdateSuccess" class="alert alert-success">@Resource.Success_PasswordUpdated</div>
         <div ng-show="passwordUpdateError" class="alert alert-danger">error</div>
         <div class="form-group">
-            <label for="inputActualPassword" class="col-sm-3 col-lg-2 control-label">@Resource.Account_PasswordActual</label>
+            <label for="inputActualPassword" class="col-sm-3 col-lg-2 control-label">@Resource.Field_PasswordActual</label>
             <div class="col-sm-9 col-lg-10">
                 <input class="form-control" type="password" id="inputActualPassword" ng-model="actualPassword">
             </div>
         </div>
         <div class="form-group">
-            <label for="inputNewPassword" class="col-sm-3 col-lg-2 control-label">@Resource.Account_PasswordNew</label>
+            <label for="inputNewPassword" class="col-sm-3 col-lg-2 control-label">@Resource.Field_PasswordNew</label>
             <div class="col-sm-9 col-lg-10">
                 <input class="form-control" type="password" id="inputNewPassword" ng-model="newPassword">
             </div>
         </div>
         <div class="form-group">
-            <label for="inputPasswordConfirmation" class="col-sm-3 col-lg-2 control-label">@Resource.Account_PasswordConfirmation</label>
+            <label for="inputPasswordConfirmation" class="col-sm-3 col-lg-2 control-label">@Resource.Field_PasswordConfirmation</label>
             <div class="col-sm-9 col-lg-10">
                 <input class="form-control" type="password" id="inputPasswordConfirmation" ng-model="passwordConfirmation">
             </div>
         </div>
         <div class="form-group">
             <div class="col-sm-offset-3 col-sm-9 col-lg-offset-2 col-lg-10">
-                <button class="btn btn-primary" ng-click="savePassword()">@Resource.Site_SavePassword</button>
+                <button class="btn btn-primary" ng-click="savePassword()">@Resource.Action_SavePassword</button>
             </div>
         </div>
     </div>
@@ -76,9 +76,9 @@
     <div class="form-horizontal">
         <div ng-show="deleteAccountError" class="alert alert-danger">error</div>
         <div class="form-group">
-            <label class="col-sm-3 col-lg-2 control-label">@Resource.Site_Account</label>
+            <label class="col-sm-3 col-lg-2 control-label">@Resource.Common_Account</label>
             <div class="col-sm-9 col-lg-10">
-                <button class="btn btn-danger" ng-click="deleteAccount()">@Resource.Site_DeleteAccount</button>
+                <button class="btn btn-danger" ng-click="deleteAccount()">@Resource.Action_DeleteAccount</button>
             </div>
         </div>
     </div>

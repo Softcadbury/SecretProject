@@ -1,21 +1,21 @@
 ﻿@model global::Service.ViewModels.Account.LoginViewModel
 
 <div id="login">
-    <h1 class="account-title">@Resource.Account_LoginNow</h1>
+    <h1 class="account-title">@Resource.Action_LoginNow</h1>
     <div class="account-content">
         @using (Html.BeginForm("ValidateLogin", "Account"))
         {
             @Html.ValidationSummary(false)
-            @Html.TextBoxFor(model => model.UserName, new { placeholder = @Resource.Account_UserName, @class = "form-control" })
-            @Html.PasswordFor(model => model.Password, new { placeholder = @Resource.Account_Password, @class = "form-control" })
+            @Html.TextBoxFor(model => model.UserName, new { placeholder = @Resource.Field_UserName, @class = "form-control" })
+            @Html.PasswordFor(model => model.Password, new { placeholder = @Resource.Field_Password, @class = "form-control" })
             <button class="btn btn-block account-button" type="submit">
                 <i class="fa fa-lock"></i>
-                @Resource.Account_Login
+                @Resource.Action_Login
             </button>
         }
     </div>
     <div class="account-footer">
-        <p>@Resource.Account_NoAccountYet</p>
-        @Html.ActionLink(Resource.Account_RegisterNow, "Registration", "Account")
+        <p>@Resource.Content_NoAccountYet</p>
+        @Html.ActionLink(Resource.Action_RegisterNow, "Registration", "Account")
     </div>
 </div>

@@ -117,142 +117,142 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Account_CannotLogin" xml:space="preserve">
+  <data name="Error_CannotLogin" xml:space="preserve">
     <value>Nom d'utilisateur ou mot de passe incorrect.</value>
   </data>
-  <data name="Account_CannotRegistered" xml:space="preserve">
+  <data name="Error_CannotRegistered" xml:space="preserve">
     <value>Nom d'utilisateur ou mot de passe déjà enregistré.</value>
   </data>
-  <data name="Account_Email" xml:space="preserve">
+  <data name="Field_Email" xml:space="preserve">
     <value>Adresse électronique</value>
   </data>
-  <data name="Account_FieldMinimumLengthError" xml:space="preserve">
+  <data name="Error_MinimumLength" xml:space="preserve">
     <value>Le champ {0} doit avoir un minimum de {2} caractères.</value>
   </data>
-  <data name="Account_FieldRequiredError" xml:space="preserve">
+  <data name="Error_IsRequired" xml:space="preserve">
     <value>Le champ {0} est requis.</value>
   </data>
-  <data name="Account_FieldValidationError" xml:space="preserve">
+  <data name="Error_NotValid" xml:space="preserve">
     <value>Le champ {0} n'est pas valide.</value>
   </data>
-  <data name="Account_Login" xml:space="preserve">
+  <data name="Action_Login" xml:space="preserve">
     <value>Connexion</value>
   </data>
-  <data name="Account_LoginNow" xml:space="preserve">
+  <data name="Action_LoginNow" xml:space="preserve">
     <value>Connectez-vous</value>
   </data>
-  <data name="Account_LogOut" xml:space="preserve">
+  <data name="Action_LogOut" xml:space="preserve">
     <value>Déconnexion</value>
   </data>
-  <data name="Account_Password" xml:space="preserve">
+  <data name="Field_Password" xml:space="preserve">
     <value>Mot de passe</value>
   </data>
-  <data name="Account_PasswordConfirmation" xml:space="preserve">
+  <data name="Field_PasswordConfirmation" xml:space="preserve">
     <value>Confirmation du mot de passe</value>
   </data>
-  <data name="Account_PasswordMatchingError" xml:space="preserve">
+  <data name="Error_PasswordMatching" xml:space="preserve">
     <value>Le mot de passe et la confirmation de mot de passe sont différents.</value>
   </data>
-  <data name="Account_Register" xml:space="preserve">
+  <data name="Action_Register" xml:space="preserve">
     <value>Inscription</value>
   </data>
-  <data name="Account_RegisterNow" xml:space="preserve">
+  <data name="Action_RegisterNow" xml:space="preserve">
     <value>Inscrivez-vous</value>
   </data>
-  <data name="Account_UserName" xml:space="preserve">
+  <data name="Field_UserName" xml:space="preserve">
     <value>Nom d'utilisateur</value>
   </data>
-  <data name="Application_ChatRooms" xml:space="preserve">
+  <data name="Common_ChatRooms" xml:space="preserve">
     <value>Salles de chat</value>
   </data>
-  <data name="Site_Home" xml:space="preserve">
+  <data name="Common_Home" xml:space="preserve">
     <value>Accueil</value>
   </data>
-  <data name="Site_Settings" xml:space="preserve">
+  <data name="Common_Settings" xml:space="preserve">
     <value>Réglages</value>
   </data>
-  <data name="Site_Users" xml:space="preserve">
+  <data name="Common_Users" xml:space="preserve">
     <value>Utilisateurs</value>
   </data>
-  <data name="Site_Language" xml:space="preserve">
+  <data name="Common_Language" xml:space="preserve">
     <value>Langue</value>
   </data>
-  <data name="Home_SubTitle" xml:space="preserve">
+  <data name="Content_HomeSubTitle" xml:space="preserve">
     <value>Chat with everyone</value>
   </data>
-  <data name="Home_Title" xml:space="preserve">
+  <data name="Content_HomeTitle" xml:space="preserve">
     <value>Marketing stuff!</value>
   </data>
-  <data name="Account_AlreadyAnAccount" xml:space="preserve">
+  <data name="Content_AlreadyAnAccount" xml:space="preserve">
     <value>Déja un compte ?</value>
   </data>
-  <data name="Account_Back" xml:space="preserve">
+  <data name="Action_Back" xml:space="preserve">
     <value>Back</value>
   </data>
-  <data name="Account_NoAccountYet" xml:space="preserve">
+  <data name="Content_NoAccountYet" xml:space="preserve">
     <value>Pas encore de compte ?</value>
   </data>
-  <data name="Site_About" xml:space="preserve">
+  <data name="Common_About" xml:space="preserve">
     <value>A propos</value>
   </data>
-  <data name="Site_SaveChanges" xml:space="preserve">
+  <data name="Action_SaveChanges" xml:space="preserve">
     <value>Enregistrer</value>
   </data>
-  <data name="Account_PasswordActual" xml:space="preserve">
+  <data name="Field_PasswordActual" xml:space="preserve">
     <value>Mot de passe actuel</value>
   </data>
-  <data name="Account_PasswordNew" xml:space="preserve">
+  <data name="Field_PasswordNew" xml:space="preserve">
     <value>Nouveau mot de passe</value>
   </data>
-  <data name="Site_Avatar" xml:space="preserve">
+  <data name="Common_Avatar" xml:space="preserve">
     <value>Avatar</value>
   </data>
-  <data name="Site_SavePassword" xml:space="preserve">
+  <data name="Action_SavePassword" xml:space="preserve">
     <value>Changer</value>
   </data>
-  <data name="Site_Account" xml:space="preserve">
+  <data name="Common_Account" xml:space="preserve">
     <value>Compte</value>
   </data>
-  <data name="Site_DeleteAccount" xml:space="preserve">
+  <data name="Action_DeleteAccount" xml:space="preserve">
     <value>Supprimer mon compte</value>
   </data>
-  <data name="Site_PasswordUpdated" xml:space="preserve">
+  <data name="Success_PasswordUpdated" xml:space="preserve">
     <value>Mot de passe mis à jour</value>
   </data>
-  <data name="Site_UserUpdated" xml:space="preserve">
+  <data name="Success_UserUpdated" xml:space="preserve">
     <value>Compte mis à jour</value>
   </data>
-  <data name="Site_About_Contact" xml:space="preserve">
+  <data name="Common_Contact" xml:space="preserve">
     <value>Contact</value>
   </data>
-  <data name="Site_About_Privacy" xml:space="preserve">
+  <data name="Common_Privacy" xml:space="preserve">
     <value>Vie privée et cookies</value>
   </data>
-  <data name="Site_About_PrivacyBody" xml:space="preserve">
+  <data name="Content_PrivacyBody" xml:space="preserve">
     <value>todo: privacy body</value>
   </data>
-  <data name="Site_About_Terms" xml:space="preserve">
+  <data name="Common_Terms" xml:space="preserve">
     <value>Conditions Générales</value>
   </data>
-  <data name="Site_About_TermsBody" xml:space="preserve">
+  <data name="Content_TermsBody" xml:space="preserve">
     <value>todo: terms body</value>
   </data>
-  <data name="Site_About_ContactBody" xml:space="preserve">
+  <data name="Action_ContactMe" xml:space="preserve">
     <value>Me contacter</value>
   </data>
-  <data name="Site_Cancel" xml:space="preserve">
+  <data name="Action_Cancel" xml:space="preserve">
     <value>Annuler</value>
   </data>
-  <data name="Site_Close" xml:space="preserve">
+  <data name="Action_Close" xml:space="preserve">
     <value>Fermer</value>
   </data>
-  <data name="Site_Message" xml:space="preserve">
+  <data name="Field_Message" xml:space="preserve">
     <value>Message</value>
   </data>
-  <data name="Site_Message_PlaceHolder" xml:space="preserve">
+  <data name="PlaceHolder_Message" xml:space="preserve">
     <value>Entrez votre message</value>
   </data>
-  <data name="Site_Send" xml:space="preserve">
+  <data name="Action_Send" xml:space="preserve">
     <value>Envoyer</value>
   </data>
 </root>
