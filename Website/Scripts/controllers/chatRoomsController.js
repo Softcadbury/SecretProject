@@ -15,17 +15,18 @@
         $scope.newMessage = '';
 
         // Get the first page of chat rooms
-        chatRoomFactory.getPage(1).
-            success(function (chatRooms) {
+        chatRoomFactory.getPage(1)
+            .success(function (chatRooms) {
                 $scope.chatRooms = chatRooms;
                 $scope.selectedChatRoomId = $scope.chatRooms[0].Id;
 
                 // Register SingalR functions
-                $.connection.hub.start().done(function () {
-                    $scope.sendMessageToChatRoom = sendMessageToChatRoom;
-                    $scope.chatRoomsParticipantsUpdate = chatRoomsParticipantsUpdate;
-                    chatRoomsParticipantsUpdate($scope.chatRooms[0].Id);
-                });
+                $.connection.hub.start()
+                    .done(function () {
+                        $scope.sendMessageToChatRoom = sendMessageToChatRoom;
+                        $scope.chatRoomsParticipantsUpdate = chatRoomsParticipantsUpdate;
+                        chatRoomsParticipantsUpdate($scope.chatRooms[0].Id);
+                    });
             });
 
         // Function to know if the chat room is the selected chat room

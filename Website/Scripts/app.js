@@ -42,8 +42,8 @@
 
     // Function called at application runtime
     function run($rootScope, userFactory) {
-        userFactory.getCurrent().
-            success(function (user) {
+        userFactory.getCurrent()
+            .success(function (user) {
                 $rootScope.currentUser = user;
                 $rootScope.$broadcast('currentUser.updated');
             });
