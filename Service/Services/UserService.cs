@@ -8,7 +8,6 @@
     using Service.ViewModels.Account;
     using System.Collections.Generic;
     using System.Linq;
-    using System.Web;
     using WebMatrix.WebData;
 
     /// <summary>
@@ -41,11 +40,11 @@
         }
 
         /// <summary>
-        /// Update a user
+        /// Update the current user
         /// </summary>
         public Response<User> Update(int userId, User user)
         {
-            if (!IsCurrent(userId).Content)
+            if (userId != WebSecurity.CurrentUserId)
             {
                 return Response<User>.CreateError(ErrorCodes.Forbidden);
             }
@@ -61,11 +60,11 @@
         }
 
         /// <summary>
-        /// Update the user's passeword
+        /// Update the password of the current user
         /// </summary>
         public Response<Empty> UpdatePassword(int userId, ChangePasswordViewModel changePassword)
         {
-            if (!IsCurrent(userId).Content)
+            if (userId != WebSecurity.CurrentUserId)
             {
                 return Response<Empty>.CreateError(ErrorCodes.Forbidden);
             }
@@ -92,17 +91,6 @@
             {
                 return BaseRemove(WebSecurity.CurrentUserId);
             }
-        }
-
-        /// <summary>
-        /// Indicate if a the user id is the id of the current user
-        /// </summary>
-        public Response<bool> IsCurrent(int userId)
-        {
-            string currentUserName = HttpContext.Current.User.Identity.Name;
-            int currentUserId = WebSecurity.GetUserId(currentUserName);
-
-            return Response<bool>.CreateSuccess(userId == currentUserId);
         }
     }
 }
