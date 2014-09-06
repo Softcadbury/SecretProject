@@ -1,7 +1,7 @@
 ﻿namespace Infrastructure.BaseClasses
 {
-    using System.Collections.Generic;
     using Infrastructure.ServiceResponses;
+    using System.Collections.Generic;
 
     /// <summary>
     /// A baseline definition that every services will inherit from
@@ -64,13 +64,8 @@
         /// <summary>
         /// Update a model
         /// </summary>
-        protected Response<TModel> BaseUpdate(int id, TModel model)
+        protected Response<TModel> BaseUpdate(TModel model)
         {
-            if (id != model.Id)
-            {
-                return Response<TModel>.CreateError(ErrorCodes.BadRequest);
-            }
-
             TModel modelUpdated = Repository.Update(model);
             Repository.SaveChanges();
 

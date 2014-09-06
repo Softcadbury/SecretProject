@@ -26,7 +26,7 @@
             $rootScope.currentUser.UserName = $scope.userName;
             $rootScope.currentUser.Email = $scope.userEmail;
 
-            userFactory.update($rootScope.currentUser)
+            userFactory.updateCurrent($rootScope.currentUser)
                 .success(function () {
                     hideAlerts();
                     $scope.userUpdateSuccess = true;

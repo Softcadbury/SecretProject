@@ -42,9 +42,9 @@
         /// <summary>
         /// Update the current user
         /// </summary>
-        public Response<User> Update(int userId, User user)
+        public Response<User> UpdateCurrent(User user)
         {
-            if (userId != WebSecurity.CurrentUserId)
+            if (user.Id != WebSecurity.CurrentUserId)
             {
                 return Response<User>.CreateError(ErrorCodes.Forbidden);
             }
@@ -56,7 +56,7 @@
                 return Response<User>.CreateError(ErrorCodes.Conflict);
             }
 
-            return BaseUpdate(userId, user);
+            return BaseUpdate(user);
         }
 
         /// <summary>

@@ -20,8 +20,8 @@
         };
 
         // Function to update a user
-        factory.update = function (currentUser) {
-            return $http.put(urlBase + '/' + currentUser.Id, currentUser);
+        factory.updateCurrent = function (currentUser) {
+            return $http.put(urlBase + '/current', currentUser);
         };
 
         // Function to update the user's password

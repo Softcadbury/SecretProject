@@ -51,17 +51,17 @@
             return RenderResponse(response);
         }
 
-        // PUT: /api/users/1
+        // PUT: /api/users/current
         [HttpPut]
-        [Route("{id:int}")]
-        public IHttpActionResult Update(int id, [FromBody] User user)
+        [Route("current")]
+        public IHttpActionResult UpdateCurrent([FromBody] User user)
         {
             if (!ModelState.IsValid || user == null)
             {
                 return BadRequest();
             }
 
-            Response<User> response = userService.Update(id, user);
+            Response<User> response = userService.UpdateCurrent(user);
 
             return RenderResponse(response);
         }
