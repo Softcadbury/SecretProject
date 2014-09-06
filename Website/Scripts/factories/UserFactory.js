@@ -1,9 +1,9 @@
 ﻿(function (angular) {
     angular
         .module('app')
-        .factory('UserFactory', ['$http', UserFactory]);
+        .factory('userFactory', ['$http', userFactory]);
 
-    function UserFactory($http) {
+    function userFactory($http) {
         var urlBase = '/api/users';
         var factory = {};
 

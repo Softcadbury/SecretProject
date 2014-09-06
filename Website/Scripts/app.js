@@ -8,27 +8,27 @@
     function configuration($routeProvider, $locationProvider) {
         $routeProvider.when('/about', {
             templateUrl: '/Application/AboutContent',
-            controller: 'AboutCtrl',
+            controller: 'aboutController',
         });
 
         $routeProvider.when('/chatRooms', {
             templateUrl: '/Application/ChatRoomsContent',
-            controller: 'ChatRoomsCtrl',
+            controller: 'chatRoomsController',
         });
 
         $routeProvider.when('/', {
             templateUrl: '/Application/HomeContent',
-            controller: 'HomeCtrl',
+            controller: 'homeController',
         });
 
         $routeProvider.when('/settings', {
             templateUrl: '/Application/SettingsContent',
-            controller: 'SettingsCtrl',
+            controller: 'settingsController',
         });
 
         $routeProvider.when('/users', {
             templateUrl: '/Application/UsersContent',
-            controller: 'UsersCtrl',
+            controller: 'usersController',
         });
 
         $routeProvider.otherwise({
@@ -39,8 +39,8 @@
     }
 
     // Function called at application runtime
-    function run($rootScope, UserFactory) {
-        UserFactory.getCurrent().
+    function run($rootScope, userFactory) {
+        userFactory.getCurrent().
             success(function (user) {
                 $rootScope.currentUser = user;
                 $rootScope.$broadcast('currentUser.updated');

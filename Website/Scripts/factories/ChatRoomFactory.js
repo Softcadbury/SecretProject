@@ -1,9 +1,9 @@
 ﻿(function (angular) {
     angular
         .module('app')
-        .factory('ChatRoomFactory', ['$http', ChatRoomFactory]);
+        .factory('chatRoomFactory', ['$http', chatRoomFactory]);
 
-    function ChatRoomFactory($http) {
+    function chatRoomFactory($http) {
         var urlBase = '/api/chatrooms';
         var factory = {};
 
