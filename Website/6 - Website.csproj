@@ -183,6 +183,7 @@
     <Content Include="Scripts\controllers\menuController.js" />
     <Content Include="Scripts\controllers\usersController.js" />
     <Content Include="Scripts\factories\chatRoomFactory.js" />
+    <Content Include="Scripts\factories\signalRChatRoomFactory.js" />
     <Content Include="Scripts\factories\userFactory.js" />
     <Content Include="Views\Application\Index.cshtml" />
     <Content Include="Views\Web.config" />
