@@ -1,4 +1,6 @@
 ﻿(function (angular) {
+    'use strict';
+
     angular
         .module('app')
         .controller('settingsController', ['$rootScope', '$scope', 'userFactory', settingsController]);

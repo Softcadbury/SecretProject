@@ -1,4 +1,6 @@
 ﻿(function (angular) {
+    'use strict';
+
     angular
         .module('app')
         .controller('menuController', ['$rootScope', '$scope', '$location', menuController]);
