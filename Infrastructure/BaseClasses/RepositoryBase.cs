@@ -39,17 +39,22 @@
         /// <summary>
         /// Get a single model from the database with its id
         /// </summary>
-        public virtual TModel GetById(int id)
+        public virtual TModel GetById(int id, params Expression<Func<TModel, object>>[] includeProperties)
         {
-            return dbSet.Find(id);
+            return GetByPredicate(m => m.Id == id, includeProperties);
         }
 
         /// <summary>
         /// Get a list of models from the database with a predicate
         /// </summary>
-        public List<TModel> GetByPredicate(Expression<Func<TModel, bool>> expression)
+        public TModel GetByPredicate(Expression<Func<TModel, bool>> wherePredicate, params Expression<Func<TModel, object>>[] includeProperties)
         {
-            return dbSet.Where(expression).ToList();
+            foreach (var property in includeProperties)
+            {
+                dbSet.Include(property);
+            }
+
+            return dbSet.Where(wherePredicate).FirstOrDefault();
         }
 
         /// <summary>

@@ -7,7 +7,6 @@
     using Service.ViewModels;
     using Service.ViewModels.Account;
     using System.Collections.Generic;
-    using System.Linq;
     using WebMatrix.WebData;
 
     /// <summary>
@@ -49,7 +48,7 @@
                 return Response<User>.CreateError(ErrorCodes.Forbidden);
             }
 
-            User existingUser = Repository.GetByPredicate(u => u.UserName == user.UserName && u.Id != user.Id).FirstOrDefault();
+            User existingUser = Repository.GetByPredicate(u => u.UserName == user.UserName && u.Id != user.Id);
 
             if (existingUser != null)
             {

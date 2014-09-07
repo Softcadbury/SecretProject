@@ -1,7 +1,9 @@
 ﻿namespace Infrastructure.BaseClasses
 {
     using Infrastructure.ServiceResponses;
+    using System;
     using System.Collections.Generic;
+    using System.Linq.Expressions;
 
     /// <summary>
     /// A baseline definition that every services will inherit from
@@ -23,9 +25,9 @@
         /// <summary>
         /// Get a model
         /// </summary>
-        protected Response<TModel> BaseGet(int id)
+        protected Response<TModel> BaseGet(int id, params Expression<Func<TModel, object>>[] includeProperties)
         {
-            TModel model = Repository.GetById(id);
+            TModel model = Repository.GetById(id, includeProperties);
 
             if (model == null)
             {
