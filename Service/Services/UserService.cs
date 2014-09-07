@@ -27,7 +27,7 @@
         /// </summary>
         public Response<User> GetCurrent()
         {
-            return BaseGet(WebSecurity.CurrentUserId);
+            return BaseGet(WebSecurity.CurrentUserId, u => u.Picture);
         }
 
         /// <summary>

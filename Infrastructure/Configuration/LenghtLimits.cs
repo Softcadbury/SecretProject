@@ -10,5 +10,7 @@
 
         public const int PasswordMaxLenght = 50;
         public const int PasswordMinLenght = 6;
+
+        public const int PictureMaxLenght = 1000;
     }
 }

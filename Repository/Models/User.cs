@@ -15,5 +15,7 @@
 
         [Required]
         public string Email { get; set; }
+
+        public Picture Picture { get; set; }
     }
 }
