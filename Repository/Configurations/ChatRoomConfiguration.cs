@@ -1,5 +1,6 @@
 ﻿namespace Repository.Configurations
 {
+    using Infrastructure.Configuration;
     using Repository.Models;
 
     /// <summary>
@@ -12,7 +13,7 @@
         /// </summary>
         public ChatRoomConfiguration()
         {
-            Property(m => m.Title).IsRequired();
+            Property(m => m.Title).IsRequired().HasMaxLength(LenghtLimits.ChatRoomMaxLenght);
 
             Map(m =>
             {

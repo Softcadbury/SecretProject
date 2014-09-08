@@ -13,7 +13,7 @@
         /// </summary>
         public PictureConfiguration()
         {
-            Property(m => m.Content).IsRequired().HasMaxLength(LenghtLimits.UserNameMaxLenght);
+            Property(m => m.Content).IsRequired().HasMaxLength(LenghtLimits.PictureMaxLenght);
             HasRequired<User>(m => m.User).WithOptional(m => m.Picture).Map(m => m.MapKey("PictureId"));
 
             Map(m =>

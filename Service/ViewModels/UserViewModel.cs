@@ -16,6 +16,7 @@
         public string UserName { get; set; }
 
         [Required(ErrorMessageResourceName = "Error_IsRequired", ErrorMessageResourceType = typeof(Resource))]
+        [StringLength(LenghtLimits.EmailMaxLenght, MinimumLength = LenghtLimits.EmailMinLenght, ErrorMessageResourceName = "Error_BadLength", ErrorMessageResourceType = typeof(Resource))]
         [EmailAddress(ErrorMessageResourceName = "Error_NotValid", ErrorMessageResourceType = typeof(Resource), ErrorMessage = null)]
         [Display(Name = "Field_Email", ResourceType = typeof(Resource))]
         public string Email { get; set; }

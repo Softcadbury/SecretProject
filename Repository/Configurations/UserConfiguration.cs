@@ -14,7 +14,7 @@
         public UserConfiguration()
         {
             Property(m => m.UserName).IsRequired().HasMaxLength(LenghtLimits.UserNameMaxLenght);
-            Property(m => m.Email).IsRequired();
+            Property(m => m.Email).IsRequired().HasMaxLength(LenghtLimits.EmailMaxLenght);
             HasOptional<Picture>(m => m.Picture).WithRequired(m => m.User).Map(m => m.MapKey("UserId"));
 
             Map(m =>
