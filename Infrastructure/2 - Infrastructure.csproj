@@ -109,6 +109,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaseClasses\ConfigurationBase.cs" />
     <Compile Include="BaseClasses\ControllerApiBase.cs" />
     <Compile Include="BaseClasses\ControllerViewBase.cs" />
     <Compile Include="BaseClasses\ModelBase.cs" />

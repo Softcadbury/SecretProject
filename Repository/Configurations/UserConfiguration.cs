@@ -1,20 +1,21 @@
 ﻿namespace Repository.Configurations
 {
+    using Infrastructure.Configuration;
     using Repository.Models;
-    using System.ComponentModel.DataAnnotations.Schema;
-    using System.Data.Entity.ModelConfiguration;
 
     /// <summary>
     /// Configuration for the model User
     /// </summary>
-    public class UserConfiguration : EntityTypeConfiguration<User>
+    public class UserConfiguration : ConfigurationBase<User>
     {
         /// <summary>
         /// Constructor
         /// </summary>
         public UserConfiguration()
         {
-            Property(t => t.Id).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
+            Property(m => m.UserName).IsRequired().HasMaxLength(LenghtLimits.UserNameMaxLenght);
+            Property(m => m.Email).IsRequired();
+            HasOptional<Picture>(m => m.Picture).WithRequired(m => m.User).Map(m => m.MapKey("UserId"));
 
             Map(m =>
             {

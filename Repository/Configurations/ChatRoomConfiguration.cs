@@ -1,20 +1,18 @@
 ﻿namespace Repository.Configurations
 {
     using Repository.Models;
-    using System.ComponentModel.DataAnnotations.Schema;
-    using System.Data.Entity.ModelConfiguration;
 
     /// <summary>
     /// Configuration for the model ChatRoom
     /// </summary>
-    public class ChatRoomConfiguration : EntityTypeConfiguration<ChatRoom>
+    public class ChatRoomConfiguration : ConfigurationBase<ChatRoom>
     {
         /// <summary>
         /// Constructor
         /// </summary>
         public ChatRoomConfiguration()
         {
-            Property(t => t.Id).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
+            Property(m => m.Title).IsRequired();
 
             Map(m =>
             {

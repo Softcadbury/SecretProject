@@ -1,20 +1,20 @@
 ﻿namespace Repository.Configurations
 {
+    using Infrastructure.Configuration;
     using Repository.Models;
-    using System.ComponentModel.DataAnnotations.Schema;
-    using System.Data.Entity.ModelConfiguration;
 
     /// <summary>
     /// Configuration for the model Picture
     /// </summary>
-    public class PictureConfiguration : EntityTypeConfiguration<Picture>
+    public class PictureConfiguration : ConfigurationBase<Picture>
     {
         /// <summary>
         /// Constructor
         /// </summary>
         public PictureConfiguration()
         {
-            Property(t => t.Id).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
+            Property(m => m.Content).IsRequired().HasMaxLength(LenghtLimits.UserNameMaxLenght);
+            HasRequired<User>(m => m.User).WithOptional(m => m.Picture).Map(m => m.MapKey("PictureId"));
 
             Map(m =>
             {
