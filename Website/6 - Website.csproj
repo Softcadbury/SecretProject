@@ -221,7 +221,7 @@
     <Content Include="Views\Application\Modals\_ContactModal.cshtml" />
     <Content Include="Styles\shared\flags.less" />
     <Content Include="Styles\application\modals.less" />
-    <Content Include="Views\Application\Modals\_PictureCropingModal.cshtml" />
+    <Content Include="Views\Application\Modals\_PictureCroppingModal.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
