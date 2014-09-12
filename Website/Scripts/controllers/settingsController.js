@@ -21,6 +21,11 @@
             $scope.userEmail = $rootScope.currentUser.Email;
         });
 
+        // Function to open the picture cropping modal
+        $scope.openPictureCroppingModal = function () {
+            $('#pictureCroppingModal').modal('show');
+        }
+
         // Function to save the change of user's information
         $scope.saveChanges = function () {
             hideAlerts();
