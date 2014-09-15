@@ -255,4 +255,7 @@
   <data name="Action_Send" xml:space="preserve">
     <value>Envoyer</value>
   </data>
+  <data name="Action_Confirm" xml:space="preserve">
+    <value>Confirmer</value>
+  </data>
 </root>

@@ -88,6 +88,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Confirm.
+        /// </summary>
+        public static string Action_Confirm {
+            get {
+                return ResourceManager.GetString("Action_Confirm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Contact me.
         /// </summary>
         public static string Action_ContactMe {
