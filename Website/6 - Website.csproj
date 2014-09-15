@@ -176,12 +176,15 @@
   <ItemGroup>
     <Content Include="Content\man.jpg" />
     <Content Include="Scripts\app.js" />
-    <Content Include="Scripts\controllers\aboutController.js" />
-    <Content Include="Scripts\controllers\settingsController.js" />
-    <Content Include="Scripts\controllers\chatRoomsController.js" />
-    <Content Include="Scripts\controllers\homeController.js" />
+    <Content Include="Scripts\controllers\content\aboutController.js" />
+    <Content Include="Scripts\controllers\modals\confirmationController.js" />
+    <Content Include="Scripts\controllers\modals\contactController.js" />
+    <Content Include="Scripts\controllers\modals\pictureCroppingController.js" />
+    <Content Include="Scripts\controllers\content\settingsController.js" />
+    <Content Include="Scripts\controllers\content\chatRoomsController.js" />
+    <Content Include="Scripts\controllers\content\homeController.js" />
     <Content Include="Scripts\controllers\menuController.js" />
-    <Content Include="Scripts\controllers\usersController.js" />
+    <Content Include="Scripts\controllers\content\usersController.js" />
     <Content Include="Scripts\factories\chatRoomFactory.js" />
     <Content Include="Scripts\factories\signalRChatRoomFactory.js" />
     <Content Include="Scripts\factories\userFactory.js" />
@@ -217,7 +220,7 @@
     <Content Include="Styles\application\content\chatRooms.less" />
     <Content Include="Styles\application\content\settings.less" />
     <Content Include="Styles\application\content\users.less" />
-    <Content Include="Views\Application\Modals\_DeleteAccountConfirmationModal.cshtml" />
+    <Content Include="Views\Application\Modals\_ConfirmationModal.cshtml" />
     <Content Include="Views\Application\Modals\_ContactModal.cshtml" />
     <Content Include="Styles\shared\flags.less" />
     <Content Include="Styles\application\modals.less" />

@@ -1,19 +1,21 @@
 ﻿<div id="contactModal" class="modal fade">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">@Resource.Action_Close</span></button>
-                <h4 class="modal-title">@Resource.Action_ContactMe</h4>
-            </div>
-            <div class="modal-body">
-                <div class="form-group">
-                    <label for="inputMessage">@Resource.Field_Message</label>
-                    <textarea class="form-control" id="inputMessage" ng-model="userName" placeholder="@Resource.PlaceHolder_Message"></textarea>
+    <div ng-controller="contactController">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">@Resource.Action_Close</span></button>
+                    <h4 class="modal-title">@Resource.Action_ContactMe</h4>
                 </div>
-            </div>
-            <div class="modal-footer">
-                <button class="btn btn-default" data-dismiss="modal">@Resource.Action_Cancel</button>
-                <button class="btn btn-primary">@Resource.Action_Send</button>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="inputMessage">@Resource.Field_Message</label>
+                        <textarea class="form-control" id="inputMessage" ng-model="userName" placeholder="@Resource.PlaceHolder_Message"></textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-default" data-dismiss="modal">@Resource.Action_Cancel</button>
+                    <button class="btn btn-primary">@Resource.Action_Send</button>
+                </div>
             </div>
         </div>
     </div>
