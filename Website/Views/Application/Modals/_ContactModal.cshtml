@@ -9,12 +9,12 @@
                 <div class="modal-body">
                     <div class="form-group">
                         <label for="inputMessage">@Resource.Field_Message</label>
-                        <textarea class="form-control" id="inputMessage" ng-model="userName" placeholder="@Resource.PlaceHolder_Message"></textarea>
+                        <textarea class="form-control" ng-model="message" placeholder="@Resource.PlaceHolder_Message"></textarea>
                     </div>
                 </div>
                 <div class="modal-footer">
                     <button class="btn btn-default" data-dismiss="modal">@Resource.Action_Cancel</button>
-                    <button class="btn btn-primary">@Resource.Action_Send</button>
+                    <button class="btn btn-primary" ng-click="sendMessage($event)">@Resource.Action_Send</button>
                 </div>
             </div>
         </div>
