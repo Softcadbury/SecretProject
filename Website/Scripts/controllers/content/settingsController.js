@@ -27,39 +27,47 @@
         }
 
         // Function to save the change of user's information
-        $scope.saveChanges = function () {
+        $scope.saveChanges = function (clickEvent) {
             hideAlerts();
+            $(clickEvent.target).button('loading');
             $rootScope.currentUser.UserName = $scope.userName;
             $rootScope.currentUser.Email = $scope.userEmail;
 
             userFactory.updateCurrent($rootScope.currentUser)
                 .success(function () {
                     $scope.userUpdateSuccess = true;
+                    $(clickEvent.target).button('reset');
                     $rootScope.$broadcast('currentUser.updated');
                 })
                 .error(function () {
                     $scope.userUpdateError = true;
+                    $(clickEvent.target).button('reset');
                 });
         };
 
         // Function to save the change of user's password
-        $scope.savePassword = function () {
+        $scope.savePassword = function (clickEvent) {
             hideAlerts();
+            $(clickEvent.target).button('loading');
+
             userFactory.updatePassword($rootScope.currentUser, $scope.actualPassword, $scope.newPassword, $scope.passwordConfirmation)
                 .success(function () {
                     $scope.passwordUpdateSuccess = true;
+                    $(clickEvent.target).button('reset');
                     $scope.actualPassword = '';
                     $scope.newPassword = '';
                     $scope.passwordConfirmation = '';
                 })
                 .error(function () {
                     $scope.passwordUpdateError = true;
+                    $(clickEvent.target).button('reset');
                 });
         };
 
         // Function to delete the user's account
         $scope.deleteAccount = function () {
             hideAlerts();
+
             userFactory.removeCurrent()
                 .success(function () {
                     // Todo: redirect to home
