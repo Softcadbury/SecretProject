@@ -6,8 +6,6 @@
         .controller('chatRoomsController', ['$rootScope', '$scope', 'chatRoomFactory', 'signalRChatRoomService', chatRoomsController]);
 
     function chatRoomsController($rootScope, $scope, chatRoomFactory, signalRChatRoomService) {
-        var chatHub = $.connection.chatHub;
-
         $scope.chatRooms = [];
         $scope.selectedChatRoomId = null;
         $scope.userName = $rootScope.currentUser ? $rootScope.currentUser.UserName : '';
