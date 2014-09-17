@@ -3,9 +3,9 @@
 
     angular
         .module('app')
-        .controller('chatRoomsController', ['$rootScope', '$scope', 'chatRoomFactory', 'signalRChatRoomFactory', chatRoomsController]);
+        .controller('chatRoomsController', ['$rootScope', '$scope', 'chatRoomFactory', 'signalRChatRoomService', chatRoomsController]);
 
-    function chatRoomsController($rootScope, $scope, chatRoomFactory, signalRChatRoomFactory) {
+    function chatRoomsController($rootScope, $scope, chatRoomFactory, signalRChatRoomService) {
         var chatHub = $.connection.chatHub;
 
         $scope.chatRooms = [];
@@ -20,9 +20,9 @@
                 $scope.chatRooms = chatRooms;
                 $scope.selectedChatRoomId = $scope.chatRooms[0].Id;
 
-                signalRChatRoomFactory.connect()
+                signalRChatRoomService.connect()
                     .done(function () {
-                        signalRChatRoomFactory.chatRoomsParticipantsUpdate($scope.selectedChatRoomId);
+                        signalRChatRoomService.chatRoomsParticipantsUpdate($scope.selectedChatRoomId);
                     });
             });
 
@@ -33,7 +33,7 @@
 
         // Function to change the selected chat room
         $scope.changeChatRoom = function (chatRoom) {
-            signalRChatRoomFactory.chatRoomsParticipantsUpdate(chatRoom.Id);
+            signalRChatRoomService.chatRoomsParticipantsUpdate(chatRoom.Id);
             $scope.selectedChatRoomId = chatRoom.Id;
             $scope.messages = [];
             $scope.newMessage = '';
@@ -42,7 +42,7 @@
         // Function to send a message to a chat room
         $scope.sendMessageToChatRoom = function () {
             if ($scope.newMessage.trim() !== '') {
-                signalRChatRoomFactory.sendMessageToChatRoom($scope.selectedChatRoomId, $scope.userName, $scope.newMessage);
+                signalRChatRoomService.sendMessageToChatRoom($scope.selectedChatRoomId, $scope.userName, $scope.newMessage);
                 $scope.newMessage = '';
             }
         };

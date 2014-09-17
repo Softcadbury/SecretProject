@@ -3,9 +3,9 @@
 
     angular
         .module('app')
-        .factory('signalRChatRoomFactory', ['$rootScope', signalRChatRoomFactory]);
+        .factory('signalRChatRoomService', ['$rootScope', signalRChatRoomService]);
 
-    function signalRChatRoomFactory($rootScope) {
+    function signalRChatRoomService($rootScope) {
         var chatHub = $.connection.chatHub;
         var factory = {};
 
