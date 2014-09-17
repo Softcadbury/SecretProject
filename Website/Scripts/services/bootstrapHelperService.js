@@ -20,7 +20,7 @@
 
         // Function to reset the state of the button. Uses a timeout to avoid clipping and clicking spam
         factory.resetButtonState = function (clickEvent) {
-            setTimeout(function() {
+            setTimeout(function () {
                 $(clickEvent.target).button('reset');
             }, 500);
         };
