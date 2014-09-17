@@ -3,14 +3,14 @@
 
     angular
         .module('app')
-        .controller('contactController', ['$rootScope', '$scope', contactController]);
+        .controller('contactController', ['$rootScope', '$scope', 'bootstrapHelperService', contactController]);
 
-    function contactController($rootScope, $scope) {
+    function contactController($rootScope, $scope, bootstrapHelperService) {
         $scope.message = '';
 
         // Function to send the message of contact
         $scope.sendMessage = function (clickEvent) {
-            $(clickEvent.target).button('loading');
+            bootstrapHelperService.buttonToLoadingState(clickEvent);
         }
     }
 })(angular);

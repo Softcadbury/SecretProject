@@ -3,9 +3,9 @@
 
     angular
         .module('app')
-        .controller('settingsController', ['$rootScope', '$scope', 'userFactory', settingsController]);
+        .controller('settingsController', ['$rootScope', '$scope', 'userFactory', 'bootstrapHelperService', settingsController]);
 
-    function settingsController($rootScope, $scope, userFactory) {
+    function settingsController($rootScope, $scope, userFactory, bootstrapHelperService) {
         $scope.userName = $rootScope.currentUser ? $rootScope.currentUser.UserName : '';
         $scope.userEmail = $rootScope.currentUser ? $rootScope.currentUser.Email : '';
 
@@ -23,12 +23,12 @@
 
         // Function to open the picture cropping modal
         $scope.openPictureCroppingModal = function () {
-            $('#pictureCroppingModal').modal('show');
+            bootstrapHelperService.showModal('#pictureCroppingModal');
         }
 
         // Function to save the change of user's information
         $scope.saveChanges = function (clickEvent) {
-            $(clickEvent.target).button('loading');
+            bootstrapHelperService.buttonToLoadingState(clickEvent);
             $rootScope.currentUser.UserName = $scope.userName;
             $rootScope.currentUser.Email = $scope.userEmail;
 
@@ -43,13 +43,13 @@
                     $scope.userUpdateError = true;
                 })
                 .finally(function () {
-                    $(clickEvent.target).button('reset');
+                    bootstrapHelperService.resetButtonState(clickEvent);
                 });
         };
 
         // Function to save the change of user's password
         $scope.savePassword = function (clickEvent) {
-            $(clickEvent.target).button('loading');
+            bootstrapHelperService.buttonToLoadingState(clickEvent);
 
             userFactory.updatePassword($rootScope.currentUser, $scope.actualPassword, $scope.newPassword, $scope.passwordConfirmation)
                 .success(function () {
@@ -64,7 +64,7 @@
                     $scope.passwordUpdateError = true;
                 })
                 .finally(function () {
-                    $(clickEvent.target).button('reset');
+                    bootstrapHelperService.resetButtonState(clickEvent);
                 });
         };
 

@@ -186,6 +186,7 @@
     <Content Include="Scripts\controllers\menuController.js" />
     <Content Include="Scripts\controllers\content\usersController.js" />
     <Content Include="Scripts\factories\chatRoomFactory.js" />
+    <Content Include="Scripts\services\bootstrapHelperService.js" />
     <Content Include="Scripts\services\signalRChatRoomService.js" />
     <Content Include="Scripts\factories\userFactory.js" />
     <Content Include="Views\Application\Index.cshtml" />
