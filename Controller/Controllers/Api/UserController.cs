@@ -66,17 +66,17 @@
             return RenderResponse(response);
         }
 
-        // PUT: /api/users/1/updatePassword
+        // PUT: /api/users/current/updatePassword
         [HttpPut]
-        [Route("{id:int}/updatePassword")]
-        public IHttpActionResult UpdatePassword(int id, [FromBody] ChangePasswordViewModel changePassword)
+        [Route("current/updatePassword")]
+        public IHttpActionResult UpdateCurrentPassword([FromBody] ChangePasswordViewModel changePassword)
         {
             if (!ModelState.IsValid || changePassword == null)
             {
                 return BadRequest();
             }
 
-            Response<Empty> response = userService.UpdatePassword(id, changePassword);
+            Response<Empty> response = userService.UpdateCurrentPassword(changePassword);
 
             return RenderResponse(response);
         }

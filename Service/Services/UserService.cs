@@ -61,13 +61,8 @@
         /// <summary>
         /// Update the password of the current user
         /// </summary>
-        public Response<Empty> UpdatePassword(int userId, ChangePasswordViewModel changePassword)
+        public Response<Empty> UpdateCurrentPassword(ChangePasswordViewModel changePassword)
         {
-            if (userId != WebSecurity.CurrentUserId)
-            {
-                return Response<Empty>.CreateError(ErrorCodes.Forbidden);
-            }
-
             if (!WebSecurity.ChangePassword(WebSecurity.CurrentUserName, changePassword.ActualPassword, changePassword.NewPassword))
             {
                 return Response<Empty>.CreateError(ErrorCodes.Forbidden);

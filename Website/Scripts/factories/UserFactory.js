@@ -19,20 +19,20 @@
             return $http.get(urlBase + '/?pageIndex=' + pageIndex);
         };
 
-        // Function to update a user
+        // Function to update the current user
         factory.updateCurrent = function (currentUser) {
             return $http.put(urlBase + '/current', currentUser);
         };
 
-        // Function to update the user's password
-        factory.updatePassword = function (currentUser, actualPassword, newPassword, passwordConfirmation) {
+        // Function to update the password of the current user
+        factory.updateCurrentPassword = function (currentUser, actualPassword, newPassword, passwordConfirmation) {
             var updatePassword = {
                 ActualPassword: actualPassword,
                 NewPassword: newPassword,
                 ConfirmPassword: passwordConfirmation
             };
 
-            return $http.put(urlBase + '/' + currentUser.Id + '/updatePassword', updatePassword);
+            return $http.put(urlBase + '/current/updatePassword', updatePassword);
         };
 
         // Function to delete the current user
