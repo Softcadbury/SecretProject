@@ -3,9 +3,9 @@
 
     angular
         .module('app')
-        .controller('chatRoomsController', ['$rootScope', '$scope', 'chatRoomFactory', 'signalRChatRoomService', chatRoomsController]);
+        .controller('chatRoomsController', ['$rootScope', '$scope', 'signalRChatRoomService', 'chatRoomFactory', chatRoomsController]);
 
-    function chatRoomsController($rootScope, $scope, chatRoomFactory, signalRChatRoomService) {
+    function chatRoomsController($rootScope, $scope, signalRChatRoomService, chatRoomFactory) {
         $scope.chatRooms = [];
         $scope.selectedChatRoomId = null;
         $scope.userName = $rootScope.currentUser ? $rootScope.currentUser.UserName : '';

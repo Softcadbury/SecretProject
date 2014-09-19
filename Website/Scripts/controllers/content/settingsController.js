@@ -3,9 +3,9 @@
 
     angular
         .module('app')
-        .controller('settingsController', ['$rootScope', '$scope', 'userFactory', 'bootstrapHelperService', settingsController]);
+        .controller('settingsController', ['$rootScope', '$scope', 'bootstrapHelperService', 'userFactory', settingsController]);
 
-    function settingsController($rootScope, $scope, userFactory, bootstrapHelperService) {
+    function settingsController($rootScope, $scope, bootstrapHelperService, userFactory) {
         $scope.userName = $rootScope.currentUser ? $rootScope.currentUser.UserName : '';
         $scope.userEmail = $rootScope.currentUser ? $rootScope.currentUser.Email : '';
 
