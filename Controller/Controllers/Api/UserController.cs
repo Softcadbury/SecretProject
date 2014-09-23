@@ -69,14 +69,14 @@
         // PUT: /api/users/current/updatePassword
         [HttpPut]
         [Route("current/updatePassword")]
-        public IHttpActionResult UpdateCurrentPassword([FromBody] ChangePasswordViewModel changePassword)
+        public IHttpActionResult UpdateCurrentPassword([FromBody] UpdatePasswordViewModel updatePassword)
         {
-            if (!ModelState.IsValid || changePassword == null)
+            if (!ModelState.IsValid || updatePassword == null)
             {
                 return BadRequest();
             }
 
-            Response<Empty> response = userService.UpdateCurrentPassword(changePassword);
+            Response<Empty> response = userService.UpdateCurrentPassword(updatePassword);
 
             return RenderResponse(response);
         }
