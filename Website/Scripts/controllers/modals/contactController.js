@@ -9,11 +9,12 @@
         $scope.message = '';
 
         // Function to send the message of contact
-        $scope.sendMessage = function (clickEvent) {
+        $scope.sendContactEmail = function (clickEvent) {
             bootstrapHelperService.buttonToLoadingState(clickEvent);
 
             toolFactory.sendContactEmail($scope.message)
                 .success(function () {
+                    $scope.message = '';
                 })
                 .error(function () {
                 })
