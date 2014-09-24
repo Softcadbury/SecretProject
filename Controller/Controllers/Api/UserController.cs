@@ -58,7 +58,7 @@
         {
             if (!ModelState.IsValid || user == null)
             {
-                return BadRequest();
+                return BadRequest(RenderErrorMessage());
             }
 
             Response<User> response = userService.UpdateCurrent(user);
@@ -73,7 +73,7 @@
         {
             if (!ModelState.IsValid || updatePassword == null)
             {
-                return BadRequest();
+                return BadRequest(RenderErrorMessage());
             }
 
             Response<Empty> response = userService.UpdateCurrentPassword(updatePassword);
@@ -88,7 +88,7 @@
         {
             if (!ModelState.IsValid || deleteAccount == null)
             {
-                return BadRequest();
+                return BadRequest(RenderErrorMessage());
             }
 
             Response<Empty> response = userService.RemoveCurrent(deleteAccount);

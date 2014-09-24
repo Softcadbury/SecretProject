@@ -21,5 +21,23 @@
 
             return InternalServerError();
         }
+
+        /// <summary>
+        /// Aggregate errors in the model state in a string
+        /// </summary>
+        protected string RenderErrorMessage()
+        {
+            string errorMessage = string.Empty;
+
+            foreach (var values in ModelState.Values)
+            {
+                foreach (var errors in values.Errors)
+                {
+                    errorMessage += errors.ErrorMessage + "|";
+                }
+            }
+
+            return errorMessage;
+        }
     }
 }
