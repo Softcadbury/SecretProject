@@ -8,7 +8,7 @@
                 </div>
                 <div class="modal-body">
                     <div ng-show="sendContactEmailSuccess" class="alert alert-success">@Resource.Succes_EmailSended</div>
-                    <div ng-show="sendContactEmailError" class="alert alert-danger">error</div>
+                    <div ng-show="sendContactEmailError" ng-bind-html="sendContactEmailError" class="alert alert-danger"></div>
                     <div class="form-group">
                         <label for="inputMessage">@Resource.Field_Message</label>
                         <textarea class="form-control" ng-model="message" placeholder="@Resource.PlaceHolder_Message"></textarea>

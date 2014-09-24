@@ -3,9 +3,9 @@
 
     angular
         .module('app')
-        .controller('settingsController', ['$rootScope', '$scope', 'bootstrapHelperService', 'userFactory', settingsController]);
+        .controller('settingsController', ['$rootScope', '$scope', '$sce', 'bootstrapHelperService', 'userFactory', settingsController]);
 
-    function settingsController($rootScope, $scope, bootstrapHelperService, userFactory) {
+    function settingsController($rootScope, $scope, $sce, bootstrapHelperService, userFactory) {
         resetAlerts();
         $scope.userName = $rootScope.currentUser ? $rootScope.currentUser.UserName : '';
         $scope.userEmail = $rootScope.currentUser ? $rootScope.currentUser.Email : '';
@@ -33,9 +33,9 @@
                     $scope.saveChangesSuccess = true;
                     $rootScope.$broadcast('currentUser.updated');
                 })
-                .error(function () {
+                .error(function (data) {
                     resetAlerts();
-                    $scope.saveChangesError = true;
+                    $scope.saveChangesError = $sce.trustAsHtml(data.Message);
                 })
                 .finally(function () {
                     bootstrapHelperService.resetButtonState(clickEvent);
@@ -54,9 +54,9 @@
                     $scope.newPassword = '';
                     $scope.passwordConfirmation = '';
                 })
-                .error(function () {
+                .error(function (data) {
                     resetAlerts();
-                    $scope.savePasswordError = true;
+                    $scope.savePasswordError = $sce.trustAsHtml(data.Message);
                 })
                 .finally(function () {
                     bootstrapHelperService.resetButtonState(clickEvent);
@@ -69,9 +69,9 @@
                 .success(function () {
                     // Todo: redirect to home
                 })
-                .error(function () {
+                .error(function (data) {
                     resetAlerts();
-                    $scope.deleteAccountError = true;
+                    $scope.deleteAccountError = $sce.trustAsHtml(data.Message);
                 });
         };
 

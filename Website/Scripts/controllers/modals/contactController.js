@@ -3,9 +3,9 @@
 
     angular
         .module('app')
-        .controller('contactController', ['$rootScope', '$scope', 'bootstrapHelperService', 'toolFactory', contactController]);
+        .controller('contactController', ['$rootScope', '$scope', '$sce', 'bootstrapHelperService', 'toolFactory', contactController]);
 
-    function contactController($rootScope, $scope, bootstrapHelperService, toolFactory) {
+    function contactController($rootScope, $scope, $sce, bootstrapHelperService, toolFactory) {
         resetAlerts();
         $scope.message = '';
 
@@ -19,9 +19,9 @@
                     $scope.sendContactEmailSuccess = true;
                     $scope.message = '';
                 })
-                .error(function () {
+                .error(function (data) {
                     resetAlerts();
-                    $scope.sendContactEmailError = true;
+                    $scope.sendContactEmailError = $sce.trustAsHtml(data.Message);
                 })
                 .finally(function () {
                     bootstrapHelperService.resetButtonState(clickEvent);

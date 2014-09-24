@@ -33,7 +33,7 @@
             {
                 foreach (var errors in values.Errors)
                 {
-                    errorMessage += errors.ErrorMessage + "|";
+                    errorMessage += errors.ErrorMessage + "<br />";
                 }
             }
 
