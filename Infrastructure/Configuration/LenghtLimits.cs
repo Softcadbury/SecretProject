@@ -18,5 +18,8 @@
         public const int ChatRoomMaxLenght = 30;
 
         public const int PictureMaxLenght = 10000;
+
+        public const int EmailMessageMinLenght = 10;
+        public const int EmailMessageMaxLenght = 200;
     }
 }

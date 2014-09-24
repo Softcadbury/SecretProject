@@ -5,6 +5,8 @@
     using Service.Services;
     using System.Web.Http;
 
+    using Service.ViewModels;
+
     /// <summary>
     /// Tool controller
     /// </summary>
@@ -25,9 +27,14 @@
         // POST: /api/tools/sendContactEmail
         [HttpPost]
         [Route("sendContactEmail")]
-        public IHttpActionResult SendContactEmail()
+        public IHttpActionResult SendContactEmail(SendContactEmailViewModel sendContactEmail)
         {
-            Response<Empty> response = toolService.SendContactEmail();
+            if (!ModelState.IsValid || sendContactEmail == null)
+            {
+                return BadRequest();
+            }
+
+            Response<Empty> response = toolService.SendContactEmail(sendContactEmail);
 
             return RenderResponse(response);
         }
