@@ -466,6 +466,24 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string String1 {
+            get {
+                return ResourceManager.GetString("String1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Email sended..
+        /// </summary>
+        public static string Succes_EmailSended {
+            get {
+                return ResourceManager.GetString("Succes_EmailSended", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Password updated.
         /// </summary>
         public static string Success_PasswordUpdated {

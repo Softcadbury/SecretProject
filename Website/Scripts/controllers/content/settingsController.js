@@ -6,14 +6,9 @@
         .controller('settingsController', ['$rootScope', '$scope', 'bootstrapHelperService', 'userFactory', settingsController]);
 
     function settingsController($rootScope, $scope, bootstrapHelperService, userFactory) {
+        resetAlerts();
         $scope.userName = $rootScope.currentUser ? $rootScope.currentUser.UserName : '';
         $scope.userEmail = $rootScope.currentUser ? $rootScope.currentUser.Email : '';
-
-        $scope.userUpdateSuccess = false;
-        $scope.userUpdateError = false;
-        $scope.passwordUpdateSuccess = false;
-        $scope.passwordUpdateError = false;
-        $scope.deleteAccountError = false;
 
         // Event fired when the current user is updated
         $rootScope.$on('currentUser.updated', function () {
@@ -34,13 +29,13 @@
 
             userFactory.updateCurrent($rootScope.currentUser)
                 .success(function () {
-                    hideAlerts();
-                    $scope.userUpdateSuccess = true;
+                    resetAlerts();
+                    $scope.saveChangesSuccess = true;
                     $rootScope.$broadcast('currentUser.updated');
                 })
                 .error(function () {
-                    hideAlerts();
-                    $scope.userUpdateError = true;
+                    resetAlerts();
+                    $scope.saveChangesError = true;
                 })
                 .finally(function () {
                     bootstrapHelperService.resetButtonState(clickEvent);
@@ -53,15 +48,15 @@
 
             userFactory.updateCurrentPassword($rootScope.currentUser, $scope.actualPassword, $scope.newPassword, $scope.passwordConfirmation)
                 .success(function () {
-                    hideAlerts();
-                    $scope.passwordUpdateSuccess = true;
+                    resetAlerts();
+                    $scope.savePasswordSuccess = true;
                     $scope.actualPassword = '';
                     $scope.newPassword = '';
                     $scope.passwordConfirmation = '';
                 })
                 .error(function () {
-                    hideAlerts();
-                    $scope.passwordUpdateError = true;
+                    resetAlerts();
+                    $scope.savePasswordError = true;
                 })
                 .finally(function () {
                     bootstrapHelperService.resetButtonState(clickEvent);
@@ -75,17 +70,17 @@
                     // Todo: redirect to home
                 })
                 .error(function () {
-                    hideAlerts();
+                    resetAlerts();
                     $scope.deleteAccountError = true;
                 });
         };
 
         // Function to hide all alerts
-        function hideAlerts() {
-            $scope.userUpdateSuccess = false;
-            $scope.userUpdateError = false;
-            $scope.passwordUpdateSuccess = false;
-            $scope.passwordUpdateError = false;
+        function resetAlerts() {
+            $scope.saveChangesSuccess = false;
+            $scope.saveChangesError = false;
+            $scope.savePasswordSuccess = false;
+            $scope.savePasswordError = false;
             $scope.deleteAccountError = false;
         }
     }

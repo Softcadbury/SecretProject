@@ -258,4 +258,7 @@
   <data name="Action_Confirm" xml:space="preserve">
     <value>Confirmer</value>
   </data>
+  <data name="Succes_EmailSended" xml:space="preserve">
+    <value>Email envoyé.</value>
+  </data>
 </root>
