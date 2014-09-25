@@ -243,9 +243,6 @@
   <data name="Action_Cancel" xml:space="preserve">
     <value>Annuler</value>
   </data>
-  <data name="Action_Close" xml:space="preserve">
-    <value>Fermer</value>
-  </data>
   <data name="Field_Message" xml:space="preserve">
     <value>Message</value>
   </data>
