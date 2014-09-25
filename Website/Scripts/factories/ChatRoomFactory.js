@@ -11,7 +11,11 @@
 
         // Function to get a page of chat rooms
         factory.getPage = function (pageIndex) {
-            return $http.get(urlBase + '/?pageIndex=' + pageIndex);
+            var params = {
+                pageIndex: pageIndex
+            };
+
+            return $http.get(urlBase, { params: params });
         };
 
         return factory;

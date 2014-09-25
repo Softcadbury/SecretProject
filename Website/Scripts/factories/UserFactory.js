@@ -16,7 +16,11 @@
 
         // Function to get a page of users
         factory.getPage = function (pageIndex) {
-            return $http.get(urlBase + '/?pageIndex=' + pageIndex);
+            var params = {
+                pageIndex: pageIndex
+            };
+
+            return $http.get(urlBase, { params: params });
         };
 
         // Function to update the current user
