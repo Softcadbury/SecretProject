@@ -261,4 +261,7 @@
   <data name="Action_Cancel" xml:space="preserve">
     <value>Cancel</value>
   </data>
+  <data name="Content_DeleteAccountConfirmation" xml:space="preserve">
+    <value>To delete your account, you need to provide your password. Be carefull, all your information will be deleted.</value>
+  </data>
 </root>

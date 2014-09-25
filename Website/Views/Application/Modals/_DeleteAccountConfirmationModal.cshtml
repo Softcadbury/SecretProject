@@ -7,8 +7,12 @@
                     <h4 class="modal-title">@Resource.Action_DeleteAccount</h4>
                 </div>
                 <div class="modal-body">
+                    <p>@Resource.Content_DeleteAccountConfirmation</p>
                     <div ng-show="deleteAccountError" ng-bind-html="deleteAccountError" class="alert alert-danger"></div>
-                    <p>One fine body&hellip;</p>
+                    <div class="form-group">
+                        <label for="inputActualPassword" control-label">@Resource.Field_PasswordActual</label>
+                        <input class="form-control" type="password" id="inputActualPassword" ng-model="actualPassword">
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button class="btn btn-default" data-dismiss="modal">@Resource.Action_Cancel</button>

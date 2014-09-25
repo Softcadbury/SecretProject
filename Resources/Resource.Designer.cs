@@ -286,6 +286,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to To delete your account, you need to provide your password. Be carefull, all your information will be deleted..
+        /// </summary>
+        public static string Content_DeleteAccountConfirmation {
+            get {
+                return ResourceManager.GetString("Content_DeleteAccountConfirmation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Chat with everyone.
         /// </summary>
         public static string Content_HomeSubTitle {
