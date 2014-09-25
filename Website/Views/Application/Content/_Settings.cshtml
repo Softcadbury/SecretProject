@@ -37,7 +37,7 @@
         </div>
         <div class="form-group">
             <div class="col-sm-offset-3 col-sm-9 col-lg-offset-2 col-lg-10">
-                <button class="btn btn-primary" ng-click="saveChanges($event)">@Resource.Action_SaveChanges</button>
+                <button class="btn btn-primary" ng-click="updateUser($event)">@Resource.Action_UpdateUser</button>
             </div>
         </div>
     </div>
@@ -67,7 +67,7 @@
         </div>
         <div class="form-group">
             <div class="col-sm-offset-3 col-sm-9 col-lg-offset-2 col-lg-10">
-                <button class="btn btn-primary" ng-click="savePassword($event)">@Resource.Action_SavePassword</button>
+                <button class="btn btn-primary" ng-click="updatePassword($event)">@Resource.Action_UpdatePassword</button>
             </div>
         </div>
     </div>
@@ -75,7 +75,6 @@
     <hr />
 
     <div class="form-horizontal">
-        <div ng-show="deleteAccountError" ng-bind-html="deleteAccountError" class="alert alert-danger"></div>
         <div class="form-group">
             <label class="col-sm-3 col-lg-2 control-label">@Resource.Common_Account</label>
             <div class="col-sm-9 col-lg-10">

@@ -21,8 +21,8 @@
             bootstrapHelperService.showModal('#pictureCroppingModal');
         }
 
-        // Function to save the change of user's information
-        $scope.saveChanges = function (clickEvent) {
+        // Function to update user's information
+        $scope.updateUser = function (clickEvent) {
             bootstrapHelperService.buttonToLoadingState(clickEvent);
             $rootScope.currentUser.UserName = $scope.userName;
             $rootScope.currentUser.Email = $scope.userEmail;
@@ -42,8 +42,8 @@
                 });
         };
 
-        // Function to save the change of user's password
-        $scope.savePassword = function (clickEvent) {
+        // Function to update user's password
+        $scope.updatePassword = function (clickEvent) {
             bootstrapHelperService.buttonToLoadingState(clickEvent);
 
             userFactory.updateCurrentPassword($rootScope.currentUser, $scope.actualPassword, $scope.newPassword, $scope.passwordConfirmation)
@@ -65,14 +65,7 @@
 
         // Function to delete the user's account
         $scope.deleteAccount = function () {
-            userFactory.removeCurrent()
-                .success(function () {
-                    // Todo: redirect to home
-                })
-                .error(function (data) {
-                    resetAlerts();
-                    $scope.deleteAccountError = $sce.trustAsHtml(data.Message);
-                });
+            bootstrapHelperService.showModal('#deleteAccountConfirmationModal');
         };
 
         // Function to hide all alerts
@@ -81,7 +74,6 @@
             $scope.saveChangesError = $sce.trustAsHtml('');
             $scope.savePasswordSuccess = false;
             $scope.savePasswordError = $sce.trustAsHtml('');
-            $scope.deleteAccountError = $sce.trustAsHtml('');
         }
     }
 })(angular);

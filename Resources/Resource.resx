@@ -195,7 +195,7 @@
   <data name="Common_About" xml:space="preserve">
     <value>About</value>
   </data>
-  <data name="Action_SaveChanges" xml:space="preserve">
+  <data name="Action_UpdateUser" xml:space="preserve">
     <value>Save changes</value>
   </data>
   <data name="Field_PasswordActual" xml:space="preserve">
@@ -207,8 +207,8 @@
   <data name="Common_Avatar" xml:space="preserve">
     <value>Avatar</value>
   </data>
-  <data name="Action_SavePassword" xml:space="preserve">
-    <value>Save password</value>
+  <data name="Action_UpdatePassword" xml:space="preserve">
+    <value>Change my password</value>
   </data>
   <data name="Common_Account" xml:space="preserve">
     <value>Account</value>

@@ -160,29 +160,29 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Save changes.
-        /// </summary>
-        public static string Action_SaveChanges {
-            get {
-                return ResourceManager.GetString("Action_SaveChanges", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Save password.
-        /// </summary>
-        public static string Action_SavePassword {
-            get {
-                return ResourceManager.GetString("Action_SavePassword", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Send.
         /// </summary>
         public static string Action_Send {
             get {
                 return ResourceManager.GetString("Action_Send", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Change my password.
+        /// </summary>
+        public static string Action_UpdatePassword {
+            get {
+                return ResourceManager.GetString("Action_UpdatePassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Save changes.
+        /// </summary>
+        public static string Action_UpdateUser {
+            get {
+                return ResourceManager.GetString("Action_UpdateUser", resourceCulture);
             }
         }
         
