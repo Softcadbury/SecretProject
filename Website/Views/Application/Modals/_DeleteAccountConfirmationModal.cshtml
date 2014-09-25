@@ -1,0 +1,20 @@
+﻿<div id="deleteAccountConfirmationModal" class="modal fade">
+    <div ng-controller="deleteAccountConfirmationController">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">@Resource.Action_Close</span></button>
+                    <h4 class="modal-title">@Resource.Action_DeleteAccount</h4>
+                </div>
+                <div class="modal-body">
+                    <div ng-show="deleteAccountError" ng-bind-html="deleteAccountError" class="alert alert-danger"></div>
+                    <p>One fine body&hellip;</p>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-default" data-dismiss="modal">@Resource.Action_Cancel</button>
+                    <button class="btn btn-primary" ng-click="deleteAccount($event)">@Resource.Action_Confirm</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
