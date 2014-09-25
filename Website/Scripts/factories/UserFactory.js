@@ -25,7 +25,7 @@
         };
 
         // Function to update the password of the current user
-        factory.updateCurrentPassword = function (currentUser, actualPassword, newPassword, passwordConfirmation) {
+        factory.updateCurrentPassword = function (actualPassword, newPassword, passwordConfirmation) {
             var data = {
                 ActualPassword: actualPassword,
                 NewPassword: newPassword,
@@ -36,9 +36,17 @@
         };
 
         // Function to delete the current user
-        factory.removeCurrent = function () {
-            // Todo: ask for password
-            return $http.delete(urlBase + '/current');
+        factory.removeCurrent = function (actualPassword) {
+            var data = {
+                ActualPassword: actualPassword
+            };
+
+            return $http({
+                method: "DELETE",
+                url: urlBase + '/current',
+                data: data,
+                headers: { "Content-Type": "application/json;charset=utf-8" }
+            });
         };
 
         return factory;

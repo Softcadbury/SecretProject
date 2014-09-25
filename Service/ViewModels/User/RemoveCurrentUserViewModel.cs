@@ -13,6 +13,6 @@
         [StringLength(LenghtLimits.PasswordMaxLenght, MinimumLength = LenghtLimits.PasswordMinLenght, ErrorMessageResourceName = "Error_BadLength", ErrorMessageResourceType = typeof(Resource))]
         [DataType(DataType.Password)]
         [Display(Name = "Field_PasswordActual", ResourceType = typeof(Resource))]
-        public string Password { get; set; }
+        public string ActualPassword { get; set; }
     }
 }

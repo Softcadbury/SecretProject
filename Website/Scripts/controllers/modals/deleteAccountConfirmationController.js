@@ -12,7 +12,7 @@
         $scope.deleteAccount = function (clickEvent) {
             bootstrapHelperService.buttonToLoadingState(clickEvent);
 
-            userFactory.removeCurrent()
+            userFactory.removeCurrent($scope.actualPassword)
                 .success(function () {
                     location.reload();
                 })

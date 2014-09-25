@@ -46,7 +46,7 @@
         $scope.updatePassword = function (clickEvent) {
             bootstrapHelperService.buttonToLoadingState(clickEvent);
 
-            userFactory.updateCurrentPassword($rootScope.currentUser, $scope.actualPassword, $scope.newPassword, $scope.passwordConfirmation)
+            userFactory.updateCurrentPassword($scope.actualPassword, $scope.newPassword, $scope.passwordConfirmation)
                 .success(function () {
                     resetAlerts();
                     $scope.savePasswordSuccess = true;
