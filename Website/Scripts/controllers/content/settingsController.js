@@ -78,10 +78,10 @@
         // Function to hide all alerts
         function resetAlerts() {
             $scope.saveChangesSuccess = false;
-            $scope.saveChangesError = false;
+            $scope.saveChangesError = $sce.trustAsHtml('');
             $scope.savePasswordSuccess = false;
-            $scope.savePasswordError = false;
-            $scope.deleteAccountError = false;
+            $scope.savePasswordError = $sce.trustAsHtml('');
+            $scope.deleteAccountError = $sce.trustAsHtml('');
         }
     }
 })(angular);

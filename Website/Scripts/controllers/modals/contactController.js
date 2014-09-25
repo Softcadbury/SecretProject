@@ -31,7 +31,7 @@
         // Function to hide all alerts
         function resetAlerts() {
             $scope.sendContactEmailSuccess = false;
-            $scope.sendContactEmailError = false;
+            $scope.sendContactEmailError = $sce.trustAsHtml('');
         }
     }
 })(angular);
