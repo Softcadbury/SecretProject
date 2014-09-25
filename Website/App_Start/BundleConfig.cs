@@ -3,7 +3,10 @@
     using BundleTransformer.Core.Transformers;
     using System.Web.Optimization;
 
-    public class BundleConfig
+    /// <summary>
+    /// Class to configure bundles
+    /// </summary>
+    public static class BundleConfig
     {
         public static void RegisterBundles(BundleCollection bundles)
         {

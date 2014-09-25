@@ -122,9 +122,9 @@
     <Compile Include="BaseClasses\RepositoryBase.cs" />
     <Compile Include="BaseClasses\ServiceBase.cs" />
     <Compile Include="BaseClasses\ViewModelBase.cs" />
-    <Compile Include="Configuration\CookieKeys.cs" />
-    <Compile Include="Configuration\LenghtLimits.cs" />
-    <Compile Include="Configuration\SettingKeys.cs" />
+    <Compile Include="Configurations\CookieKeys.cs" />
+    <Compile Include="Configurations\LenghtLimits.cs" />
+    <Compile Include="Configurations\SettingKeys.cs" />
     <Compile Include="ServiceResponses\Empty.cs" />
     <Compile Include="ServiceResponses\ErrorCodes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

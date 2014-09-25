@@ -2,7 +2,10 @@
 {
     using System.Web.Mvc;
 
-    public class FilterConfig
+    /// <summary>
+    /// Class to configure filters
+    /// </summary>
+    public static class FilterConfig
     {
         public static void RegisterGlobalFilters(GlobalFilterCollection filters)
         {

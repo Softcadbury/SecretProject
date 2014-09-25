@@ -4,7 +4,7 @@
     using System.Data.Entity.ModelConfiguration;
 
     /// <summary>
-    /// Configuration for the base model
+    /// A baseline definition that every configuration of models will inherit from
     /// </summary>
     public class ConfigurationBase<TModel> : EntityTypeConfiguration<TModel>
         where TModel : ModelBase

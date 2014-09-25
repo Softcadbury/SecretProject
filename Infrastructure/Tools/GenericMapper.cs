@@ -8,66 +8,66 @@
     using Infrastructure.BaseClasses;
 
     /// <summary>
-    /// Generic mapper.
+    /// Class to manage mapping of models and view models
     /// </summary>
     public static class GenericMapper
     {
         /// <summary>
-        /// Convert the model to a view
+        /// Convert the model to a view model
         /// </summary>
-        /// <typeparam name="TView">Type of the view</typeparam>
+        /// <typeparam name="TViewModel">Type of the view model</typeparam>
         /// <param name="model">The model</param>
-        /// <returns>The view</returns>
-        public static TView ConvertToView<TView>(this ModelBase model)
-            where TView : ViewModelBase
+        /// <returns>The view model</returns>
+        public static TViewModel ConvertToView<TViewModel>(this ModelBase model)
+            where TViewModel : ViewModelBase
         {
             if (model == null)
             {
-                return default(TView);
+                return default(TViewModel);
             }
 
-            return (TView)Mapper.Map(model, model.GetType(), typeof(TView));
+            return (TViewModel)Mapper.Map(model, model.GetType(), typeof(TViewModel));
         }
 
         /// <summary>
-        /// Convert the list of models to a list of views
+        /// Convert the list of models to a list of view models
         /// </summary>
-        /// <typeparam name="TView">Type of the view</typeparam>
+        /// <typeparam name="TViewModel">Type of the view model</typeparam>
         /// <param name="model">The list of models</param>
-        /// <returns>The list of views</returns>
-        public static List<TView> ConvertToViews<TView>(this IEnumerable<ModelBase> model)
-            where TView : ViewModelBase
+        /// <returns>The list of view models</returns>
+        public static List<TViewModel> ConvertToViews<TViewModel>(this IEnumerable<ModelBase> model)
+            where TViewModel : ViewModelBase
         {
-            return model.Select(m => m.ConvertToView<TView>()).ToList();
+            return model.Select(m => m.ConvertToView<TViewModel>()).ToList();
         }
 
         /// <summary>
-        /// Convert the view to a model
+        /// Convert the view model to a model
         /// </summary>
         /// <typeparam name="TModel">Type of the model</typeparam>
-        /// <param name="view">The view</param>
+        /// <param name="viewModel">The view model</param>
         /// <returns>The model</returns>
-        public static TModel ConvertToModel<TModel>(this ViewModelBase view)
+        public static TModel ConvertToModel<TModel>(this ViewModelBase viewModel)
             where TModel : ModelBase
         {
-            if (view == null)
+            if (viewModel == null)
             {
                 return default(TModel);
             }
 
-            return (TModel)Mapper.Map(view, view.GetType(), typeof(TModel));
+            return (TModel)Mapper.Map(viewModel, viewModel.GetType(), typeof(TModel));
         }
 
         /// <summary>
-        /// Convert the list of views to a list of models
+        /// Convert the list of view models to a list of models
         /// </summary>
         /// <typeparam name="TModel">Type of the model</typeparam>
-        /// <param name="view">The list of views</param>
+        /// <param name="viewModel">The list of view models</param>
         /// <returns>The list of models</returns>
-        public static List<TModel> ConvertToModels<TModel>(this IEnumerable<ViewModelBase> view)
+        public static List<TModel> ConvertToModels<TModel>(this IEnumerable<ViewModelBase> viewModel)
             where TModel : ModelBase
         {
-            return view.Select(v => v.ConvertToModel<TModel>()).ToList();
+            return viewModel.Select(v => v.ConvertToModel<TModel>()).ToList();
         }
     }
 }

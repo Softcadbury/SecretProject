@@ -1,6 +1,6 @@
 ﻿namespace Infrastructure.Tools
 {
-    using Infrastructure.Configuration;
+    using Infrastructure.Configurations;
     using System;
     using System.Configuration;
     using System.Linq;

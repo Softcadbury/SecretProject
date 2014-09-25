@@ -1,12 +1,12 @@
 ﻿namespace Service.ViewModels.ChatRoom
 {
     using Infrastructure.BaseClasses;
-    using Infrastructure.Configuration;
+    using Infrastructure.Configurations;
     using Resources;
     using System.ComponentModel.DataAnnotations;
 
     /// <summary>
-    /// User
+    /// Chat Room
     /// </summary>
     public class ChatRoomViewModel : ViewModelBase
     {

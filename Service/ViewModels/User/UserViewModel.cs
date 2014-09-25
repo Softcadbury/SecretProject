@@ -1,7 +1,7 @@
 ﻿namespace Service.ViewModels.User
 {
     using Infrastructure.BaseClasses;
-    using Infrastructure.Configuration;
+    using Infrastructure.Configurations;
     using Resources;
     using System.ComponentModel.DataAnnotations;
 

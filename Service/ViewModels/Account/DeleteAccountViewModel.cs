@@ -1,6 +1,6 @@
-﻿namespace Service.ViewModels
+﻿namespace Service.ViewModels.Account
 {
-    using Infrastructure.Configuration;
+    using Infrastructure.Configurations;
     using Resources;
     using System.ComponentModel.DataAnnotations;
 

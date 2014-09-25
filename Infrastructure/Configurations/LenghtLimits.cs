@@ -1,4 +1,4 @@
-﻿namespace Infrastructure.Configuration
+﻿namespace Infrastructure.Configurations
 {
     /// <summary>
     /// Represents limits lenght for strings

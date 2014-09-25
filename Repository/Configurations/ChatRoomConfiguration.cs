@@ -1,7 +1,7 @@
 ﻿namespace Repository.Configurations
 {
     using Infrastructure.BaseClasses;
-    using Infrastructure.Configuration;
+    using Infrastructure.Configurations;
     using Repository.Models;
 
     /// <summary>
