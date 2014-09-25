@@ -1,4 +1,4 @@
-﻿namespace Service.ViewModels
+﻿namespace Service.ViewModels.Tool
 {
     using Infrastructure.Configuration;
     using Resources;

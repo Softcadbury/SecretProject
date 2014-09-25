@@ -3,7 +3,7 @@
     using Infrastructure.ServiceResponses;
     using Infrastructure.Tools;
 
-    using Service.ViewModels;
+    using Service.ViewModels.Tool;
 
     using WebMatrix.WebData;
 

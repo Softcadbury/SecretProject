@@ -1,4 +1,4 @@
-﻿namespace Service.ViewModels
+﻿namespace Service.ViewModels.User
 {
     using Infrastructure.BaseClasses;
     using Infrastructure.Configuration;

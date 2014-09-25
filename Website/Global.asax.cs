@@ -6,6 +6,7 @@
     using System.Web.Mvc;
     using System.Web.Optimization;
     using System.Web.Routing;
+    using Service.Configurations;
 
     public class MvcApplication : System.Web.HttpApplication
     {
@@ -17,6 +18,7 @@
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             GlobalConfiguration.Configuration.EnsureInitialized();
+            AutoMapperConfiguration.Initialize();
 
             // Database initialization
             Database.SetInitializer(new CreateDatabaseIfNotExists<SecretProjectContext>());

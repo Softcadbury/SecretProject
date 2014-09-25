@@ -14,8 +14,8 @@
         public const int PasswordMinLenght = 8;
         public const int PasswordMaxLenght = 30;
 
-        public const int ChatRoomMinLenght = 4;
-        public const int ChatRoomMaxLenght = 30;
+        public const int ChatRoomTitleMinLenght = 4;
+        public const int ChatRoomTitleMaxLenght = 30;
 
         public const int PictureMaxLenght = 10000;
 

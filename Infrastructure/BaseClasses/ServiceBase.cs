@@ -5,11 +5,14 @@
     using System.Collections.Generic;
     using System.Linq.Expressions;
 
+    using Infrastructure.Tools;
+
     /// <summary>
     /// A baseline definition that every services will inherit from
     /// </summary>
-    public abstract class BaseService<TModel, TRepository>
+    public abstract class BaseService<TModel, TViewModel, TRepository>
         where TModel : ModelBase
+        where TViewModel : ViewModelBase
         where TRepository : BaseRepository<TModel>
     {
         /// <summary>
@@ -25,58 +28,58 @@
         /// <summary>
         /// Get a model
         /// </summary>
-        protected Response<TModel> BaseGet(int id, params Expression<Func<TModel, object>>[] includeProperties)
+        protected Response<TViewModel> BaseGet(int id, params Expression<Func<TModel, object>>[] includeProperties)
         {
             TModel model = Repository.GetById(id, includeProperties);
 
             if (model == null)
             {
-                return Response<TModel>.CreateError(ErrorCodes.NotFound);
+                return Response<TViewModel>.CreateError(ErrorCodes.NotFound);
             }
 
-            return Response<TModel>.CreateSuccess(model);
+            return Response<TViewModel>.CreateSuccess(model.ConvertToView<TViewModel>());
         }
 
         /// <summary>
         /// Get a list of models
         /// </summary>
-        protected Response<List<TModel>> BaseGetPage(int pageIndex, int pageSize)
+        protected Response<List<TViewModel>> BaseGetPage(int pageIndex, int pageSize)
         {
             List<TModel> models = Repository.GetPage(pageIndex, pageSize);
 
-            return Response<List<TModel>>.CreateSuccess(models);
+            return Response<List<TViewModel>>.CreateSuccess(models.ConvertToViews<TViewModel>());
         }
 
         /// <summary>
         /// Add a model
         /// </summary>
-        protected Response<TModel> BaseAdd(TModel model)
+        protected Response<TViewModel> BaseAdd(TViewModel viewModel)
         {
-            TModel modelAdded = Repository.Add(model);
+            TModel modelAdded = Repository.Add(viewModel.ConvertToModel<TModel>());
             Repository.SaveChanges();
 
             if (modelAdded == null)
             {
-                return Response<TModel>.CreateError(ErrorCodes.NotAdded);
+                return Response<TViewModel>.CreateError(ErrorCodes.NotAdded);
             }
 
-            return Response<TModel>.CreateSuccess(modelAdded);
+            return Response<TViewModel>.CreateSuccess(modelAdded.ConvertToView<TViewModel>());
         }
 
         /// <summary>
         /// Update a model
         /// </summary>
-        protected Response<TModel> BaseUpdate(TModel model)
+        protected Response<TViewModel> BaseUpdate(TViewModel viewModel)
         {
-            TModel modelUpdated = Repository.Update(model);
+            TModel modelUpdated = Repository.Update(viewModel.ConvertToModel<TModel>());
             Repository.SaveChanges();
 
             if (modelUpdated == null)
             {
-                return Response<TModel>.CreateError(ErrorCodes.NotUpdated);
+                return Response<TViewModel>.CreateError(ErrorCodes.NotUpdated);
             }
 
-            return Response<TModel>.CreateSuccess(modelUpdated);
+            return Response<TViewModel>.CreateSuccess(modelUpdated.ConvertToView<TViewModel>());
         }
 
         /// <summary>

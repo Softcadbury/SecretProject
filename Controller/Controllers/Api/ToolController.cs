@@ -5,7 +5,7 @@
     using Service.Services;
     using System.Web.Http;
 
-    using Service.ViewModels;
+    using Service.ViewModels.Tool;
 
     /// <summary>
     /// Tool controller

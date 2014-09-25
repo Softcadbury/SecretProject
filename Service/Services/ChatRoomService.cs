@@ -6,10 +6,12 @@
     using Repository.Repositories;
     using System.Collections.Generic;
 
+    using Service.ViewModels.ChatRoom;
+
     /// <summary>
     /// ChatRoom service
     /// </summary>
-    public class ChatRoomService : BaseService<ChatRoom, ChatRoomRepository>
+    public class ChatRoomService : BaseService<ChatRoom, ChatRoomViewModel, ChatRoomRepository>
     {
         /// <summary>
         /// Constructor
@@ -22,7 +24,7 @@
         /// <summary>
         /// Get a list of chat rooms
         /// </summary>
-        public Response<List<ChatRoom>> GetPage(int pageIndex, int pageSize)
+        public Response<List<ChatRoomViewModel>> GetPage(int pageIndex, int pageSize)
         {
             return BaseGetPage(pageIndex, pageSize);
         }

@@ -15,20 +15,20 @@
         /// <summary>
         /// Register a user
         /// </summary>
-        public Response<Empty> RegisterUser(RegistrationViewModel model)
+        public Response<Empty> RegisterUser(RegistrationViewModel registration)
         {
             try
             {
                 var propertyValues = new
                     {
-                        Email = model.Email,
+                        Email = registration.Email,
                         CreationDate = DateTime.UtcNow,
                         ModificationDate = DateTime.UtcNow
                     };
 
-                WebSecurity.CreateUserAndAccount(model.UserName, model.Password, propertyValues);
-                WebSecurity.Login(model.UserName, model.Password);
-                FormsAuthentication.SetAuthCookie(model.UserName, createPersistentCookie: false);
+                WebSecurity.CreateUserAndAccount(registration.UserName, registration.Password, propertyValues);
+                WebSecurity.Login(registration.UserName, registration.Password);
+                FormsAuthentication.SetAuthCookie(registration.UserName, createPersistentCookie: false);
 
                 return Response<Empty>.CreateSuccess();
             }
@@ -41,11 +41,11 @@
         /// <summary>
         /// Login a user
         /// </summary>
-        public Response<Empty> LoginUser(LoginViewModel model)
+        public Response<Empty> LoginUser(LoginViewModel login)
         {
-            if (WebSecurity.Login(model.UserName, model.Password, persistCookie: true))
+            if (WebSecurity.Login(login.UserName, login.Password, persistCookie: true))
             {
-                FormsAuthentication.SetAuthCookie(model.UserName, createPersistentCookie: true);
+                FormsAuthentication.SetAuthCookie(login.UserName, createPersistentCookie: true);
 
                 return Response<Empty>.CreateSuccess();
             }

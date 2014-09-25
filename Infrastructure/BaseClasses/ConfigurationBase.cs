@@ -1,6 +1,5 @@
-﻿namespace Repository.Configurations
+﻿namespace Infrastructure.BaseClasses
 {
-    using Infrastructure.BaseClasses;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.ModelConfiguration;
 

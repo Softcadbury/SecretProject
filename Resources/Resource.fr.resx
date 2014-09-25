@@ -261,4 +261,7 @@
   <data name="Succes_EmailSended" xml:space="preserve">
     <value>Email envoyé.</value>
   </data>
+  <data name="Field_Title" xml:space="preserve">
+    <value>Titre</value>
+  </data>
 </root>

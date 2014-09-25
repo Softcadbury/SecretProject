@@ -2,10 +2,11 @@
 {
     using Infrastructure.BaseClasses;
     using Infrastructure.ServiceResponses;
-    using Repository.Models;
     using Service.Services;
     using System.Collections.Generic;
     using System.Web.Http;
+
+    using Service.ViewModels.ChatRoom;
 
     /// <summary>
     /// ChatRoom controller
@@ -34,7 +35,7 @@
                 return BadRequest();
             }
 
-            Response<List<ChatRoom>> response = chatRoomService.GetPage(pageIndex, 20);
+            Response<List<ChatRoomViewModel>> response = chatRoomService.GetPage(pageIndex, 20);
 
             return RenderResponse(response);
         }

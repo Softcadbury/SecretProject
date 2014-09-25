@@ -2,17 +2,21 @@
 {
     using Infrastructure.BaseClasses;
     using Infrastructure.ServiceResponses;
+
     using Repository.Models;
     using Repository.Repositories;
     using Service.ViewModels;
     using Service.ViewModels.Account;
     using System.Collections.Generic;
+
+    using Service.ViewModels.User;
+
     using WebMatrix.WebData;
 
     /// <summary>
     /// User service
     /// </summary>
-    public class UserService : BaseService<User, UserRepository>
+    public class UserService : BaseService<User, UserViewModel, UserRepository>
     {
         /// <summary>
         /// Constructor
@@ -25,7 +29,7 @@
         /// <summary>
         /// Get the current user
         /// </summary>
-        public Response<User> GetCurrent()
+        public Response<UserViewModel> GetCurrent()
         {
             return BaseGet(WebSecurity.CurrentUserId, u => u.Picture);
         }
@@ -33,7 +37,7 @@
         /// <summary>
         /// Get a list of users
         /// </summary>
-        public Response<List<User>> GetPage(int pageIndex, int pageSize)
+        public Response<List<UserViewModel>> GetPage(int pageIndex, int pageSize)
         {
             return BaseGetPage(pageIndex, pageSize);
         }
@@ -41,18 +45,18 @@
         /// <summary>
         /// Update the current user
         /// </summary>
-        public Response<User> UpdateCurrent(User user)
+        public Response<UserViewModel> UpdateCurrent(UserViewModel user)
         {
             if (user.Id != WebSecurity.CurrentUserId)
             {
-                return Response<User>.CreateError(ErrorCodes.Forbidden);
+                return Response<UserViewModel>.CreateError(ErrorCodes.Forbidden);
             }
 
             User existingUser = Repository.GetByPredicate(u => u.UserName == user.UserName && u.Id != user.Id);
 
             if (existingUser != null)
             {
-                return Response<User>.CreateError(ErrorCodes.Conflict);
+                return Response<UserViewModel>.CreateError(ErrorCodes.Conflict);
             }
 
             return BaseUpdate(user);

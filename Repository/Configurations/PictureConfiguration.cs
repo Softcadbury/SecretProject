@@ -1,5 +1,6 @@
 ﻿namespace Repository.Configurations
 {
+    using Infrastructure.BaseClasses;
     using Infrastructure.Configuration;
     using Repository.Models;
 
@@ -14,7 +15,7 @@
         public PictureConfiguration()
         {
             Property(m => m.Content).IsRequired().HasMaxLength(LenghtLimits.PictureMaxLenght);
-            HasRequired<User>(m => m.User).WithOptional(m => m.Picture).Map(m => m.MapKey("PictureId"));
+            HasRequired(m => m.User).WithOptional(m => m.Picture).Map(m => m.MapKey("PictureId"));
 
             Map(m =>
             {

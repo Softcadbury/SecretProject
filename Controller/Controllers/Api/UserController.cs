@@ -2,12 +2,13 @@
 {
     using Infrastructure.BaseClasses;
     using Infrastructure.ServiceResponses;
-    using Repository.Models;
     using Service.Services;
     using Service.ViewModels;
     using Service.ViewModels.Account;
     using System.Collections.Generic;
     using System.Web.Http;
+
+    using Service.ViewModels.User;
 
     /// <summary>
     /// User controller
@@ -31,7 +32,7 @@
         [Route("current")]
         public IHttpActionResult GetCurrent()
         {
-            Response<User> response = userService.GetCurrent();
+            Response<UserViewModel> response = userService.GetCurrent();
 
             return RenderResponse(response);
         }
@@ -46,7 +47,7 @@
                 return BadRequest();
             }
 
-            Response<List<User>> response = userService.GetPage(pageIndex, 20);
+            Response<List<UserViewModel>> response = userService.GetPage(pageIndex, 20);
 
             return RenderResponse(response);
         }
@@ -54,14 +55,14 @@
         // PUT: /api/users/current
         [HttpPut]
         [Route("current")]
-        public IHttpActionResult UpdateCurrent([FromBody] User user)
+        public IHttpActionResult UpdateCurrent([FromBody] UserViewModel user)
         {
             if (!ModelState.IsValid || user == null)
             {
                 return BadRequest(RenderErrorMessage());
             }
 
-            Response<User> response = userService.UpdateCurrent(user);
+            Response<UserViewModel> response = userService.UpdateCurrent(user);
 
             return RenderResponse(response);
         }
