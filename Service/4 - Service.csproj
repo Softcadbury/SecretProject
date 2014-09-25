@@ -63,10 +63,10 @@
     <Compile Include="Services\ChatRoomService.cs" />
     <Compile Include="Services\ToolService.cs" />
     <Compile Include="Services\UserService.cs" />
-    <Compile Include="ViewModels\Account\UpdatePasswordViewModel.cs" />
+    <Compile Include="ViewModels\User\UpdateCurrentUserPasswordViewModel.cs" />
     <Compile Include="ViewModels\Account\LoginViewModel.cs" />
     <Compile Include="ViewModels\Account\RegistrationViewModel.cs" />
-    <Compile Include="ViewModels\Account\DeleteAccountViewModel.cs" />
+    <Compile Include="ViewModels\User\RemoveCurrentUserViewModel.cs" />
     <Compile Include="ViewModels\ChatRoom\ChatRoomViewModel.cs" />
     <Compile Include="ViewModels\Tool\SendContactEmailViewModel.cs" />
     <Compile Include="ViewModels\User\UserViewModel.cs" />

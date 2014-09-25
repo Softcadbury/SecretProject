@@ -26,13 +26,13 @@
 
         // Function to update the password of the current user
         factory.updateCurrentPassword = function (currentUser, actualPassword, newPassword, passwordConfirmation) {
-            var updatePassword = {
+            var data = {
                 ActualPassword: actualPassword,
                 NewPassword: newPassword,
                 ConfirmPassword: passwordConfirmation
             };
 
-            return $http.put(urlBase + '/current/updatePassword', updatePassword);
+            return $http.put(urlBase + '/current/updatePassword', data);
         };
 
         // Function to delete the current user

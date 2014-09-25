@@ -5,9 +5,9 @@
     using System.ComponentModel.DataAnnotations;
 
     /// <summary>
-    /// Change password
+    /// Update current user password
     /// </summary>
-    public class UpdatePasswordViewModel
+    public class UpdateCurrentUserPasswordViewModel
     {
         [Required(ErrorMessageResourceName = "Error_IsRequired", ErrorMessageResourceType = typeof(Resource))]
         [StringLength(LenghtLimits.PasswordMaxLenght, MinimumLength = LenghtLimits.PasswordMinLenght, ErrorMessageResourceName = "Error_BadLength", ErrorMessageResourceType = typeof(Resource))]

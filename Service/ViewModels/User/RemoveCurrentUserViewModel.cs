@@ -5,9 +5,9 @@
     using System.ComponentModel.DataAnnotations;
 
     /// <summary>
-    /// User
+    /// Remove current user
     /// </summary>
-    public class DeleteAccountViewModel
+    public class RemoveCurrentUserViewModel
     {
         [Required(ErrorMessageResourceName = "Error_IsRequired", ErrorMessageResourceType = typeof(Resource))]
         [StringLength(LenghtLimits.PasswordMaxLenght, MinimumLength = LenghtLimits.PasswordMinLenght, ErrorMessageResourceName = "Error_BadLength", ErrorMessageResourceType = typeof(Resource))]

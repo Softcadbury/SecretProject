@@ -1,11 +1,10 @@
 ﻿namespace Infrastructure.BaseClasses
 {
     using Infrastructure.ServiceResponses;
+    using Infrastructure.Tools;
     using System;
     using System.Collections.Generic;
     using System.Linq.Expressions;
-
-    using Infrastructure.Tools;
 
     /// <summary>
     /// A baseline definition that every services will inherit from

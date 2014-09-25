@@ -2,15 +2,11 @@
 {
     using Infrastructure.BaseClasses;
     using Infrastructure.ServiceResponses;
-
     using Repository.Models;
     using Repository.Repositories;
-    using Service.ViewModels;
     using Service.ViewModels.Account;
-    using System.Collections.Generic;
-
     using Service.ViewModels.User;
-
+    using System.Collections.Generic;
     using WebMatrix.WebData;
 
     /// <summary>
@@ -65,9 +61,9 @@
         /// <summary>
         /// Update the password of the current user
         /// </summary>
-        public Response<Empty> UpdateCurrentPassword(UpdatePasswordViewModel updatePassword)
+        public Response<Empty> UpdateCurrentPassword(UpdateCurrentUserPasswordViewModel updateCurrentUserPassword)
         {
-            if (!WebSecurity.ChangePassword(WebSecurity.CurrentUserName, updatePassword.ActualPassword, updatePassword.NewPassword))
+            if (!WebSecurity.ChangePassword(WebSecurity.CurrentUserName, updateCurrentUserPassword.ActualPassword, updateCurrentUserPassword.NewPassword))
             {
                 return Response<Empty>.CreateError(ErrorCodes.Forbidden);
             }
@@ -78,7 +74,7 @@
         /// <summary>
         /// Remove the current user
         /// </summary>
-        public Response<Empty> RemoveCurrent(DeleteAccountViewModel deleteAccount)
+        public Response<Empty> RemoveCurrent(RemoveCurrentUserViewModel removeCurrentUser)
         {
             // Todo: check password
             if (true)

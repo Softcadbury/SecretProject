@@ -3,10 +3,9 @@
     using Infrastructure.BaseClasses;
     using Infrastructure.ServiceResponses;
     using Service.Services;
+    using Service.ViewModels.ChatRoom;
     using System.Collections.Generic;
     using System.Web.Http;
-
-    using Service.ViewModels.ChatRoom;
 
     /// <summary>
     /// ChatRoom controller

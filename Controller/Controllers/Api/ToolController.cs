@@ -3,9 +3,8 @@
     using Infrastructure.BaseClasses;
     using Infrastructure.ServiceResponses;
     using Service.Services;
-    using System.Web.Http;
-
     using Service.ViewModels.Tool;
+    using System.Web.Http;
 
     /// <summary>
     /// Tool controller

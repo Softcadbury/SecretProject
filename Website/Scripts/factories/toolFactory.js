@@ -11,11 +11,11 @@
 
         // Function to send a contact email
         factory.sendContactEmail = function (message) {
-            var sendContactEmail = {
+            var data = {
                 Message: message
             };
 
-            return $http.post(urlBase + '/sendContactEmail', sendContactEmail);
+            return $http.post(urlBase + '/sendContactEmail', data);
         };
 
         return factory;

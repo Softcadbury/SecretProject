@@ -3,12 +3,10 @@
     using Infrastructure.BaseClasses;
     using Infrastructure.ServiceResponses;
     using Service.Services;
-    using Service.ViewModels;
     using Service.ViewModels.Account;
+    using Service.ViewModels.User;
     using System.Collections.Generic;
     using System.Web.Http;
-
-    using Service.ViewModels.User;
 
     /// <summary>
     /// User controller
@@ -70,14 +68,14 @@
         // PUT: /api/users/current/updatePassword
         [HttpPut]
         [Route("current/updatePassword")]
-        public IHttpActionResult UpdateCurrentPassword([FromBody] UpdatePasswordViewModel updatePassword)
+        public IHttpActionResult UpdateCurrentPassword([FromBody] UpdateCurrentUserPasswordViewModel updateCurrentUserPassword)
         {
-            if (!ModelState.IsValid || updatePassword == null)
+            if (!ModelState.IsValid || updateCurrentUserPassword == null)
             {
                 return BadRequest(RenderErrorMessage());
             }
 
-            Response<Empty> response = userService.UpdateCurrentPassword(updatePassword);
+            Response<Empty> response = userService.UpdateCurrentPassword(updateCurrentUserPassword);
 
             return RenderResponse(response);
         }
@@ -85,14 +83,14 @@
         // DELETE: /api/users/current
         [HttpDelete]
         [Route("current")]
-        public IHttpActionResult RemoveCurrent([FromBody] DeleteAccountViewModel deleteAccount)
+        public IHttpActionResult RemoveCurrent([FromBody] RemoveCurrentUserViewModel removeCurrentUser)
         {
-            if (!ModelState.IsValid || deleteAccount == null)
+            if (!ModelState.IsValid || removeCurrentUser == null)
             {
                 return BadRequest(RenderErrorMessage());
             }
 
-            Response<Empty> response = userService.RemoveCurrent(deleteAccount);
+            Response<Empty> response = userService.RemoveCurrent(removeCurrentUser);
 
             return RenderResponse(response);
         }

@@ -1,11 +1,9 @@
 ﻿namespace Infrastructure.Tools
 {
+    using AutoMapper;
+    using Infrastructure.BaseClasses;
     using System.Collections.Generic;
     using System.Linq;
-
-    using AutoMapper;
-
-    using Infrastructure.BaseClasses;
 
     /// <summary>
     /// Class to manage mapping of models and view models

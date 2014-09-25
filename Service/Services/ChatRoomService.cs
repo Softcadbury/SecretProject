@@ -4,9 +4,8 @@
     using Infrastructure.ServiceResponses;
     using Repository.Models;
     using Repository.Repositories;
-    using System.Collections.Generic;
-
     using Service.ViewModels.ChatRoom;
+    using System.Collections.Generic;
 
     /// <summary>
     /// ChatRoom service
