@@ -76,14 +76,20 @@
         /// </summary>
         public Response<Empty> RemoveCurrent(RemoveCurrentUserViewModel removeCurrentUser)
         {
-            // Todo: check password
-            if (true)
+            if (WebSecurity.Login(WebSecurity.CurrentUserName, removeCurrentUser.ActualPassword))
             {
-                return Response<Empty>.CreateError(ErrorCodes.Forbidden);
+                Response<Empty> response = BaseRemove(WebSecurity.CurrentUserId);
+
+                if (response.IsSuccess)
+                {
+                    WebSecurity.Logout();
+                }
+
+                return response;
             }
             else
             {
-                return BaseRemove(WebSecurity.CurrentUserId);
+                return Response<Empty>.CreateError(ErrorCodes.Forbidden);
             }
         }
     }

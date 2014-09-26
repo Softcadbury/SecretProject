@@ -5,8 +5,8 @@
     /// </summary>
     public class Response<TContent>
     {
-        public TContent Content { get; private set; }
         public bool IsSuccess { get; private set; }
+        public TContent Content { get; private set; }
         public ErrorCodes ErrorCode { get; private set; }
         public string Message { get; private set; }
 
@@ -15,7 +15,7 @@
         /// </summary>
         public static Response<TContent> CreateSuccess(TContent content)
         {
-            return new Response<TContent> { Content = content, IsSuccess = true };
+            return new Response<TContent> { IsSuccess = true, Content = content };
         }
 
         /// <summary>
