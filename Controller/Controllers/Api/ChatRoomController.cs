@@ -10,7 +10,6 @@
     /// <summary>
     /// ChatRoom controller
     /// </summary>
-    [Authorize]
     [RoutePrefix("api/chatrooms")]
     public class ChatRoomController : ControllerApiBase
     {
@@ -24,7 +23,7 @@
             chatRoomService = new ChatRoomService();
         }
 
-        // GET: /api/chatrooms?pageIndex=0
+        // GET: /api/chatrooms?pageIndex=1
         [HttpGet]
         [Route("")]
         public IHttpActionResult GetPage([FromUri] int pageIndex)

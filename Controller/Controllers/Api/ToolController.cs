@@ -9,7 +9,6 @@
     /// <summary>
     /// Tool controller
     /// </summary>
-    [Authorize]
     [RoutePrefix("api/tools")]
     public class ToolController : ControllerApiBase
     {

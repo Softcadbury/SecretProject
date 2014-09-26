@@ -11,7 +11,6 @@
     /// <summary>
     /// User controller
     /// </summary>
-    [Authorize]
     [RoutePrefix("api/users")]
     public class UserController : ControllerApiBase
     {
@@ -35,7 +34,7 @@
             return RenderResponse(response);
         }
 
-        // GET: /api/users?pageIndex=0
+        // GET: /api/users?pageIndex=1
         [HttpGet]
         [Route("")]
         public IHttpActionResult GetPage([FromUri] int pageIndex)
