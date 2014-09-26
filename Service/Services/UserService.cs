@@ -90,7 +90,7 @@
             }
             else
             {
-                return Response<Empty>.CreateError(Resource.Error_Forbidden);
+                return Response<Empty>.CreateError(Resource.Error_IncorrectPassword);
             }
         }
     }

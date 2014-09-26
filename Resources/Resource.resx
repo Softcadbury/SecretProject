@@ -279,4 +279,7 @@
   <data name="Error_NotUpdated" xml:space="preserve">
     <value>The resource couldn't be updated.</value>
   </data>
+  <data name="Error_IncorrectPassword" xml:space="preserve">
+    <value>Incorrect password.</value>
+  </data>
 </root>

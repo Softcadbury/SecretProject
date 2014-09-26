@@ -385,6 +385,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Incorrect password..
+        /// </summary>
+        public static string Error_IncorrectPassword {
+            get {
+                return ResourceManager.GetString("Error_IncorrectPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The {0} is required..
         /// </summary>
         public static string Error_IsRequired {
