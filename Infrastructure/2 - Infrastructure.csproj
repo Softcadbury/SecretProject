@@ -126,7 +126,6 @@
     <Compile Include="Configurations\LenghtLimits.cs" />
     <Compile Include="Configurations\SettingKeys.cs" />
     <Compile Include="ServiceResponses\Empty.cs" />
-    <Compile Include="ServiceResponses\ErrorCodes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ServiceResponses\Response.cs" />
     <Compile Include="Tools\Cookies.cs" />

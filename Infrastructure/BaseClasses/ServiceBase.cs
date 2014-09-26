@@ -34,7 +34,7 @@
 
             if (model == null)
             {
-                return Response<TViewModel>.CreateError(ErrorCodes.NotFound, Resource.Error_NotFound);
+                return Response<TViewModel>.CreateError(Resource.Error_NotFound);
             }
 
             return Response<TViewModel>.CreateSuccess(model.ConvertToView<TViewModel>());
@@ -60,7 +60,7 @@
 
             if (modelAdded == null)
             {
-                return Response<TViewModel>.CreateError(ErrorCodes.NotAdded, Resource.Error_NotAdded);
+                return Response<TViewModel>.CreateError(Resource.Error_NotAdded);
             }
 
             return Response<TViewModel>.CreateSuccess(modelAdded.ConvertToView<TViewModel>());
@@ -76,7 +76,7 @@
 
             if (modelUpdated == null)
             {
-                return Response<TViewModel>.CreateError(ErrorCodes.NotUpdated, Resource.Error_NotUpdated);
+                return Response<TViewModel>.CreateError(Resource.Error_NotUpdated);
             }
 
             return Response<TViewModel>.CreateSuccess(modelUpdated.ConvertToView<TViewModel>());

@@ -46,14 +46,14 @@
         {
             if (user.Id != WebSecurity.CurrentUserId)
             {
-                return Response<UserViewModel>.CreateError(ErrorCodes.Forbidden, Resource.Error_Forbidden);
+                return Response<UserViewModel>.CreateError(Resource.Error_Forbidden);
             }
 
             User existingUser = Repository.GetByPredicate(u => u.UserName == user.UserName && u.Id != user.Id);
 
             if (existingUser != null)
             {
-                return Response<UserViewModel>.CreateError(ErrorCodes.Conflict, Resource.Error_ConflictUserName);
+                return Response<UserViewModel>.CreateError(Resource.Error_ConflictUserName);
             }
 
             return BaseUpdate(user);
@@ -66,7 +66,7 @@
         {
             if (!WebSecurity.ChangePassword(WebSecurity.CurrentUserName, updateCurrentUserPassword.ActualPassword, updateCurrentUserPassword.NewPassword))
             {
-                return Response<Empty>.CreateError(ErrorCodes.Forbidden, Resource.Error_Forbidden);
+                return Response<Empty>.CreateError(Resource.Error_Forbidden);
             }
 
             return Response<Empty>.CreateSuccess();
@@ -90,7 +90,7 @@
             }
             else
             {
-                return Response<Empty>.CreateError(ErrorCodes.Forbidden, Resource.Error_Forbidden);
+                return Response<Empty>.CreateError(Resource.Error_Forbidden);
             }
         }
     }
