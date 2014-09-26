@@ -367,11 +367,56 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to This user name is already used.
+        /// </summary>
+        public static string Error_ConflictUserName {
+            get {
+                return ResourceManager.GetString("Error_ConflictUserName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This action is forbidden.
+        /// </summary>
+        public static string Error_Forbidden {
+            get {
+                return ResourceManager.GetString("Error_Forbidden", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The {0} is required..
         /// </summary>
         public static string Error_IsRequired {
             get {
                 return ResourceManager.GetString("Error_IsRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The resource couldn&apos;t be added.
+        /// </summary>
+        public static string Error_NotAdded {
+            get {
+                return ResourceManager.GetString("Error_NotAdded", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The resource couldn&apos;t be found.
+        /// </summary>
+        public static string Error_NotFound {
+            get {
+                return ResourceManager.GetString("Error_NotFound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The resource couldn&apos;t be updated.
+        /// </summary>
+        public static string Error_NotUpdated {
+            get {
+                return ResourceManager.GetString("Error_NotUpdated", resourceCulture);
             }
         }
         

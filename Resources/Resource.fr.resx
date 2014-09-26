@@ -264,4 +264,19 @@
   <data name="Content_DeleteAccountConfirmation" xml:space="preserve">
     <value>Pour supprimer votre compte, vous devez fournir votre mot de passe. Attention, toutes vos informations seront supprimées.</value>
   </data>
+  <data name="Error_ConflictUserName" xml:space="preserve">
+    <value>Ce nom d'utilisateur est déja utilisé</value>
+  </data>
+  <data name="Error_Forbidden" xml:space="preserve">
+    <value>Cette opération est interdite</value>
+  </data>
+  <data name="Error_NotAdded" xml:space="preserve">
+    <value>La ressource n'a pas pu être ajoutée</value>
+  </data>
+  <data name="Error_NotFound" xml:space="preserve">
+    <value>La ressource n'a pas été trouvée</value>
+  </data>
+  <data name="Error_NotUpdated" xml:space="preserve">
+    <value>La ressource n'a pas pu être modifiée</value>
+  </data>
 </root>
