@@ -30,7 +30,7 @@
         {
             if (!ModelState.IsValid || sendContactEmail == null)
             {
-                return BadRequest(RenderErrorMessage());
+                return BadRequest(RenderModelStateErrorsMessage());
             }
 
             Response<Empty> response = toolService.SendContactEmail(sendContactEmail);

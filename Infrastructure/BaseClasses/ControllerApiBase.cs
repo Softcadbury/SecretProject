@@ -25,7 +25,7 @@
         /// <summary>
         /// Aggregate errors in the model state in a string
         /// </summary>
-        protected string RenderErrorMessage()
+        protected string RenderModelStateErrorsMessage()
         {
             string errorMessage = string.Empty;
 
