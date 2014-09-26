@@ -19,7 +19,7 @@
                 return Ok(response.Content);
             }
 
-            return InternalServerError();
+            return BadRequest(response.Message);
         }
 
         /// <summary>
