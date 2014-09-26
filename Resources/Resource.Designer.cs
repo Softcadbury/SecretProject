@@ -367,7 +367,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to This user name is already used.
+        ///   Looks up a localized string similar to This user name is already used..
         /// </summary>
         public static string Error_ConflictUserName {
             get {
@@ -376,7 +376,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to This action is forbidden.
+        ///   Looks up a localized string similar to This action is forbidden..
         /// </summary>
         public static string Error_Forbidden {
             get {
@@ -394,7 +394,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The resource couldn&apos;t be added.
+        ///   Looks up a localized string similar to The resource couldn&apos;t be added..
         /// </summary>
         public static string Error_NotAdded {
             get {
@@ -403,7 +403,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The resource couldn&apos;t be found.
+        ///   Looks up a localized string similar to The resource couldn&apos;t be found..
         /// </summary>
         public static string Error_NotFound {
             get {
@@ -412,7 +412,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The resource couldn&apos;t be updated.
+        ///   Looks up a localized string similar to The resource couldn&apos;t be updated..
         /// </summary>
         public static string Error_NotUpdated {
             get {
@@ -529,7 +529,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Password updated.
+        ///   Looks up a localized string similar to Password updated..
         /// </summary>
         public static string Success_PasswordUpdated {
             get {
@@ -538,7 +538,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Account updated.
+        ///   Looks up a localized string similar to Account updated..
         /// </summary>
         public static string Success_UserUpdated {
             get {

@@ -217,10 +217,10 @@
     <value>Supprimer mon compte</value>
   </data>
   <data name="Success_PasswordUpdated" xml:space="preserve">
-    <value>Mot de passe mis à jour</value>
+    <value>Mot de passe mis à jour.</value>
   </data>
   <data name="Success_UserUpdated" xml:space="preserve">
-    <value>Compte mis à jour</value>
+    <value>Compte mis à jour.</value>
   </data>
   <data name="Common_Contact" xml:space="preserve">
     <value>Contact</value>
@@ -265,18 +265,18 @@
     <value>Pour supprimer votre compte, vous devez fournir votre mot de passe. Attention, toutes vos informations seront supprimées.</value>
   </data>
   <data name="Error_ConflictUserName" xml:space="preserve">
-    <value>Ce nom d'utilisateur est déja utilisé</value>
+    <value>Ce nom d'utilisateur est déja utilisé.</value>
   </data>
   <data name="Error_Forbidden" xml:space="preserve">
-    <value>Cette opération est interdite</value>
+    <value>Cette opération est interdite.</value>
   </data>
   <data name="Error_NotAdded" xml:space="preserve">
-    <value>La ressource n'a pas pu être ajoutée</value>
+    <value>La ressource n'a pas pu être ajoutée.</value>
   </data>
   <data name="Error_NotFound" xml:space="preserve">
-    <value>La ressource n'a pas été trouvée</value>
+    <value>La ressource n'a pas été trouvée.</value>
   </data>
   <data name="Error_NotUpdated" xml:space="preserve">
-    <value>La ressource n'a pas pu être modifiée</value>
+    <value>La ressource n'a pas pu être modifiée.</value>
   </data>
 </root>
