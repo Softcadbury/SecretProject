@@ -1,7 +1,12 @@
 ﻿namespace Infrastructure.BaseClasses
 {
     using Infrastructure.ServiceResponses;
+    using Infrastructure.Tools;
+    using System.Net.Http;
+    using System.Threading;
+    using System.Web;
     using System.Web.Http;
+    using System.Web.Http.Controllers;
 
     /// <summary>
     /// A baseline definition that every api controllers will inherit from
@@ -9,6 +14,39 @@
     [Authorize]
     public abstract class ControllerApiBase : ApiController
     {
+        /// <summary>
+        /// Override Initialize method to manage internationalization
+        /// </summary>
+        protected override void Initialize(HttpControllerContext context)
+        {
+            string cultureName = Cookies.GetCulture(GetHttpContext(context.Request));
+
+            cultureName = Culture.GetImplementedCulture(cultureName);
+            Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo(cultureName);
+            Thread.CurrentThread.CurrentUICulture = Thread.CurrentThread.CurrentCulture;
+
+            base.Initialize(context);
+        }
+
+        /// <summary>
+        /// Allow to get the HttpContext
+        /// </summary>
+        public HttpContextWrapper GetHttpContext(HttpRequestMessage request)
+        {
+            if (request.Properties.ContainsKey("MS_HttpContext"))
+            {
+                return ((HttpContextWrapper)request.Properties["MS_HttpContext"]);
+            }
+            else if (HttpContext.Current != null)
+            {
+                return new HttpContextWrapper(HttpContext.Current);
+            }
+            else
+            {
+                return null;
+            }
+        }
+
         /// <summary>
         /// Render a response to an HttpActionResult
         /// </summary>
