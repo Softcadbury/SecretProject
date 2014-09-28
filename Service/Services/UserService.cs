@@ -8,6 +8,7 @@
     using Service.ViewModels.Account;
     using Service.ViewModels.User;
     using System.Collections.Generic;
+    using System.Web.Security;
     using WebMatrix.WebData;
 
     /// <summary>
@@ -79,14 +80,11 @@
         {
             if (WebSecurity.Login(WebSecurity.CurrentUserName, removeCurrentUser.ActualPassword))
             {
-                Response<Empty> response = BaseRemove(WebSecurity.CurrentUserId);
+                ((SimpleMembershipProvider)Membership.Provider).DeleteAccount(WebSecurity.CurrentUserName);
+                ((SimpleMembershipProvider)Membership.Provider).DeleteUser(WebSecurity.CurrentUserName, true);
+                WebSecurity.Logout();
 
-                if (response.IsSuccess)
-                {
-                    WebSecurity.Logout();
-                }
-
-                return response;
+                return Response<Empty>.CreateSuccess();
             }
             else
             {
