@@ -57,7 +57,15 @@
                 return Response<UserViewModel>.CreateError(Resource.Error_ConflictUserName);
             }
 
-            return BaseUpdate(user);
+            Response<UserViewModel> response = BaseUpdate(user);
+
+            if (response.IsSuccess)
+            {
+                WebSecurity.Logout();
+                FormsAuthentication.SetAuthCookie(user.UserName, true);
+            }
+
+            return response;
         }
 
         /// <summary>
@@ -81,7 +89,7 @@
             if (WebSecurity.Login(WebSecurity.CurrentUserName, removeCurrentUser.ActualPassword))
             {
                 ((SimpleMembershipProvider)Membership.Provider).DeleteAccount(WebSecurity.CurrentUserName);
-                ((SimpleMembershipProvider)Membership.Provider).DeleteUser(WebSecurity.CurrentUserName, true);
+                Membership.Provider.DeleteUser(WebSecurity.CurrentUserName, true);
                 WebSecurity.Logout();
 
                 return Response<Empty>.CreateSuccess();

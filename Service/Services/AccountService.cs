@@ -28,7 +28,7 @@
 
                 WebSecurity.CreateUserAndAccount(registration.UserName, registration.Password, propertyValues);
                 WebSecurity.Login(registration.UserName, registration.Password);
-                FormsAuthentication.SetAuthCookie(registration.UserName, createPersistentCookie: false);
+                FormsAuthentication.SetAuthCookie(registration.UserName, true);
 
                 return Response<Empty>.CreateSuccess();
             }
@@ -43,9 +43,9 @@
         /// </summary>
         public Response<Empty> LoginUser(LoginViewModel login)
         {
-            if (WebSecurity.Login(login.UserName, login.Password, persistCookie: true))
+            if (WebSecurity.Login(login.UserName, login.Password, true))
             {
-                FormsAuthentication.SetAuthCookie(login.UserName, createPersistentCookie: true);
+                FormsAuthentication.SetAuthCookie(login.UserName, true);
 
                 return Response<Empty>.CreateSuccess();
             }
