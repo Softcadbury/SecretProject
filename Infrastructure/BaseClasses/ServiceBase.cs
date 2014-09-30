@@ -58,11 +58,6 @@
             TModel modelAdded = Repository.Add(viewModel.ConvertToModel<TModel>());
             Repository.SaveChanges();
 
-            if (modelAdded == null)
-            {
-                return Response<TViewModel>.CreateError(Resource.Error_NotAdded);
-            }
-
             return Response<TViewModel>.CreateSuccess(modelAdded.ConvertToView<TViewModel>());
         }
 
@@ -73,11 +68,6 @@
         {
             TModel modelUpdated = Repository.Update(viewModel.ConvertToModel<TModel>());
             Repository.SaveChanges();
-
-            if (modelUpdated == null)
-            {
-                return Response<TViewModel>.CreateError(Resource.Error_NotUpdated);
-            }
 
             return Response<TViewModel>.CreateSuccess(modelUpdated.ConvertToView<TViewModel>());
         }

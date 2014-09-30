@@ -270,14 +270,8 @@
   <data name="Error_Forbidden" xml:space="preserve">
     <value>This action is forbidden.</value>
   </data>
-  <data name="Error_NotAdded" xml:space="preserve">
-    <value>The resource couldn't be added.</value>
-  </data>
   <data name="Error_NotFound" xml:space="preserve">
     <value>The resource couldn't be found.</value>
-  </data>
-  <data name="Error_NotUpdated" xml:space="preserve">
-    <value>The resource couldn't be updated.</value>
   </data>
   <data name="Error_IncorrectPassword" xml:space="preserve">
     <value>Incorrect password.</value>

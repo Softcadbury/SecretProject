@@ -403,29 +403,11 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The resource couldn&apos;t be added..
-        /// </summary>
-        public static string Error_NotAdded {
-            get {
-                return ResourceManager.GetString("Error_NotAdded", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to The resource couldn&apos;t be found..
         /// </summary>
         public static string Error_NotFound {
             get {
                 return ResourceManager.GetString("Error_NotFound", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to The resource couldn&apos;t be updated..
-        /// </summary>
-        public static string Error_NotUpdated {
-            get {
-                return ResourceManager.GetString("Error_NotUpdated", resourceCulture);
             }
         }
         
