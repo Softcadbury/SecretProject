@@ -1,8 +1,6 @@
 ﻿namespace Infrastructure.BaseClasses
 {
-    using Infrastructure.ServiceResponses;
     using Infrastructure.Tools;
-    using Resources;
     using System;
     using System.Collections.Generic;
     using System.Linq.Expressions;
@@ -28,59 +26,52 @@
         /// <summary>
         /// Get a model
         /// </summary>
-        protected Response<TViewModel> BaseGet(int id, params Expression<Func<TModel, object>>[] includeProperties)
+        protected TViewModel BaseGet(int id, params Expression<Func<TModel, object>>[] includeProperties)
         {
             TModel model = Repository.GetById(id, includeProperties);
 
-            if (model == null)
-            {
-                return Response<TViewModel>.CreateError(Resource.Error_NotFound);
-            }
-
-            return Response<TViewModel>.CreateSuccess(model.ConvertToView<TViewModel>());
+            return model.ConvertToView<TViewModel>();
         }
 
         /// <summary>
         /// Get a list of models
         /// </summary>
-        protected Response<List<TViewModel>> BaseGetPage(int pageIndex, int pageSize)
+        protected List<TViewModel> BaseGetPage(int pageIndex, int pageSize)
         {
             List<TModel> models = Repository.GetPage(pageIndex, pageSize);
 
-            return Response<List<TViewModel>>.CreateSuccess(models.ConvertToViews<TViewModel>());
+            return models.ConvertToViews<TViewModel>();
         }
 
         /// <summary>
         /// Add a model
         /// </summary>
-        protected Response<TViewModel> BaseAdd(TViewModel viewModel)
+        protected TViewModel BaseAdd(TViewModel viewModel)
         {
             TModel modelAdded = Repository.Add(viewModel.ConvertToModel<TModel>());
             Repository.SaveChanges();
 
-            return Response<TViewModel>.CreateSuccess(modelAdded.ConvertToView<TViewModel>());
+            return modelAdded.ConvertToView<TViewModel>();
         }
 
         /// <summary>
         /// Update a model
         /// </summary>
-        protected Response<TViewModel> BaseUpdate(TViewModel viewModel)
+        protected TViewModel BaseUpdate(TViewModel viewModel)
         {
             TModel modelUpdated = Repository.Update(viewModel.ConvertToModel<TModel>());
             Repository.SaveChanges();
 
-            return Response<TViewModel>.CreateSuccess(modelUpdated.ConvertToView<TViewModel>());
+            return modelUpdated.ConvertToView<TViewModel>();
         }
 
         /// <summary>
         /// Remove a model
         /// </summary>
-        protected Response<Empty> BaseRemove(int id)
+        protected void BaseRemove(int id)
         {
             Repository.Remove(id);
             Repository.SaveChanges();
-
-            return Response<Empty>.CreateSuccess();
         }
     }
 }

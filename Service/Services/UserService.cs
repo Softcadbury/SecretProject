@@ -29,7 +29,14 @@
         /// </summary>
         public Response<UserViewModel> GetCurrent()
         {
-            return BaseGet(WebSecurity.CurrentUserId, u => u.Picture);
+            UserViewModel user = BaseGet(WebSecurity.CurrentUserId, u => u.Picture);
+
+            if (user == null)
+            {
+                return Response<UserViewModel>.CreateError(Resource.Error_NotFound);
+            }
+
+            return Response<UserViewModel>.CreateSuccess(user);
         }
 
         /// <summary>
@@ -37,7 +44,9 @@
         /// </summary>
         public Response<List<UserViewModel>> GetPage(int pageIndex, int pageSize)
         {
-            return BaseGetPage(pageIndex, pageSize);
+            List<UserViewModel> users = BaseGetPage(pageIndex, pageSize);
+
+            return Response<List<UserViewModel>>.CreateSuccess(users);
         }
 
         /// <summary>
@@ -57,15 +66,11 @@
                 return Response<UserViewModel>.CreateError(Resource.Error_ConflictUserName);
             }
 
-            Response<UserViewModel> response = BaseUpdate(user);
+            UserViewModel userUpdated = BaseUpdate(user);
+            WebSecurity.Logout();
+            FormsAuthentication.SetAuthCookie(user.UserName, true);
 
-            if (response.IsSuccess)
-            {
-                WebSecurity.Logout();
-                FormsAuthentication.SetAuthCookie(user.UserName, true);
-            }
-
-            return response;
+            return Response<UserViewModel>.CreateSuccess(userUpdated);
         }
 
         /// <summary>

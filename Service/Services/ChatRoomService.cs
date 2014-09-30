@@ -25,7 +25,9 @@
         /// </summary>
         public Response<List<ChatRoomViewModel>> GetPage(int pageIndex, int pageSize)
         {
-            return BaseGetPage(pageIndex, pageSize);
+            List<ChatRoomViewModel> chatRooms = BaseGetPage(pageIndex, pageSize);
+
+            return Response<List<ChatRoomViewModel>>.CreateSuccess(chatRooms);
         }
     }
 }
