@@ -2,6 +2,7 @@
 {
     using Infrastructure.Tools;
     using System;
+    using System.Linq;
     using System.Threading;
     using System.Web.Mvc;
 
@@ -19,7 +20,7 @@
 
             if (string.IsNullOrEmpty(cultureName) && Request.UserLanguages != null && Request.UserLanguages.Length > 0)
             {
-                cultureName = Request.UserLanguages[0];
+                cultureName = Request.UserLanguages.First();
             }
 
             cultureName = Culture.GetImplementedCulture(cultureName);

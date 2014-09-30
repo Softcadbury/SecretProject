@@ -2,6 +2,7 @@
 {
     using Infrastructure.ServiceResponses;
     using Infrastructure.Tools;
+    using System.Linq;
     using System.Net.Http;
     using System.Threading;
     using System.Web;
@@ -20,6 +21,11 @@
         protected override void Initialize(HttpControllerContext context)
         {
             string cultureName = Cookies.GetCulture(GetHttpContext(context.Request));
+
+            if (string.IsNullOrEmpty(cultureName) && context.Request != null && context.Request.Headers.AcceptLanguage != null && context.Request.Headers.AcceptLanguage.Count > 0)
+            {
+                cultureName = context.Request.Headers.AcceptLanguage.First().Value;
+            }
 
             cultureName = Culture.GetImplementedCulture(cultureName);
             Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo(cultureName);
