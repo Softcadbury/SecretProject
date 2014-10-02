@@ -93,8 +93,7 @@
         {
             if (WebSecurity.Login(WebSecurity.CurrentUserName, removeCurrentUser.ActualPassword))
             {
-                ((SimpleMembershipProvider)Membership.Provider).DeleteAccount(WebSecurity.CurrentUserName);
-                Membership.Provider.DeleteUser(WebSecurity.CurrentUserName, true);
+                Repository.RemoveCurrent();
                 WebSecurity.Logout();
 
                 return Response<Empty>.CreateSuccess();
