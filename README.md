@@ -2,7 +2,7 @@
 
 ## Description
 
-Website with chat.
+Website with user management and chat.
 
 ## Screenshot
 
